@@ -45,10 +45,14 @@ namespace RouteOpt::Application::CVRP {
             return node->value;
         }
 
+        // static std::tuple<std::pair<int, int>, bool, int> getLastBrc(BbNode *node) {
+        //     if (node->brcs.empty())
+        //         return {std::make_pair(0, 0), false, 0};
+        //     return {node->brcs.back().edge, node->brcs.back().br_dir, static_cast<int>(node->brcs.size())};
+        // }
+
         static std::tuple<std::pair<int, int>, bool, int> getLastBrc(BbNode *node) {
-            if (node->brcs.empty())
-                return {std::make_pair(0, 0), false, 0};
-            return {node->brcs.back().edge, node->brcs.back().br_dir, static_cast<int>(node->brcs.size())};
+            return {std::make_pair(0, 0), false, 0};
         }
 
 

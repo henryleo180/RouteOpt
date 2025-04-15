@@ -1,0 +1,375 @@
+Set parameter Username
+Set parameter LicenseID to value 2629497
+Academic license - for non-commercial use only - expires 2026-02-28
+Set parameter Threads to value 1
+instance name= CVRP_120_183
+#########################################################################################
+tree size= 0 lb= 0 ub= 20883
+#########################################################################################
+idx= 0 value= 0 enu= 0
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 30  ncol= 1501  ncstr= 120  mt= 0.0   spt= 0.2   lpval= 1000000.0 ub= 20883.0  
+it= 60  ncol= 3001  ncstr= 120  mt= 0.1   spt= 0.2   lpval= 1000000.0 ub= 20883.0  
+it= 90  ncol= 4501  ncstr= 120  mt= 0.2   spt= 0.2   lpval= 1000000.0 ub= 20883.0  
+it= 120 ncol= 6001  ncstr= 120  mt= 0.2   spt= 0.2   lpval= 24284.2   ub= 20883.0  
+it= 150 ncol= 7460  ncstr= 120  mt= 0.2   spt= 0.2   lpval= 20628.0   ub= 20883.0  
+it= 154 ncol= 7477  ncstr= 120  mt= 0.0   spt= 0.0   lpval= 20625.6   ub= 20883.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 8   ncol= 7622  ncstr= 120  mt= 0.0   spt= 0.1   lpval= 20526.5   ub= 20883.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 7797  ncstr= 120  mt= 0.0   spt= 0.1   lpval= 20494.6   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 2.06 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.08 s.
+previous= 29.4419% maximum= 29.4419%
+eliminate bucket arcs time= 0.05 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 2.22 s.
+-----------------------------------------------------------------------------------------
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 4   ncol= 7902  ncstr= 140  mt= 0.1   spt= 0.0   lpval= 20594.6   ub= 20883.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 7943  ncstr= 140  mt= 0.0   spt= 0.0   lpval= 20594.2   ub= 20883.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 8000  ncstr= 140  mt= 0.0   spt= 0.1   lpval= 20578.0   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 2.47 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.06 s.
+previous= 78.3301% maximum= 23.0619%
+eliminate bucket arcs time= 0.03 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 2.55 s.
+-----------------------------------------------------------------------------------------
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 6   ncol= 8146  ncstr= 149  mt= 0.1   spt= 0.0   lpval= 20654.7   ub= 20883.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 6   ncol= 8181  ncstr= 149  mt= 0.0   spt= 0.0   lpval= 20651.0   ub= 20883.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 8220  ncstr= 149  mt= 0.0   spt= 0.0   lpval= 20646.7   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 2.84 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.04 s.
+previous= 83.4697% maximum= 19.2497%
+eliminate bucket arcs time= 0.02 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 2.90 s.
+-----------------------------------------------------------------------------------------
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 4   ncol= 8281  ncstr= 155  mt= 0.1   spt= 0.0   lpval= 20669.6   ub= 20883.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 8317  ncstr= 155  mt= 0.0   spt= 0.0   lpval= 20668.9   ub= 20883.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 8323  ncstr= 155  mt= 0.0   spt= 0.0   lpval= 20668.1   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 3.17 s.
+-----------------------------------------------------------------------------------------
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 8336  ncstr= 174  mt= 0.1   spt= 0.0   lpval= 20680.6   ub= 20883.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 8360  ncstr= 174  mt= 0.0   spt= 0.0   lpval= 20679.4   ub= 20883.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 8376  ncstr= 174  mt= 0.0   spt= 0.0   lpval= 20679.1   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 3.43 s.
+-----------------------------------------------------------------------------------------
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 8382  ncstr= 165  mt= 0.1   spt= 0.0   lpval= 20683.3   ub= 20883.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 8387  ncstr= 165  mt= 0.0   spt= 0.0   lpval= 20683.1   ub= 20883.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 8392  ncstr= 165  mt= 0.0   spt= 0.0   lpval= 20683.1   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 3.65 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] 2: gap improved= 3.925278 ratio= 0.019634 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 8412  ncstr= 164  mt= 0.1   spt= 0.0   lpval= 20683.3   ub= 20883.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 8413  ncstr= 164  mt= 0.0   spt= 0.0   lpval= 20683.3   ub= 20883.0  
+ ****** Pricing Level: EXACT ****** 
+it= 1   ncol= 8413  ncstr= 164  mt= 0.0   spt= 0.0   lpval= 20683.3   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 3.84 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] 2: gap improved= 0.238139 ratio= 0.001193 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 1   ncol= 8413  ncstr= 161  mt= 0.1   spt= 0.0   lpval= 20683.4   ub= 20883.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 8414  ncstr= 161  mt= 0.0   spt= 0.0   lpval= 20683.4   ub= 20883.0  
+ ****** Pricing Level: EXACT ****** 
+it= 2   ncol= 8415  ncstr= 161  mt= 0.0   spt= 0.0   lpval= 20683.4   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 4.02 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] 1: gap improved= 0.063503 threshold= 0.100000 in function increaseCondition1 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:61[0m
+[1;36m[REMIND] tail off counter= 3 threshold= 3 in function setIfTailOff at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:150[0m
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 10  ncol= 8742  ncstr= 312  mt= 0.3   spt= 0.0   lpval= 20779.0   ub= 20883.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 7   ncol= 8862  ncstr= 312  mt= 0.1   spt= 0.0   lpval= 20766.4   ub= 20883.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 9019  ncstr= 312  mt= 0.1   spt= 0.1   lpval= 20755.8   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 5.05 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.08 s.
+previous= 60.4946% maximum= 11.645%
+eliminate bucket arcs time= 0.02 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 5.15 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Try Enumeration ****** 
+#labels= 75259 #routes= 193
+labeling 1 time= 0.12 s.
+concatenate time= 0.29 s.
+#routes= 170953
+average gap of successful enumeration= 0.00604238
+next try value > 20741
+-----------------------------------------------------------------------------------------
+elapsed time= 5.59 s.
+-----------------------------------------------------------------------------------------
+ ****** Process Enumeration Matrix ****** 
+delete non-ele routes lp val= 20757
+recover rank1c lp val= 20760.5
+recover rcc lp val= 20767.9
+obtain rcc coefficient time= 0.05 s.
+obtain r1c coefficient time= 0.05 s.
+obtain matrix from triplets time= 0.08 s.
+delete columns by branch time= 0.00 s.
+regenerate enumeration matrix time= 0.00 s.
+-----------------------------------------------------------------------------------------
+elapsed time= 5.95 s.
+-----------------------------------------------------------------------------------------
+it= 4   ncol= 2390  ncstr= 300  mt= 0.0   spt= 0.0   lpval= 20766.6   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 6.00 s.
+-----------------------------------------------------------------------------------------
+delete columns= 70941 remain= 100012
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+it= 4   ncol= 2105  ncstr= 334  mt= 0.0   spt= 0.0   lpval= 20793.8   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 6.40 s.
+-----------------------------------------------------------------------------------------
+delete columns= 52323 remain= 47689
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+it= 4   ncol= 2038  ncstr= 327  mt= 0.0   spt= 0.0   lpval= 20805.8   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 6.77 s.
+-----------------------------------------------------------------------------------------
+delete columns= 17329 remain= 30360
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 1989  ncstr= 366  mt= 0.0   spt= 0.0   lpval= 20812.8   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 7.17 s.
+-----------------------------------------------------------------------------------------
+delete columns= 8835 remain= 21525
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 1975  ncstr= 420  mt= 0.0   spt= 0.0   lpval= 20817.1   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 7.52 s.
+-----------------------------------------------------------------------------------------
+columns pending deletion= 3454 remain= 21525 col ratio= 0.839535 row ratio= 0.759524
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 2031  ncstr= 484  mt= 0.0   spt= 0.0   lpval= 20820.3   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 7.86 s.
+-----------------------------------------------------------------------------------------
+delete columns= 5994 remain= 15531
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+it= 4   ncol= 2042  ncstr= 442  mt= 0.0   spt= 0.0   lpval= 20824.8   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 8.38 s.
+-----------------------------------------------------------------------------------------
+columns pending deletion= 2370 remain= 15531 col ratio= 0.847402 row ratio= 0.816742
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+it= 4   ncol= 2059  ncstr= 492  mt= 0.1   spt= 0.0   lpval= 20826.4   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 8.81 s.
+-----------------------------------------------------------------------------------------
+delete columns= 3520 remain= 12011
+[1;36m[REMIND] 2: gap improved= 1.590737 ratio= 0.028089 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 2058  ncstr= 418  mt= 0.0   spt= 0.0   lpval= 20827.6   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 9.37 s.
+-----------------------------------------------------------------------------------------
+columns pending deletion= 883 remain= 12011 col ratio= 0.926484 row ratio= 0.88756
+[1;36m[REMIND] 2: gap improved= 1.210698 ratio= 0.021845 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 2053  ncstr= 473  mt= 0.0   spt= 0.0   lpval= 20828.0   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 9.75 s.
+-----------------------------------------------------------------------------------------
+columns pending deletion= 1347 remain= 12011 col ratio= 0.887853 row ratio= 0.803383
+[1;36m[REMIND] 2: gap improved= 0.456201 ratio= 0.008300 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+[1;36m[REMIND] tail off counter= 3 threshold= 3 in function setIfTailOff at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:150[0m
+pseudo= 0 frac= 30
+testing lp time= 5.91 s.
+-----------------------------------------------------------------------------------------
+ 71-87  , 287.98|  41-87  , 226.06|  16-104 , 209.78|  19-104 , 136.69|   0-23  , 113.25| 
+ 25-111 ,  88.68|   0-81  ,  79.10|   0-26  ,  71.63|  77-113 ,  69.54|  41-44  ,  59.13| 
+ 42-58  ,  55.12|  68-81  ,  54.89|   9-15  ,  51.92|   0-107 ,  33.15|   0-41  ,  29.51| 
+ 27-42  ,  26.07|  19-31  ,  25.93|  76-81  ,  23.22|   0-113 ,  18.25|   0-51  ,  17.18| 
+ 23-44  ,  15.12|   4-12  ,  14.55|  96-115 ,  14.03|  62-108 ,  11.05|  38-54  ,   6.49| 
+ 19-61  ,   6.46|  59-90  ,   4.58|   0-42  ,   2.09|  59-99  ,   1.52|  29-84  ,   0.01| 
+-----------------------------------------------------------------------------------------
+evaluate on edge: 71-87
+it= 4   ncol= 2092  ncstr= 474  mt= 0.3   spt= 0.0   lpval= 20840.5   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 16.01 s.
+-----------------------------------------------------------------------------------------
+it= 4   ncol= 2177  ncstr= 474  mt= 0.4   spt= 0.0   lpval= 20846.1   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 16.44 s.
+-----------------------------------------------------------------------------------------
+evaluate on edge: 41-87
+it= 3   ncol= 2090  ncstr= 474  mt= 0.3   spt= 0.0   lpval= 20838.7   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 16.72 s.
+-----------------------------------------------------------------------------------------
+it= 4   ncol= 2159  ncstr= 474  mt= 0.4   spt= 0.0   lpval= 20844.9   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 17.09 s.
+-----------------------------------------------------------------------------------------
+evaluate on edge: 16-104
+it= 5   ncol= 2125  ncstr= 474  mt= 0.3   spt= 0.0   lpval= 20855.6   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 17.39 s.
+-----------------------------------------------------------------------------------------
+it= 3   ncol= 2130  ncstr= 474  mt= 0.2   spt= 0.0   lpval= 20834.7   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 17.64 s.
+-----------------------------------------------------------------------------------------
+testing heuristic time= 1.98 s.
+-----------------------------------------------------------------------------------------
+ 71-87  , 225.65|  16-104 , 184.32|  41-87  , 180.40| 
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] no exact testing is needed: too few candidates: 1 in function testing at /home/haoran/solver/RouteOpt/packages/branching/candidate_selector/include/candidate_testing.hpp:73[0m
+#########################################################################################
+tree size= 1 lb= 20828 ub= 20883
+#########################################################################################
+idx= 1 value= 20828 enu= 1
+brc= 71-87 : +
+it= 5   ncol= 2032  ncstr= 473  mt= 0.4   spt= 0.0   lpval= 20846.1   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 18.47 s.
+-----------------------------------------------------------------------------------------
+delete columns= 5855 remain= 4354
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+it= 3   ncol= 1719  ncstr= 338  mt= 0.0   spt= 0.0   lpval= 20846.4   ub= 20883.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 18.61 s.
+-----------------------------------------------------------------------------------------
+columns pending deletion= 656 remain= 4354 col ratio= 0.849334 row ratio= 0.934911
+[1;36m[REMIND] 2: gap improved= 0.281036 ratio= 0.007674 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+mip: row= 316 col= 5348 density= 8.21903%
+mip time= 1.54 s.
+[36mUpdated UB: 20882[0m
+#########################################################################################
+tree size= 0 lb= 20828 ub= 20882
+#########################################################################################
+idx= 2 value= 20828 enu= 1
+brc= 71-87 : -
+it= 4   ncol= 2082  ncstr= 473  mt= 0.0   spt= 0.0   lpval= 20840.5   ub= 20882.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 20.21 s.
+-----------------------------------------------------------------------------------------
+delete columns= 4612 remain= 6019
+ ****** Separate RCCs ****** 
+[1;36m[REMIND]  in function callCutting at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:489[0m
+it= 2   ncol= 1854  ncstr= 360  mt= 0.0   spt= 0.0   lpval= 20840.6   ub= 20882.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 20.38 s.
+-----------------------------------------------------------------------------------------
+columns pending deletion= 454 remain= 6019 col ratio= 0.924572 row ratio= 0.936111
+[1;36m[REMIND] 1: gap improved= 0.035445 threshold= 0.100000 in function increaseCondition1 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:61[0m
+[1;36m[REMIND] tail off counter= 3 threshold= 3 in function setIfTailOff at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:150[0m
+mip: row= 337 col= 7382 density= 7.40284%
+mip time= 4.81 s.
+mip status= 6
+#########################################################################################
+[32m<Instance: CVRP_120_183>
+<Solution>
+97-52-7-108-62-74
+56-110-49-65-55-95
+29-84-28-92-64-89-24-31-19-61
+80-21-14-5-22
+26-70-1-16-104-33-44
+113-77-117-20-93-42
+90-68-99-54-82-59
+72-114-12-101-106-4-46-17
+116-45-39-18-85-88-67
+48-66-107-10
+41-23-75
+112-40-83-36-69
+81-73-103-94-100
+13-91-6-30-57-86
+76-38-50-9-3
+63-118-47-58-27-2
+111-25-37-71-87
+51-32-98-15-109
+53-102-119-34-96-115-78
+8-11-105-35-43-79-60
+<UB= 20882>
+<LB= 20882>
+<Elapsed Time= 25.3>
+<Nodes Explored= 3>
+<Global Gap= 0%>[0m
+#########################################################################################

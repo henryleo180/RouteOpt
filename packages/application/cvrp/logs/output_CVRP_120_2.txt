@@ -1,0 +1,220 @@
+Set parameter Username
+Set parameter LicenseID to value 2629497
+Academic license - for non-commercial use only - expires 2026-02-28
+Set parameter Threads to value 1
+instance name= CVRP_120_2
+#########################################################################################
+tree size= 0 lb= 0 ub= 20199
+#########################################################################################
+idx= 0 value= 0 enu= 0
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 30  ncol= 1501  ncstr= 120  mt= 0.0   spt= 0.2   lpval= 1000000.0 ub= 20199.0  
+it= 60  ncol= 3001  ncstr= 120  mt= 0.0   spt= 0.2   lpval= 1000000.0 ub= 20199.0  
+it= 90  ncol= 4501  ncstr= 120  mt= 0.1   spt= 0.2   lpval= 1000000.0 ub= 20199.0  
+it= 120 ncol= 6001  ncstr= 120  mt= 0.2   spt= 0.2   lpval= 1000000.0 ub= 20199.0  
+it= 150 ncol= 7501  ncstr= 120  mt= 0.3   spt= 0.2   lpval= 34775.8   ub= 20199.0  
+it= 180 ncol= 9001  ncstr= 120  mt= 0.3   spt= 0.2   lpval= 21516.1   ub= 20199.0  
+it= 204 ncol= 9918  ncstr= 120  mt= 0.2   spt= 0.1   lpval= 19953.6   ub= 20199.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 9   ncol= 6761  ncstr= 120  mt= 0.0   spt= 0.1   lpval= 19876.7   ub= 20199.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 6887  ncstr= 120  mt= 0.0   spt= 0.1   lpval= 19816.4   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 2.81 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.09 s.
+previous= 29.0614% maximum= 29.0614%
+eliminate bucket arcs time= 0.06 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 2.97 s.
+-----------------------------------------------------------------------------------------
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 6   ncol= 7009  ncstr= 135  mt= 0.1   spt= 0.0   lpval= 19927.0   ub= 20199.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 7052  ncstr= 135  mt= 0.0   spt= 0.0   lpval= 19919.8   ub= 20199.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 7090  ncstr= 135  mt= 0.0   spt= 0.1   lpval= 19898.6   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 3.22 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.06 s.
+previous= 81.7363% maximum= 23.7537%
+eliminate bucket arcs time= 0.03 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 3.31 s.
+-----------------------------------------------------------------------------------------
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 9   ncol= 7335  ncstr= 156  mt= 0.1   spt= 0.0   lpval= 19968.0   ub= 20199.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 5   ncol= 7364  ncstr= 156  mt= 0.0   spt= 0.0   lpval= 19965.5   ub= 20199.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 7396  ncstr= 156  mt= 0.0   spt= 0.0   lpval= 19961.7   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 3.58 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.04 s.
+previous= 80.892% maximum= 19.2149%
+eliminate bucket arcs time= 0.02 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 3.65 s.
+-----------------------------------------------------------------------------------------
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 7399  ncstr= 163  mt= 0.1   spt= 0.0   lpval= 19969.3   ub= 20199.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 7404  ncstr= 163  mt= 0.0   spt= 0.0   lpval= 19969.3   ub= 20199.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 7417  ncstr= 163  mt= 0.0   spt= 0.0   lpval= 19968.8   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 3.83 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] 2: gap improved= 7.146379 ratio= 0.031048 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 7465  ncstr= 154  mt= 0.1   spt= 0.0   lpval= 19970.7   ub= 20199.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 7489  ncstr= 154  mt= 0.0   spt= 0.0   lpval= 19970.7   ub= 20199.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 7498  ncstr= 154  mt= 0.0   spt= 0.0   lpval= 19970.6   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 4.02 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] 2: gap improved= 1.748069 ratio= 0.007653 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 1   ncol= 7498  ncstr= 157  mt= 0.1   spt= 0.0   lpval= 19970.6   ub= 20199.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 1   ncol= 7498  ncstr= 157  mt= 0.0   spt= 0.0   lpval= 19970.6   ub= 20199.0  
+ ****** Pricing Level: EXACT ****** 
+it= 1   ncol= 7498  ncstr= 157  mt= 0.0   spt= 0.0   lpval= 19970.6   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 4.14 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] 1: gap improved= 0.063583 threshold= 0.100000 in function increaseCondition1 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:61[0m
+[1;36m[REMIND] tail off counter= 3 threshold= 3 in function setIfTailOff at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:150[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 9   ncol= 7808  ncstr= 325  mt= 0.2   spt= 0.0   lpval= 20102.5   ub= 20199.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 8   ncol= 7921  ncstr= 325  mt= 0.1   spt= 0.0   lpval= 20092.3   ub= 20199.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 8226  ncstr= 325  mt= 0.1   spt= 0.1   lpval= 20067.4   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 5.15 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.08 s.
+previous= 57.2371% maximum= 10.998%
+eliminate bucket arcs time= 0.03 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 5.26 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Try Enumeration ****** 
+#labels= 60936 #routes= 63
+labeling 1 time= 0.09 s.
+concatenate time= 0.20 s.
+#routes= 151224
+average gap of successful enumeration= 0.00646369
+next try value > 20052.1
+-----------------------------------------------------------------------------------------
+elapsed time= 5.57 s.
+-----------------------------------------------------------------------------------------
+ ****** Process Enumeration Matrix ****** 
+delete non-ele routes lp val= 20071.7
+recover rank1c lp val= 20085.1
+recover rcc lp val= 20091.1
+obtain rcc coefficient time= 0.03 s.
+obtain r1c coefficient time= 0.06 s.
+obtain matrix from triplets time= 0.07 s.
+delete columns by branch time= 0.00 s.
+regenerate enumeration matrix time= 0.00 s.
+-----------------------------------------------------------------------------------------
+elapsed time= 5.91 s.
+-----------------------------------------------------------------------------------------
+it= 4   ncol= 2243  ncstr= 308  mt= 0.0   spt= 0.0   lpval= 20089.8   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 5.95 s.
+-----------------------------------------------------------------------------------------
+delete columns= 89544 remain= 61680
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+it= 4   ncol= 1963  ncstr= 318  mt= 0.0   spt= 0.0   lpval= 20111.2   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 6.27 s.
+-----------------------------------------------------------------------------------------
+delete columns= 30340 remain= 31340
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 1859  ncstr= 307  mt= 0.0   spt= 0.0   lpval= 20124.7   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 6.51 s.
+-----------------------------------------------------------------------------------------
+delete columns= 12655 remain= 18685
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 1885  ncstr= 395  mt= 0.0   spt= 0.0   lpval= 20133.6   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 7.01 s.
+-----------------------------------------------------------------------------------------
+delete columns= 7325 remain= 11360
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 1738  ncstr= 359  mt= 0.0   spt= 0.0   lpval= 20137.2   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 7.38 s.
+-----------------------------------------------------------------------------------------
+columns pending deletion= 1783 remain= 11360 col ratio= 0.843046 row ratio= 0.805014
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 1747  ncstr= 429  mt= 0.0   spt= 0.0   lpval= 20139.8   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 7.71 s.
+-----------------------------------------------------------------------------------------
+delete columns= 2994 remain= 8366
+[1;36m[REMIND] 3: gap improved= 2.591081 ratio= 0.000129 threshold= 0.000150 in function increaseCondition3 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:89[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+it= 3   ncol= 1740  ncstr= 372  mt= 0.0   spt= 0.0   lpval= 20142.6   ub= 20199.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 8.09 s.
+-----------------------------------------------------------------------------------------
+columns pending deletion= 864 remain= 8366 col ratio= 0.896725 row ratio= 0.822581
+[1;36m[REMIND] 3: gap improved= 2.790717 ratio= 0.000139 threshold= 0.000150 in function increaseCondition3 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:89[0m
+mip: row= 306 col= 9204 density= 6.91856%
+mip time= 10.16 s.
+mip status= 6
+#########################################################################################
+[32m<Instance: CVRP_120_2>
+<Solution>
+<UB= 20199>
+<LB= 20199>
+<Elapsed Time= 18.3>
+<Nodes Explored= 1>
+<Global Gap= 0%>[0m
+#########################################################################################
