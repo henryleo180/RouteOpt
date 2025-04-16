@@ -61,7 +61,13 @@ int main(int argc, char *argv[]) {
     //   - BbNode: the type for branch-and-bound nodes.
     //   - std::pair<int, int>: the type for branching candidates.
     //   - PairHasher: hash function for branching candidates.
+
+    // using BrCType = std::vector<std::pair<int, int>>;
+    // //using BrCType = std::pair<int, int>;
+    // using BrCHasher = VectorPairHasher;
+
     Branching::BBT::BBTController<BbNode, std::pair<int, int>, PairHasher> bbt_controller{
+    //Branching::BBT::BBTController<BbNode, std::vector<std::pair<int, int>>, VectorPairHasher> bbt_controller{
         cvrp->getDim(), // Problem/Instance dimension.
         cvrp->refUB(), // Reference to the current upper bound.
         static_cast<int>(NUM_TESTING::PHASE0), // Number of output candidates for phase 0.
@@ -83,22 +89,26 @@ int main(int argc, char *argv[]) {
         BbNode::getNodeValue, // Function to extract node value.
         BbNode::getNodeIdx, // Function to extract node index.
         BbNode::getNodeIfInEnumState, // Function to check node enumeration state.
-        BbNode::getLastBrc, // Function to get the last branching candidate.
+        BbNode::getLastBrc, // Function to get the last branching candidate.                  // set to all zero for 3 branch
         BbNode::refNodeBrIncreaseVal, // Function to reference node branching increase value.
         BbNode::getNodeIfTerminate, // Function to check if node is terminated.
         BbNode::obtainSolEdgeMap, // Function to obtain solution edge map.
-        // LP testing function for processing LP testing.
-        [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
-            return cvrp->processLPTesting(arg1, arg2, arg3, arg4);
-        },
-        // Heuristic testing function.
-        [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
-            return cvrp->processCGTesting<false>(arg1, arg2, arg3, arg4);
-        },
-        // Exact testing function.
-        [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
-            return cvrp->processCGTesting<true>(arg1, arg2, arg3, arg4);
-        },
+        // LP testing function for processing LP testing. //cannot be used in 3 branch
+        // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
+        //     return cvrp->processLPTesting(arg1, arg2, arg3, arg4);
+        // },
+        /* LP test */   
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // LP test no‑op
+        // Heuristic testing function. //cannot be used in 3 branch
+        // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
+        //     return cvrp->processCGTesting<false>(arg1, arg2, arg3, arg4);
+        // },
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Heur test no‑op
+        // Exact testing function. //cannot be used in 3 branch
+        // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
+        //     return cvrp->processCGTesting<true>(arg1, arg2, arg3, arg4);
+        // },
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Exact test no‑op,
         // Function to perform pricing at the beginning of processing a node.
         [cvrp](auto arg1) -> decltype(auto) {
             return cvrp->callPricingAtBeg(arg1);
@@ -111,9 +121,9 @@ int main(int argc, char *argv[]) {
         [cvrp](auto arg1, auto arg2, auto &arg3) -> decltype(auto) {
             return cvrp->imposeBranching(arg1, arg2, arg3);
         },
-        // Self-Defined Branching Selection Function (e.g., 2LBB).
-        // ml_candidate_selection,
-        nullptr,
+        // Self-Defined Branching Selection Function (e.g., 2LBB). (3PB cannot be used for 3 branching)
+        ml_candidate_selection,
+        //nullptr,
 
         // Node output function for writing nodes to external storage.
         node_out_func,

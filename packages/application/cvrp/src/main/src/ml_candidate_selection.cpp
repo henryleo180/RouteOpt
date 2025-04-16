@@ -49,4 +49,50 @@ namespace RouteOpt::Application::CVRP {
         l2b_controller.cleanLastData();
         return data_shared.refBranchPair().front();
     }
+
+    // Returns two candidate edges (std::pair<int,int>) from the given node
+    // whose accumulated fractional values sum is as close as possible to 1.5.
+    inline std::vector<std::pair<int, int>> CVRPSolver::getBestTwoEdges(BbNode *node,
+                                                             Branching::BranchingHistory<std::pair<int, int>,
+                                                                 PairHasher> &history,
+                                                             Branching::BranchingDataShared<std::pair<int, int>,
+                                                                 PairHasher> &data_shared,
+                                                             Branching::CandidateSelector::BranchingTesting<BbNode,
+                                                                 std::pair<int, int>, PairHasher> &tester) {
+        // Call the existing function to get the candidate map.
+        // The map type is: std::unordered_map<std::pair<int, int>, double, PairHasher>
+        auto candidateMap = BbNode::obtainSolEdgeMap(node);
+
+        // Convert the map into a vector so that we can iterate over candidate pairs.
+        std::vector<std::pair<std::pair<int, int>, double>> candidates;
+        candidates.reserve(candidateMap.size());
+        for (const auto &item : candidateMap) {
+            candidates.push_back(item);
+        }
+
+        // Ensure we have at least two candidates.
+        if (candidates.size() < 2)
+            return {};  // Alternatively, you may decide to throw an error or return one candidate.
+
+        const double target = 1.5;
+        double bestDiff = std::numeric_limits<double>::max();
+        std::pair<int, int> bestEdge1{}, bestEdge2{};
+
+        // Iterate over all unique pairs of candidate edges.
+        for (size_t i = 0; i < candidates.size(); ++i) {
+            for (size_t j = i + 1; j < candidates.size(); ++j) {
+                double sum = candidates[i].second + candidates[j].second;
+                double diff = std::abs(sum - target);
+                if (diff < bestDiff) {
+                    bestDiff = diff;
+                    bestEdge1 = candidates[i].first;
+                    bestEdge2 = candidates[j].first;
+                }
+            }
+        }
+
+        // Return a vector containing the two selected edges.
+        return { bestEdge1, bestEdge2 };
+    }
+
 }

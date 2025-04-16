@@ -98,6 +98,11 @@ namespace RouteOpt::Application::CVRP {
 
         void imposeBranching(BbNode *node, const std::pair<int, int> &brc, std::vector<BbNode *> &children);
 
+        void imposeThreeBranching(BbNode* node,
+                                                const std::pair<int,int>& edge1,
+                                                const std::pair<int,int>& edge2,
+                                                std::vector<BbNode*>& children);
+
         void processLPTesting(BbNode *node, const std::pair<int, int> &edge, double &dif1, double &dif2);
 
         template<bool if_exact>
@@ -114,6 +119,14 @@ namespace RouteOpt::Application::CVRP {
                                                          PairHasher> &data_shared,
                                                      Branching::CandidateSelector::BranchingTesting<BbNode,
                                                          std::pair<int, int>, PairHasher> &tester);
+
+        std::vector<std::pair<int, int>> getBestTwoEdges(BbNode *node,
+                                                             Branching::BranchingHistory<std::pair<int, int>,
+                                                                 PairHasher> &history,
+                                                             Branching::BranchingDataShared<std::pair<int, int>,
+                                                                 PairHasher> &data_shared,
+                                                             Branching::CandidateSelector::BranchingTesting<BbNode,
+                                                                 std::pair<int, int>, PairHasher> &tester);
 
         void callWriteNodeOut(BbNode *node,
                               const Branching::BranchingHistory<std::pair<int, int>, PairHasher> &history,

@@ -51,10 +51,17 @@ namespace RouteOpt::Application::CVRP {
         //     return {node->brcs.back().edge, node->brcs.back().br_dir, static_cast<int>(node->brcs.size())};
         // }
 
+        
+        // using BrcType = std::vector<std::pair<int, int>>;
+        // using BrcHasher = VectorPairHasher;
+
+        // static std::tuple<std::vector<std::pair<int, int>>, bool, int> getLastBrc(BbNode *node) {
+        //     return {{{0, 0}, {0, 0}}, false, 0};
+        // }
+
         static std::tuple<std::pair<int, int>, bool, int> getLastBrc(BbNode *node) {
             return {std::make_pair(0, 0), false, 0};
         }
-
 
         static bool getNodeIfTerminate(BbNode *node) {
             return node->if_terminate;

@@ -94,6 +94,10 @@ namespace RouteOpt::Application::CVRP {
         }
     }
 
+    // using BrCType = std::vector<std::pair<int, int>>;
+    // //using BrCType = std::pair<int, int>;
+    // using BrCHasher = VectorPairHasher;
+
     template<bool if_exact>
     void CVRPSolver::processCGTesting(BbNode *node, const std::pair<int, int> &edge, double &dif1, double &dif2) {
         std::cout << "evaluate on edge: " << edge.first << "-" << edge.second << std::endl;
@@ -378,6 +382,76 @@ namespace RouteOpt::Application::CVRP {
         }
         return edge_map;
     }
+
+
+    // inline std::unordered_map<BrCType, double, BrCHasher> BbNode::obtainSolEdgeMap(BbNode *node) {
+    //     // Build the candidate map from node->cols data.
+    //     std::unordered_map<BrCType, double, BrCHasher> edge_map;
+    //     edge_map.clear();
+    //     edge_map.reserve(dim * dim);
+        
+    //     auto &cols = node->cols;
+    //     std::vector<double> x(cols.size());
+    //     SAFE_SOLVER(node->solver.getX(0, cols.size(), x.data()))
+        
+    //     // Use each column to update candidate branch scores.
+    //     for (size_t i = 0; i < cols.size(); ++i) {
+    //         const double val = x[i];
+    //         if (val < SOL_X_TOLERANCE)
+    //             continue;
+    //         const auto &seq = cols[i].col_seq;
+    //         int b4 = 0;
+    //         for (auto j : seq) {
+    //             BrCType key;
+    //             // Ensure key ordering (the smaller element first)
+    //             if (b4 < j)
+    //                 key.push_back({b4, j});
+    //             else
+    //                 key.push_back({j, b4});
+    //             edge_map[key] += val;
+    //             b4 = j;
+    //         }
+    //         if (seq.size() != 1) {
+    //             // Handle the "single point" or end-of-sequence case.
+    //             BrCType key;
+    //             key.push_back({0, b4});
+    //             edge_map[key] += val;
+    //         }
+    //     }
+
+    //     // If we do not have at least two candidate branches, return what we got.
+    //     if (edge_map.size() < 2)
+    //         return edge_map;
+        
+    //     // Now we want to select two branch candidates (i.e. keys of edge_map)
+    //     // such that the sum of their values is as close as possible to 1.5.
+    //     std::vector<std::pair<BrCType, double>> candidates(edge_map.begin(), edge_map.end());
+        
+    //     double bestDiff = std::numeric_limits<double>::max();
+    //     size_t bestI = 0, bestJ = 1;
+    //     const double target = 1.5;
+        
+    //     // Brute-force check all unique pairs.
+    //     for (size_t i = 0; i < candidates.size(); ++i) {
+    //         for (size_t j = i + 1; j < candidates.size(); ++j) {
+    //             double sum = candidates[i].second + candidates[j].second;
+    //             double diff = std::abs(sum - target);
+    //             if (diff < bestDiff) {
+    //                 bestDiff = diff;
+    //                 bestI = i;
+    //                 bestJ = j;
+    //             }
+    //         }
+    //     }
+        
+    //     // Build a new edge_map containing only the two selected candidate branches.
+    //     std::unordered_map<BrCType, double, BrCHasher> best_edge_map;
+    //     best_edge_map[candidates[bestI].first] = candidates[bestI].second;
+    //     best_edge_map[candidates[bestJ].first] = candidates[bestJ].second;
+        
+    //     return best_edge_map;
+    // }
+
 }
 
 #endif // ROUTE_OPT_CALL_BRANCHING_HPP
