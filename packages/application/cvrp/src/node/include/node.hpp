@@ -55,13 +55,13 @@ namespace RouteOpt::Application::CVRP {
         // using BrcType = std::vector<std::pair<int, int>>;
         // using BrcHasher = VectorPairHasher;
 
-        // static std::tuple<std::vector<std::pair<int, int>>, bool, int> getLastBrc(BbNode *node) {
-        //     return {{{0, 0}, {0, 0}}, false, 0};
-        // }
-
-        static std::tuple<std::pair<int, int>, bool, int> getLastBrc(BbNode *node) {
-            return {std::make_pair(0, 0), false, 0};
+        static std::tuple<std::vector<std::pair<int, int>>, bool, int> getLastBrc(BbNode *node) {
+            return {{{0, 0}, {0, 0}}, false, 0};
         }
+
+        // static std::tuple<std::pair<int, int>, bool, int> getLastBrc(BbNode *node) {
+        //     return {std::make_pair(0, 0), false, 0};
+        // }
 
         static bool getNodeIfTerminate(BbNode *node) {
             return node->if_terminate;
@@ -82,6 +82,8 @@ namespace RouteOpt::Application::CVRP {
         static void regenerateEnumMat(BbNode *node, BbNode *node2, bool if_force, std::vector<double> &duals);
 
         static std::unordered_map<std::pair<int, int>, double, PairHasher> obtainSolEdgeMap(BbNode *node);
+
+        static std::unordered_map<std::vector<std::pair<int,int>>, double, VectorPairHasher> obtainSol3DEdgeMap(BbNode *node);
 
 
         //refers

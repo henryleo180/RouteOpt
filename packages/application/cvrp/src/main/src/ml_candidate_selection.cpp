@@ -52,47 +52,35 @@ namespace RouteOpt::Application::CVRP {
 
     // Returns two candidate edges (std::pair<int,int>) from the given node
     // whose accumulated fractional values sum is as close as possible to 1.5.
-    inline std::vector<std::pair<int, int>> CVRPSolver::getBestTwoEdges(BbNode *node,
-                                                             Branching::BranchingHistory<std::pair<int, int>,
-                                                                 PairHasher> &history,
-                                                             Branching::BranchingDataShared<std::pair<int, int>,
-                                                                 PairHasher> &data_shared,
-                                                             Branching::CandidateSelector::BranchingTesting<BbNode,
-                                                                 std::pair<int, int>, PairHasher> &tester) {
-        // Call the existing function to get the candidate map.
-        // The map type is: std::unordered_map<std::pair<int, int>, double, PairHasher>
-        auto candidateMap = BbNode::obtainSolEdgeMap(node);
+    std::vector<std::pair<int, int>>  CVRPSolver::getBestTwoEdges(
+        BbNode *node,
+        Branching::BranchingHistory<std::vector<std::pair<int, int>>, VectorPairHasher> &history,
+        Branching::BranchingDataShared<std::vector<std::pair<int, int>>, VectorPairHasher> &data_shared,
+        Branching::CandidateSelector::BranchingTesting<BbNode, std::vector<std::pair<int, int>>, VectorPairHasher> &tester
+    ) {
+        // 1) Build the 2‑edge map: each key is a vector of two edges, value is their sum.
+        auto comboMap = BbNode::obtainSol3DEdgeMap(node);
 
-        // Convert the map into a vector so that we can iterate over candidate pairs.
-        std::vector<std::pair<std::pair<int, int>, double>> candidates;
-        candidates.reserve(candidateMap.size());
-        for (const auto &item : candidateMap) {
-            candidates.push_back(item);
-        }
+        // 2) If there are no combinations, return empty.
+        if (comboMap.empty()) 
+            return {};
 
-        // Ensure we have at least two candidates.
-        if (candidates.size() < 2)
-            return {};  // Alternatively, you may decide to throw an error or return one candidate.
-
+        // 3) Find the key (two‑edge vector) with sum closest to target.
         const double target = 1.5;
-        double bestDiff = std::numeric_limits<double>::max();
-        std::pair<int, int> bestEdge1{}, bestEdge2{};
+        double bestDiff = std::numeric_limits<double>::infinity();
+        std::vector<std::pair<int,int>> bestCombo;
 
-        // Iterate over all unique pairs of candidate edges.
-        for (size_t i = 0; i < candidates.size(); ++i) {
-            for (size_t j = i + 1; j < candidates.size(); ++j) {
-                double sum = candidates[i].second + candidates[j].second;
-                double diff = std::abs(sum - target);
-                if (diff < bestDiff) {
-                    bestDiff = diff;
-                    bestEdge1 = candidates[i].first;
-                    bestEdge2 = candidates[j].first;
-                }
+        for (auto &kv : comboMap) {
+            double sum = kv.second;
+            double diff = std::abs(sum - target);
+            if (diff < bestDiff) {
+                bestDiff = diff;
+                bestCombo = kv.first;  // a vector of exactly two edges
             }
         }
 
-        // Return a vector containing the two selected edges.
-        return { bestEdge1, bestEdge2 };
+        // 4) Return that two‑edge vector.
+        return bestCombo;
     }
 
 }

@@ -34,11 +34,14 @@ int main(int argc, char *argv[]) {
 
     // Define a candidate selection function pointer for machine learning based candidate selection.
     // Initialize to nullptr by default.
-    CandidateSelectionFuncType ml_candidate_selection = nullptr;
+    //CandidateSelectionFuncType ml_candidate_selection = nullptr;
+    VectorCandidateSelectionFuncType vec_candidate_selection = nullptr;
     // If machine learning is enabled (ml_type is not ML_NO_USE), set the candidate selection function.
     if constexpr (ml_type != ML_TYPE::ML_NO_USE) {
-        ml_candidate_selection = [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> std::pair<int, int> {
-            return cvrp->callMLCandidateSelection(arg1, arg2, arg3, arg4);
+        //ml_candidate_selection = [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> std::pair<int, int> {
+        vec_candidate_selection = [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> std::vector<std::pair<int, int>> {
+            //return cvrp->callMLCandidateSelection(arg1, arg2, arg3, arg4);
+            return cvrp->getBestTwoEdges(arg1, arg2, arg3, arg4);
         };
     }
 
@@ -53,7 +56,8 @@ int main(int argc, char *argv[]) {
 
     // Define a function for reading node information.
     auto node_in_func = [cvrp](auto arg1, auto &arg2, auto &arg3) -> void {
-        cvrp->callReadNodeIn(arg1, arg2, arg3);
+        //cvrp->callReadNodeIn(arg1, arg2, arg3);
+        cvrp->callReadNodeInNaiveVector(arg1, arg2, arg3);
     };
 
     // Create an instance of the Branch-and-Bound Tree (BBT) Controller.
@@ -66,8 +70,8 @@ int main(int argc, char *argv[]) {
     // //using BrCType = std::pair<int, int>;
     // using BrCHasher = VectorPairHasher;
 
-    Branching::BBT::BBTController<BbNode, std::pair<int, int>, PairHasher> bbt_controller{
-    //Branching::BBT::BBTController<BbNode, std::vector<std::pair<int, int>>, VectorPairHasher> bbt_controller{
+    //Branching::BBT::BBTController<BbNode, std::pair<int, int>, PairHasher> bbt_controller{
+    Branching::BBT::BBTController<BbNode, std::vector<std::pair<int, int>>, VectorPairHasher> bbt_controller{
         cvrp->getDim(), // Problem/Instance dimension.
         cvrp->refUB(), // Reference to the current upper bound.
         static_cast<int>(NUM_TESTING::PHASE0), // Number of output candidates for phase 0.
@@ -92,23 +96,23 @@ int main(int argc, char *argv[]) {
         BbNode::getLastBrc, // Function to get the last branching candidate.                  // set to all zero for 3 branch
         BbNode::refNodeBrIncreaseVal, // Function to reference node branching increase value.
         BbNode::getNodeIfTerminate, // Function to check if node is terminated.
-        BbNode::obtainSolEdgeMap, // Function to obtain solution edge map.
+        BbNode::obtainSol3DEdgeMap, // Function to obtain solution edge map.   //change to 3 branch
         // LP testing function for processing LP testing. //cannot be used in 3 branch
         // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
         //     return cvrp->processLPTesting(arg1, arg2, arg3, arg4);
         // },
         /* LP test */   
-        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // LP test no‑op
+        [](BbNode*, const std::vector<std::pair<int, int>>&, double&, double&){},  // LP test no‑op
         // Heuristic testing function. //cannot be used in 3 branch
         // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
         //     return cvrp->processCGTesting<false>(arg1, arg2, arg3, arg4);
         // },
-        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Heur test no‑op
+        [](BbNode*, const std::vector<std::pair<int, int>>&, double&, double&){},  // Heur test no‑op
         // Exact testing function. //cannot be used in 3 branch
         // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
         //     return cvrp->processCGTesting<true>(arg1, arg2, arg3, arg4);
         // },
-        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Exact test no‑op,
+        [](BbNode*, const std::vector<std::pair<int, int>>&, double&, double&){},  // Exact test no‑op,
         // Function to perform pricing at the beginning of processing a node.
         [cvrp](auto arg1) -> decltype(auto) {
             return cvrp->callPricingAtBeg(arg1);
@@ -119,14 +123,16 @@ int main(int argc, char *argv[]) {
         },
         // Function to impose a branching decision on a node, generating child nodes.
         [cvrp](auto arg1, auto arg2, auto &arg3) -> decltype(auto) {
-            return cvrp->imposeBranching(arg1, arg2, arg3);
+            //return cvrp->imposeBranching(arg1, arg2, arg3);
+            return cvrp->imposeThreeBranching(arg1, arg2, arg3);
         },
         // Self-Defined Branching Selection Function (e.g., 2LBB). (3PB cannot be used for 3 branching)
-        ml_candidate_selection,
+        vec_candidate_selection,
         //nullptr,
 
         // Node output function for writing nodes to external storage.
-        node_out_func,
+        //node_out_func,
+        nullptr,
         
         // Node input function for reading node information.
         node_in_func

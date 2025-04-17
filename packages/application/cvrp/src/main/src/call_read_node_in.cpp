@@ -106,6 +106,19 @@ namespace RouteOpt::Application::CVRP {
         }
     }
 
+    void CVRPSolver::callReadNodeInNaiveVector(BbNode *node,
+                                    Branching::BranchingHistory<std::vector<std::pair<int, int>>, VectorPairHasher> &history,
+                                    Branching::BKF::BKFDataShared &bkf_data_shared) {
+        if (tree_path.empty()) {
+            pricing_controller.initLabelingMemory();
+            BbNode::buildModel(num_vehicle, dim, &solver, node);
+            return;
+        } {
+            BbNode::setDim(dim);
+            node->refSolver().getEnv(&solver);
+        }
+        }
+
     void CVRPSolver::callReadNodeIn(BbNode *node,
                                     Branching::BranchingHistory<std::pair<int, int>, PairHasher> &history,
                                     Branching::BKF::BKFDataShared &bkf_data_shared) {

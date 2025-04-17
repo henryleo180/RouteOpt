@@ -9,6 +9,8 @@
 
 namespace RouteOpt::Application::CVRP {
     void CVRPSolver::callEnumeration(BbNode *node) {
+        PRINT_REMIND("call enumeration forbidden");
+        return;
         if constexpr (ml_type == ML_TYPE::ML_GET_DATA_1 || ml_type == ML_TYPE::ML_GET_DATA_2) {
             return;
         }

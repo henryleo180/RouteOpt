@@ -259,57 +259,132 @@ namespace RouteOpt::Application::CVRP {
 
     void CVRPSolver::imposeThreeBranching(
         BbNode* node,
-        const std::pair<int,int>& edge1,
-        const std::pair<int,int>& edge2,
+        const std::vector<std::pair<int,int>>& edgepair,   // must have size()==2
         std::vector<BbNode*>& children
     ) {
-        // // 1. Prepare space for up to 3 children.
-        // //    (You may store them in children[0], children[1], children[2] if feasible).
-        // children.resize(3, nullptr);
+        assert(edgepair.size() == 2);
+        auto e1 = edgepair[0];
+        auto e2 = edgepair[1];
 
-        // // 2. If node is flagged to terminate or is infeasible, just return.
-        // if (node->getIfTerminate()) return;
+        // If node is already terminal, do nothing.
+        if (node->getIfTerminate()) return;
 
-        // // 3. Possibly do some checks to see if 3-branch is allowed or beneficial.
-        // //    For example, if edge1 + edge2 = 1.0 in the LP solution already
-        // //    (and that leads to loops or confusion), you might skip 3-branch.
+        children.clear();
+        children.reserve(3);
 
-        // // 4. Create the "both accepted" child
-        // //    - This is the branch a+b >= 2 in your model.
-        // //    - Implementation: impose constraints that x_edge1 = 1, x_edge2 = 1, or however "accept" is enforced.
+        //
+        // --- Branch A: e1 = 1 AND e2 = 1 ---
+        //
+        {
+            // Clone the parent
+            BbNode* childA = new BbNode(*node);
 
-        // BbNode* bothAcceptedNode = createChildNodeForBothAccepted(node, edge1, edge2);
-        // if (bothAcceptedNode != nullptr) {
-        //     children[0] = bothAcceptedNode;
-        // }
+            // Force x_{e1} = 1
+            {
+                std::vector<int>   inds;
+                std::vector<double> vals;
+                childA->obtainBrcCoefficient(e1, inds, vals);
+                TestingDetail::addBranchConstraint(inds, vals,
+                                                childA->refSolver(),
+                                                /*branchIsTrue=*/true);
+            }
+            // Force x_{e2} = 1
+            {
+                std::vector<int>   inds;
+                std::vector<double> vals;
+                childA->obtainBrcCoefficient(e2, inds, vals);
+                TestingDetail::addBranchConstraint(inds, vals,
+                                                childA->refSolver(),
+                                                /*branchIsTrue=*/true);
+            }
 
-        // // 5. Create the "both rejected" child
-        // //    - This is the branch a+b <= 0 in your model.
-        // //    - Implementation: impose constraints that x_edge1 = 0, x_edge2 = 0, or however "reject" is enforced.
+            children.push_back(childA);
+        }
 
-        // BbNode* bothRejectedNode = createChildNodeForBothRejected(node, edge1, edge2);
-        // if (bothRejectedNode != nullptr) {
-        //     children[1] = bothRejectedNode;
-        // }
+        //
+        // --- Branch B: e1 = 0 AND e2 = 0 ---
+        //
+        {
+            BbNode* childB = new BbNode(*node);
 
-        // // 6. Create the "exactly one accepted" child
-        // //    - This is the branch a+b = 1 in your model.
-        // //    - Implementation: impose constraints that x_edge1 + x_edge2 = 1
+            // Force x_{e1} = 0
+            {
+                std::vector<int>   inds;
+                std::vector<double> vals;
+                childB->obtainBrcCoefficient(e1, inds, vals);
+                TestingDetail::addBranchConstraint(inds, vals,
+                                                childB->refSolver(),
+                                                /*branchIsTrue=*/false);
+            }
+            // Force x_{e2} = 0
+            {
+                std::vector<int>   inds;
+                std::vector<double> vals;
+                childB->obtainBrcCoefficient(e2, inds, vals);
+                TestingDetail::addBranchConstraint(inds, vals,
+                                                childB->refSolver(),
+                                                /*branchIsTrue=*/false);
+            }
 
-        // BbNode* exactlyOneNode = createChildNodeForExactlyOne(node, edge1, edge2);
-        // if (exactlyOneNode != nullptr) {
-        //     children[2] = exactlyOneNode;
-        // }
+            children.push_back(childB);
+        }
 
-        // // 7. Clear or update any data in the original node if needed (similar to your 2-branch code).
-        // node->clearEdgeMap();
+        //
+        // --- Branch C: x_{e1} + x_{e2} = 1 ---
+        //
+        {
+            BbNode* childC = new BbNode(*node);
 
-        // // 8. If any of the newly created children are infeasible or invalid, set them to nullptr and/or shrink the vector.
-        // //    For example:
-        // auto it = std::remove(children.begin(), children.end(), nullptr);
-        // children.erase(it, children.end());
-        
+            // 1) Collect coefficients for e1 and e2
+            std::vector<int>    inds1, inds2;
+            std::vector<double> vals1, vals2;
+            childC->obtainBrcCoefficient(e1, inds1, vals1);
+            childC->obtainBrcCoefficient(e2, inds2, vals2);
+
+            // 2) Merge into one constraint: sum_i vals[i] * x[ind[i]] = 1
+            std::vector<int>    inds = inds1;
+            std::vector<double> vals = vals1;
+            for (size_t i = 0; i < inds2.size(); ++i) {
+                auto it = std::find(inds.begin(), inds.end(), inds2[i]);
+                if (it == inds.end()) {
+                    inds.push_back(inds2[i]);
+                    vals.push_back(vals2[i]);
+                } else {
+                    size_t idx = it - inds.begin();
+                    vals[idx] += vals2[i];
+                }
+            }
+
+            // 3) Build addConstraints arguments:
+            int    numconstrs = 1;
+            int    numnz       = (int)inds.size();
+            std::vector<int>    cbeg   = { 0 };       // one row starts at offset 0
+            std::vector<char>   sense  = { '=' };     // equality
+            std::vector<double> rhs    = { 1.0 };     // RHS = 1
+            std::vector<char*>  names  = { nullptr }; // no name
+
+            // 4) Call addConstraints + updateModel, checking errors:
+            SAFE_SOLVER(
+            childC->refSolver().addConstraints(
+                numconstrs,
+                numnz,
+                cbeg.data(),
+                inds.data(),
+                vals.data(),
+                sense.data(),
+                rhs.data(),
+                names.data()
+            )
+            );
+            SAFE_SOLVER(
+            childC->refSolver().updateModel()
+            );
+
+            children.push_back(childC);
+        }
     }
+
+
 
 
 

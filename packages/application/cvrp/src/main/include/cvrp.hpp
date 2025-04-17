@@ -31,6 +31,13 @@ namespace RouteOpt::Application::CVRP {
         Branching::CandidateSelector::BranchingTesting<BbNode, std::pair<int, int>, PairHasher> &
     )>;
 
+    using VectorCandidateSelectionFuncType = std::function<std::vector<std::pair<int, int>>(
+        BbNode *,
+        Branching::BranchingHistory<std::vector<std::pair<int, int>>, VectorPairHasher> &,
+        Branching::BranchingDataShared<std::vector<std::pair<int, int>>, VectorPairHasher> &,
+        Branching::CandidateSelector::BranchingTesting<BbNode, std::vector<std::pair<int, int>>, VectorPairHasher> &
+    )>;
+
     using OutNodeFuncType = std::function<void(
         BbNode *,
         const Branching::BranchingHistory<std::pair<int, int>, PairHasher> &,
@@ -98,10 +105,11 @@ namespace RouteOpt::Application::CVRP {
 
         void imposeBranching(BbNode *node, const std::pair<int, int> &brc, std::vector<BbNode *> &children);
 
-        void imposeThreeBranching(BbNode* node,
-                                                const std::pair<int,int>& edge1,
-                                                const std::pair<int,int>& edge2,
-                                                std::vector<BbNode*>& children);
+        void imposeThreeBranching(
+                BbNode* node,
+                const std::vector<std::pair<int,int>> & edgepair,
+                std::vector<BbNode*>& children
+            );
 
         void processLPTesting(BbNode *node, const std::pair<int, int> &edge, double &dif1, double &dif2);
 
@@ -120,13 +128,12 @@ namespace RouteOpt::Application::CVRP {
                                                      Branching::CandidateSelector::BranchingTesting<BbNode,
                                                          std::pair<int, int>, PairHasher> &tester);
 
-        std::vector<std::pair<int, int>> getBestTwoEdges(BbNode *node,
-                                                             Branching::BranchingHistory<std::pair<int, int>,
-                                                                 PairHasher> &history,
-                                                             Branching::BranchingDataShared<std::pair<int, int>,
-                                                                 PairHasher> &data_shared,
-                                                             Branching::CandidateSelector::BranchingTesting<BbNode,
-                                                                 std::pair<int, int>, PairHasher> &tester);
+        std::vector<std::pair<int, int>>  getBestTwoEdges(
+                                                        BbNode *node,
+                                                        Branching::BranchingHistory<std::vector<std::pair<int, int>>, VectorPairHasher> &history,
+                                                        Branching::BranchingDataShared<std::vector<std::pair<int, int>>, VectorPairHasher> &data_shared,
+                                                        Branching::CandidateSelector::BranchingTesting<BbNode, std::vector<std::pair<int, int>>, VectorPairHasher> &tester
+                                                    ) ;
 
         void callWriteNodeOut(BbNode *node,
                               const Branching::BranchingHistory<std::pair<int, int>, PairHasher> &history,
@@ -135,6 +142,10 @@ namespace RouteOpt::Application::CVRP {
         void callReadNodeIn(BbNode *node,
                             Branching::BranchingHistory<std::pair<int, int>, PairHasher> &history,
                             Branching::BKF::BKFDataShared &bkf_data_shared);
+
+        void callReadNodeInNaiveVector(BbNode *node,
+                                    Branching::BranchingHistory<std::vector<std::pair<int, int>>, VectorPairHasher> &history,
+                                    Branching::BKF::BKFDataShared &bkf_data_shared);
 
 
         virtual void getLowerBoundofMinimumNumberCars();
