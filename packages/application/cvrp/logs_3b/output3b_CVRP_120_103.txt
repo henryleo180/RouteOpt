@@ -1,0 +1,857 @@
+Set parameter Username
+Set parameter LicenseID to value 2629497
+Academic license - for non-commercial use only - expires 2026-02-28
+Set parameter Threads to value 1
+instance name= CVRP_120_103
+#########################################################################################
+tree size= 0 lb= 0 ub= 18898
+#########################################################################################
+idx= 0 value= 0 enu= 0
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 30  ncol= 1501  ncstr= 120  mt= 0.0   spt= 0.2   lpval= 1000000.0 ub= 18898.0  
+it= 60  ncol= 3001  ncstr= 120  mt= 0.0   spt= 0.2   lpval= 1000000.0 ub= 18898.0  
+it= 90  ncol= 4501  ncstr= 120  mt= 0.1   spt= 0.2   lpval= 1000000.0 ub= 18898.0  
+it= 120 ncol= 6001  ncstr= 120  mt= 0.2   spt= 0.2   lpval= 39490.1   ub= 18898.0  
+it= 150 ncol= 7501  ncstr= 120  mt= 0.3   spt= 0.2   lpval= 21388.6   ub= 18898.0  
+it= 180 ncol= 8905  ncstr= 120  mt= 0.2   spt= 0.2   lpval= 18676.1   ub= 18898.0  
+it= 185 ncol= 8914  ncstr= 120  mt= 0.0   spt= 0.0   lpval= 18674.1   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 10  ncol= 9092  ncstr= 120  mt= 0.0   spt= 0.1   lpval= 18593.9   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 7   ncol= 9464  ncstr= 120  mt= 0.0   spt= 0.3   lpval= 18491.5   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 2.63 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.13 s.
+previous= 30.2885% maximum= 30.2885%
+eliminate bucket arcs time= 0.08 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 2.86 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 10  ncol= 9660  ncstr= 153  mt= 0.2   spt= 0.0   lpval= 18641.7   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 9   ncol= 9717  ncstr= 153  mt= 0.0   spt= 0.1   lpval= 18631.5   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 9815  ncstr= 153  mt= 0.0   spt= 0.1   lpval= 18617.5   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 3.36 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.09 s.
+previous= 72.0648% maximum= 21.8274%
+eliminate bucket arcs time= 0.03 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 3.49 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 6   ncol= 9890  ncstr= 162  mt= 0.2   spt= 0.0   lpval= 18679.8   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 6   ncol= 9927  ncstr= 162  mt= 0.0   spt= 0.0   lpval= 18671.6   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 9961  ncstr= 162  mt= 0.0   spt= 0.1   lpval= 18667.0   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 3.98 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.06 s.
+previous= 83.6868% maximum= 18.2666%
+eliminate bucket arcs time= 0.03 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 4.06 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 6714  ncstr= 153  mt= 0.1   spt= 0.0   lpval= 18672.7   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 6726  ncstr= 153  mt= 0.0   spt= 0.0   lpval= 18672.7   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 6742  ncstr= 153  mt= 0.0   spt= 0.0   lpval= 18672.4   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 4.30 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 2: gap improved= 5.331587 ratio= 0.023628 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 6745  ncstr= 154  mt= 0.1   spt= 0.0   lpval= 18673.8   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 1   ncol= 6745  ncstr= 154  mt= 0.0   spt= 0.0   lpval= 18673.8   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 2   ncol= 6755  ncstr= 154  mt= 0.0   spt= 0.0   lpval= 18673.8   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 4.46 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 2: gap improved= 1.450711 ratio= 0.006471 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate RCCs ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 6756  ncstr= 150  mt= 0.1   spt= 0.0   lpval= 18674.0   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 6757  ncstr= 150  mt= 0.0   spt= 0.0   lpval= 18673.9   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 1   ncol= 6757  ncstr= 150  mt= 0.0   spt= 0.0   lpval= 18673.9   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 4.59 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 2: gap improved= 0.145801 ratio= 0.000651 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+[1;36m[REMIND] tail off counter= 3 threshold= 3 in function setIfTailOff at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:150[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 9   ncol= 7017  ncstr= 336  mt= 0.2   spt= 0.0   lpval= 18781.7   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 6   ncol= 7097  ncstr= 336  mt= 0.0   spt= 0.0   lpval= 18774.3   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 8   ncol= 7382  ncstr= 336  mt= 0.1   spt= 0.2   lpval= 18759.5   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 5.57 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.11 s.
+previous= 62.4606% maximum= 11.4095%
+eliminate bucket arcs time= 0.03 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 5.72 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 7399  ncstr= 367  mt= 0.2   spt= 0.0   lpval= 18788.4   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 7433  ncstr= 367  mt= 0.0   spt= 0.0   lpval= 18787.1   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 7521  ncstr= 367  mt= 0.0   spt= 0.1   lpval= 18783.8   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 6.35 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 7   ncol= 7709  ncstr= 406  mt= 0.2   spt= 0.0   lpval= 18807.1   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 6   ncol= 7799  ncstr= 406  mt= 0.1   spt= 0.0   lpval= 18804.1   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 7952  ncstr= 406  mt= 0.0   spt= 0.2   lpval= 18802.1   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 7.40 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.12 s.
+previous= 75.9069% maximum= 8.66056%
+eliminate bucket arcs time= 0.03 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 7.56 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 4   ncol= 8036  ncstr= 388  mt= 0.2   spt= 0.0   lpval= 18818.7   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 8067  ncstr= 388  mt= 0.0   spt= 0.0   lpval= 18818.4   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 6   ncol= 8262  ncstr= 388  mt= 0.1   spt= 0.2   lpval= 18813.7   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 8.66 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 8291  ncstr= 383  mt= 0.2   spt= 0.0   lpval= 18819.5   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 8310  ncstr= 383  mt= 0.0   spt= 0.0   lpval= 18819.5   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 8614  ncstr= 383  mt= 0.1   spt= 0.2   lpval= 18818.9   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 9.63 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 5   ncol= 8665  ncstr= 439  mt= 0.3   spt= 0.0   lpval= 18826.0   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 8716  ncstr= 439  mt= 0.0   spt= 0.0   lpval= 18826.0   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 8863  ncstr= 439  mt= 0.1   spt= 0.3   lpval= 18825.4   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 10.86 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 8875  ncstr= 451  mt= 0.2   spt= 0.0   lpval= 18833.5   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 5   ncol= 8917  ncstr= 451  mt= 0.1   spt= 0.0   lpval= 18832.4   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 9138  ncstr= 451  mt= 0.2   spt= 0.4   lpval= 18830.5   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 12.50 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.19 s.
+previous= 78.5003% maximum= 6.79856%
+eliminate bucket arcs time= 0.05 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 12.74 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 9140  ncstr= 403  mt= 0.2   spt= 0.0   lpval= 18835.8   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 9151  ncstr= 403  mt= 0.0   spt= 0.0   lpval= 18835.8   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 9307  ncstr= 403  mt= 0.0   spt= 0.2   lpval= 18835.7   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 13.60 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 5   ncol= 9395  ncstr= 506  mt= 0.5   spt= 0.0   lpval= 18840.4   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 9424  ncstr= 506  mt= 0.0   spt= 0.0   lpval= 18840.4   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 9623  ncstr= 506  mt= 0.2   spt= 0.4   lpval= 18839.7   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 16.05 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 9627  ncstr= 432  mt= 0.2   spt= 0.0   lpval= 18843.1   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 9635  ncstr= 432  mt= 0.0   spt= 0.0   lpval= 18843.0   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 9697  ncstr= 432  mt= 0.1   spt= 0.4   lpval= 18842.7   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 17.42 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 9701  ncstr= 551  mt= 0.3   spt= 0.0   lpval= 18845.6   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 9727  ncstr= 551  mt= 0.1   spt= 0.0   lpval= 18845.6   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 9886  ncstr= 551  mt= 0.2   spt= 0.6   lpval= 18845.5   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 19.53 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 3: gap improved= 2.759735 ratio= 0.000146 threshold= 0.000150 in function increaseCondition3 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:89[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 9888  ncstr= 429  mt= 0.3   spt= 0.0   lpval= 18847.0   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 9891  ncstr= 429  mt= 0.0   spt= 0.0   lpval= 18847.0   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 9926  ncstr= 429  mt= 0.1   spt= 0.5   lpval= 18846.9   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 21.06 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 2: gap improved= 1.449104 ratio= 0.028375 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 9934  ncstr= 564  mt= 0.3   spt= 0.0   lpval= 18848.3   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 9951  ncstr= 564  mt= 0.2   spt= 0.0   lpval= 18848.2   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 10015 ncstr= 564  mt= 0.2   spt= 0.5   lpval= 18848.1   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 23.15 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 2: gap improved= 1.162205 ratio= 0.023287 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+[1;36m[REMIND] tail off counter= 3 threshold= 3 in function setIfTailOff at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:150[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] TWO EDGE MAP in function obtainSol3DEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:484[0m
+[1;36m[REMIND] Third branch added in function imposeThreeBranching at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/add_brc.cpp:716[0m
+#########################################################################################
+tree size= 2 lb= 18848.1 ub= 18898
+#########################################################################################
+idx= 1 value= 18848.1 enu= 0
+brc= 40-88 : +
+brc= 21-102 : +
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4499  ncstr= 394  mt= 0.2   spt= 0.0   lpval= 18853.1   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4504  ncstr= 394  mt= 0.0   spt= 0.0   lpval= 18853.0   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 4593  ncstr= 394  mt= 0.1   spt= 0.5   lpval= 18852.8   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 24.01 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.11 s.
+previous= 75.4442% maximum= 5.12912%
+eliminate bucket arcs time= 0.05 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 24.17 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4597  ncstr= 524  mt= 0.3   spt= 0.0   lpval= 18856.4   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4609  ncstr= 524  mt= 0.0   spt= 0.0   lpval= 18856.4   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 4688  ncstr= 524  mt= 0.1   spt= 0.4   lpval= 18856.3   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 25.93 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 4739  ncstr= 464  mt= 0.2   spt= 0.0   lpval= 18857.6   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4757  ncstr= 464  mt= 0.0   spt= 0.0   lpval= 18857.6   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 4821  ncstr= 464  mt= 0.1   spt= 0.4   lpval= 18857.4   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 27.12 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 2: gap improved= 1.103584 ratio= 0.027200 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 4830  ncstr= 483  mt= 0.2   spt= 0.0   lpval= 18859.4   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 6   ncol= 4855  ncstr= 483  mt= 0.1   spt= 0.0   lpval= 18859.3   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 4922  ncstr= 483  mt= 0.1   spt= 0.4   lpval= 18859.3   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 28.53 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 3: gap improved= 1.887506 ratio= 0.000100 threshold= 0.000150 in function increaseCondition3 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:89[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 5   ncol= 4951  ncstr= 532  mt= 0.3   spt= 0.0   lpval= 18860.6   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4970  ncstr= 532  mt= 0.0   spt= 0.0   lpval= 18860.6   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 5044  ncstr= 532  mt= 0.0   spt= 0.3   lpval= 18860.5   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 30.04 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 2: gap improved= 1.229158 ratio= 0.032815 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+[1;36m[REMIND] tail off counter= 3 threshold= 3 in function setIfTailOff at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:150[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] TWO EDGE MAP in function obtainSol3DEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:484[0m
+[1;36m[REMIND] Third branch added in function imposeThreeBranching at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/add_brc.cpp:716[0m
+#########################################################################################
+tree size= 4 lb= 18848.1 ub= 18898
+#########################################################################################
+idx= 2 value= 18848.1 enu= 0
+brc= 40-88 : -
+brc= 21-102 : -
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4510  ncstr= 394  mt= 0.1   spt= 0.0   lpval= 18871.7   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 4   ncol= 4522  ncstr= 394  mt= 0.1   spt= 0.0   lpval= 18871.6   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 4629  ncstr= 394  mt= 0.1   spt= 0.4   lpval= 18869.4   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 30.87 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.07 s.
+previous= 53.4588% maximum= 3.63443%
+eliminate bucket arcs time= 0.05 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 30.99 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4632  ncstr= 441  mt= 0.2   spt= 0.0   lpval= 18875.9   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4644  ncstr= 441  mt= 0.0   spt= 0.0   lpval= 18875.9   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 4718  ncstr= 441  mt= 0.1   spt= 0.1   lpval= 18875.2   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 31.92 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4724  ncstr= 419  mt= 0.1   spt= 0.0   lpval= 18880.2   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 4728  ncstr= 419  mt= 0.0   spt= 0.0   lpval= 18880.2   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 4782  ncstr= 419  mt= 0.0   spt= 0.2   lpval= 18880.1   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 32.69 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.03 s.
+previous= 76.0871% maximum= 2.76533%
+eliminate bucket arcs time= 0.03 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 32.76 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 4785  ncstr= 445  mt= 0.2   spt= 0.0   lpval= 18883.6   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4793  ncstr= 445  mt= 0.0   spt= 0.0   lpval= 18883.0   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 4821  ncstr= 445  mt= 0.0   spt= 0.1   lpval= 18883.0   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 33.49 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 3   ncol= 4827  ncstr= 527  mt= 0.2   spt= 0.0   lpval= 18886.6   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4837  ncstr= 527  mt= 0.0   spt= 0.0   lpval= 18886.4   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 4895  ncstr= 527  mt= 0.0   spt= 0.1   lpval= 18886.2   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 34.84 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ ****** Run Arc Elimination ****** 
+arc elimination time= 0.02 s.
+previous= 80.9132% maximum= 2.23752%
+eliminate bucket arcs time= 0.03 s.
+obtain jump arcs time= 0.00 s.
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+elapsed time= 34.89 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4899  ncstr= 500  mt= 0.2   spt= 0.0   lpval= 18887.6   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 1   ncol= 4899  ncstr= 500  mt= 0.0   spt= 0.0   lpval= 18887.6   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 4913  ncstr= 500  mt= 0.0   spt= 0.1   lpval= 18887.5   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 35.59 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 3: gap improved= 1.290279 ratio= 0.000068 threshold= 0.000150 in function increaseCondition3 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:89[0m
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4915  ncstr= 481  mt= 0.2   spt= 0.0   lpval= 18888.6   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4923  ncstr= 481  mt= 0.0   spt= 0.0   lpval= 18888.6   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 4941  ncstr= 481  mt= 0.0   spt= 0.1   lpval= 18888.5   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 36.32 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 3: gap improved= 1.026634 ratio= 0.000054 threshold= 0.000150 in function increaseCondition3 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:89[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 1   ncol= 4941  ncstr= 435  mt= 0.2   spt= 0.0   lpval= 18889.3   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4943  ncstr= 435  mt= 0.0   spt= 0.0   lpval= 18889.3   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 4963  ncstr= 435  mt= 0.0   spt= 0.1   lpval= 18889.3   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 36.93 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 3: gap improved= 0.730425 ratio= 0.000039 threshold= 0.000150 in function increaseCondition3 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:89[0m
+[1;36m[REMIND] tail off counter= 3 threshold= 3 in function setIfTailOff at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:150[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] TWO EDGE MAP in function obtainSol3DEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:484[0m
+[1;36m[REMIND] Third branch added in function imposeThreeBranching at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/add_brc.cpp:716[0m
+#########################################################################################
+tree size= 6 lb= 18848.1 ub= 18898
+#########################################################################################
+idx= 3 value= 18848.1 enu= 0
+brc= 40-88 : +
+brc= 21-102 : +
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4498  ncstr= 393  mt= 0.2   spt= 0.0   lpval= 18850.2   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 4503  ncstr= 393  mt= 0.0   spt= 0.0   lpval= 18850.2   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 5   ncol= 4516  ncstr= 393  mt= 0.0   spt= 0.6   lpval= 18850.2   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 38.14 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+col: 366 val: 0.189941 seq: 19 40 88 22 45 82 69 59 
+col: 682 val: 0.163405 seq: 15 88 117 82 69 59 
+col: 1113 val: 0.0860246 seq: 19 88 22 45 93 24 84 115 46 15 
+col: 1242 val: 0.309241 seq: 40 88 22 45 93 24 84 115 46 15 
+col: 1427 val: 0.0194463 seq: 88 22 45 93 24 84 115 46 88 
+col: 1432 val: 0.0249408 seq: 88 46 115 93 84 24 76 101 50 32 
+col: 1433 val: 0.00859997 seq: 50 101 76 24 84 93 115 46 88 
+col: 1451 val: 0.00366241 seq: 32 50 23 101 24 84 93 115 46 88 40 
+col: 1463 val: 0.00609694 seq: 50 23 101 24 84 93 115 46 88 40 
+col: 1712 val: 0.0290576 seq: 88 46 115 93 84 24 76 23 50 
+col: 1885 val: 0.0350106 seq: 15 88 22 45 82 117 19 
+col: 1976 val: 0.0318749 seq: 59 69 82 117 88 31 
+col: 2273 val: 0.00432141 seq: 59 69 82 45 88 40 19 
+col: 2718 val: 0.0249754 seq: 32 23 76 101 24 84 93 115 46 88 
+col: 2720 val: 0.00915145 seq: 101 23 76 24 84 93 115 46 88 
+col: 3548 val: 0.00984006 seq: 117 22 45 93 24 84 115 46 88 40 19 
+col: 4161 val: 0.00864282 seq: 88 46 115 93 24 101 23 108 
+col: 4291 val: 0.0129642 seq: 32 50 23 76 101 24 84 93 88 
+col: 4446 val: 0.00335795 seq: 88 117 38 13 6 5 68 
+col: 352 val: 0.0180566 seq: 57 21 102 81 49 
+col: 512 val: 0.0180566 seq: 57 96 7 71 102 21 98 
+col: 626 val: 0.0156063 seq: 98 21 102 7 71 91 25 
+col: 1193 val: 0.0771798 seq: 81 102 71 91 21 
+col: 1209 val: 0.0125322 seq: 57 102 91 71 7 96 30 
+col: 1390 val: 0.379272 seq: 21 102 71 91 48 60 28 
+col: 1703 val: 0.0180566 seq: 96 7 71 102 91 25 48 28 98 
+col: 1949 val: 0.0205069 seq: 30 96 7 71 91 102 18 
+col: 1984 val: 0.215356 seq: 98 102 7 71 91 25 60 
+col: 2203 val: 0.0459067 seq: 21 102 91 71 7 41 10 
+col: 2226 val: 0.0440017 seq: 102 91 71 7 54 41 10 
+col: 2580 val: 0.0459067 seq: 102 71 7 54 96 56 
+col: 4148 val: 0.0123828 seq: 102 7 71 91 25 60 80 
+col: 4186 val: 0.0771798 seq: 56 96 7 71 102 49 
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4518  ncstr= 459  mt= 0.2   spt= 0.0   lpval= 18852.6   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 3   ncol= 4525  ncstr= 459  mt= 0.0   spt= 0.0   lpval= 18852.6   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 4605  ncstr= 459  mt= 0.1   spt= 0.6   lpval= 18852.2   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 39.63 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+col: 366 val: 0.0716048 seq: 19 40 88 22 45 82 69 59 
+col: 681 val: 0.0110451 seq: 19 59 69 82 117 88 15 
+col: 682 val: 0.00496153 seq: 15 88 117 82 69 59 
+col: 805 val: 0.0761958 seq: 19 15 88 117 82 69 59 
+col: 1113 val: 0.016567 seq: 19 88 22 45 93 24 84 115 46 15 
+col: 1242 val: 0.412769 seq: 40 88 22 45 93 24 84 115 46 15 
+col: 1427 val: 0.00287096 seq: 88 22 45 93 24 84 115 46 88 
+col: 1432 val: 0.0284694 seq: 88 46 115 93 84 24 76 101 50 32 
+col: 1433 val: 0.0226907 seq: 50 101 76 24 84 93 115 46 88 
+col: 1451 val: 0.016726 seq: 32 50 23 101 24 84 93 115 46 88 40 
+col: 1463 val: 0.00623006 seq: 50 23 101 24 84 93 115 46 88 40 
+col: 1712 val: 0.0525347 seq: 88 46 115 93 84 24 76 23 50 
+col: 1885 val: 0.0497404 seq: 15 88 22 45 82 117 19 
+col: 1976 val: 0.0421951 seq: 59 69 82 117 88 31 
+col: 2718 val: 0.00729143 seq: 32 23 76 101 24 84 93 115 46 88 
+col: 2720 val: 0.0506294 seq: 101 23 76 24 84 93 115 46 88 
+col: 3264 val: 0.00518837 seq: 15 88 22 45 117 69 59 
+col: 3518 val: 0.038627 seq: 31 19 40 88 46 115 93 24 84 15 
+col: 4138 val: 0.0173487 seq: 19 15 88 22 45 82 117 59 
+col: 4446 val: 0.00031014 seq: 88 117 38 13 6 5 68 
+col: 4526 val: 0.000524007 seq: 27 106 17 59 69 45 22 88 19 
+col: 4529 val: 0.050189 seq: 19 88 22 45 82 69 59 
+col: 4539 val: 0.0104425 seq: 59 117 22 45 93 24 84 115 46 88 40 
+col: 4541 val: 0.00114429 seq: 40 46 115 84 24 93 45 117 88 19 
+col: 4589 val: 0.000834147 seq: 15 88 22 117 82 69 59 
+col: 435 val: 0.0842557 seq: 102 71 7 54 10 63 68 106 27 
+col: 512 val: 0.025398 seq: 57 96 7 71 102 21 98 
+col: 1209 val: 0.0583547 seq: 57 102 91 71 7 96 30 
+col: 1390 val: 0.361198 seq: 21 102 71 91 48 60 28 
+col: 1394 val: 0.00152857 seq: 98 21 102 91 48 60 28 
+col: 1743 val: 0.00175323 seq: 18 21 102 81 49 
+col: 1825 val: 0.0129558 seq: 18 102 71 7 54 10 63 30 
+col: 1949 val: 0.0224889 seq: 30 96 7 71 91 102 18 
+col: 1971 val: 0.00282067 seq: 28 25 91 71 7 102 21 98 
+col: 1984 val: 0.310876 seq: 98 102 7 71 91 25 60 
+col: 2203 val: 0.0509028 seq: 21 102 91 71 7 41 10 
+col: 2443 val: 0.000182575 seq: 98 102 71 7 54 96 57 
+col: 2580 val: 0.0594297 seq: 102 71 7 54 96 56 
+col: 2738 val: 0.00416667 seq: 80 39 34 36 43 55 44 71 102 98 
+col: 2840 val: 0.00282067 seq: 28 60 48 91 102 7 96 
+col: 4186 val: 0.000182575 seq: 56 96 7 71 102 49 
+col: 4554 val: 0.000685783 seq: 102 71 7 54 96 49 
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 3: gap improved= 1.984761 ratio= 0.000105 threshold= 0.000150 in function increaseCondition3 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:89[0m
+ ****** Separate RCCs ****** 
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4610  ncstr= 487  mt= 0.2   spt= 0.0   lpval= 18853.6   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 4613  ncstr= 487  mt= 0.0   spt= 0.0   lpval= 18853.6   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 3   ncol= 4675  ncstr= 487  mt= 0.0   spt= 0.6   lpval= 18853.5   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 41.33 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+col: 366 val: 0.078524 seq: 19 40 88 22 45 82 69 59 
+col: 682 val: 0.0394981 seq: 15 88 117 82 69 59 
+col: 805 val: 0.0609276 seq: 19 15 88 117 82 69 59 
+col: 1113 val: 0.100937 seq: 19 88 22 45 93 24 84 115 46 15 
+col: 1242 val: 0.380958 seq: 40 88 22 45 93 24 84 115 46 15 
+col: 1432 val: 0.0314759 seq: 88 46 115 93 84 24 76 101 50 32 
+col: 1433 val: 0.0416925 seq: 50 101 76 24 84 93 115 46 88 
+col: 1451 val: 0.022077 seq: 32 50 23 101 24 84 93 115 46 88 40 
+col: 1463 val: 0.0157233 seq: 50 23 101 24 84 93 115 46 88 40 
+col: 1712 val: 0.0757826 seq: 88 46 115 93 84 24 76 23 50 
+col: 1885 val: 0.08107 seq: 15 88 22 45 82 117 19 
+col: 1976 val: 0.00213934 seq: 59 69 82 117 88 31 
+col: 2718 val: 0.052539 seq: 32 23 76 101 24 84 93 115 46 88 
+col: 2720 val: 0.00175266 seq: 101 23 76 24 84 93 115 46 88 
+col: 3173 val: 0.000204535 seq: 15 88 22 45 69 117 19 
+col: 3301 val: 6.37998e-05 seq: 19 15 88 22 45 117 69 59 
+col: 3481 val: 0.000204535 seq: 32 50 24 84 93 115 46 45 22 88 40 
+col: 3548 val: 0.000268335 seq: 117 22 45 93 24 84 115 46 88 40 19 
+col: 4011 val: 0.000204535 seq: 15 88 22 45 117 59 17 106 27 
+col: 4057 val: 0.000204535 seq: 31 69 82 117 88 
+col: 4529 val: 0.0137528 seq: 19 88 22 45 82 69 59 
+col: 435 val: 0.0647023 seq: 102 71 7 54 10 63 68 106 27 
+col: 1209 val: 0.0542753 seq: 57 102 91 71 7 96 30 
+col: 1390 val: 0.386593 seq: 21 102 71 91 48 60 28 
+col: 1703 val: 0.0211146 seq: 96 7 71 102 91 25 48 28 98 
+col: 1743 val: 0.0331607 seq: 18 21 102 81 49 
+col: 1825 val: 0.0226801 seq: 18 102 71 7 54 10 63 30 
+col: 1971 val: 0.0211146 seq: 28 25 91 71 7 102 21 98 
+col: 1982 val: 0.0331607 seq: 98 28 60 25 91 71 7 102 
+col: 1984 val: 0.214643 seq: 98 102 7 71 91 25 60 
+col: 2203 val: 0.0613758 seq: 21 102 91 71 7 41 10 
+col: 2243 val: 1.40735e-06 seq: 102 71 7 41 54 10 63 68 
+col: 2580 val: 0.0647037 seq: 102 71 7 54 96 56 
+col: 4150 val: 0.0224744 seq: 96 7 71 102 91 25 48 98 
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 2: gap improved= 1.357024 ratio= 0.030501 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+ ****** Separate Rank1Cuts ****** 
+-----------------------------------------------------------------------------------------
+ ****** Pricing Level: LIGHT HEUR ****** 
+it= 2   ncol= 4677  ncstr= 482  mt= 0.2   spt= 0.0   lpval= 18854.7   ub= 18898.0  
+ ****** Pricing Level: HEAVY HEUR ****** 
+it= 2   ncol= 4680  ncstr= 482  mt= 0.0   spt= 0.0   lpval= 18854.7   ub= 18898.0  
+ ****** Pricing Level: EXACT ****** 
+it= 4   ncol= 4723  ncstr= 482  mt= 0.1   spt= 0.7   lpval= 18854.7   ub= 18898.0  
+-----------------------------------------------------------------------------------------
+elapsed time= 42.94 s.
+-----------------------------------------------------------------------------------------
+[1;36m[REMIND] call enumeration forbidden in function callEnumeration at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_enumeration.cpp:12[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+col: 366 val: 0.088764 seq: 19 40 88 22 45 82 69 59 
+col: 682 val: 0.0345615 seq: 15 88 117 82 69 59 
+col: 805 val: 0.0643021 seq: 19 15 88 117 82 69 59 
+col: 1113 val: 0.0879788 seq: 19 88 22 45 93 24 84 115 46 15 
+col: 1242 val: 0.364048 seq: 40 88 22 45 93 24 84 115 46 15 
+col: 1432 val: 0.0157894 seq: 88 46 115 93 84 24 76 101 50 32 
+col: 1433 val: 0.0167151 seq: 50 101 76 24 84 93 115 46 88 
+col: 1451 val: 0.00675713 seq: 32 50 23 101 24 84 93 115 46 88 40 
+col: 1463 val: 0.00714658 seq: 50 23 101 24 84 93 115 46 88 40 
+col: 1712 val: 0.140561 seq: 88 46 115 93 84 24 76 23 50 
+col: 1885 val: 0.110545 seq: 15 88 22 45 82 117 19 
+col: 1976 val: 0.00810351 seq: 59 69 82 117 88 31 
+col: 2718 val: 0.0266333 seq: 32 23 76 101 24 84 93 115 46 88 
+col: 2720 val: 0.0115244 seq: 101 23 76 24 84 93 115 46 88 
+col: 4529 val: 0.0165691 seq: 19 88 22 45 82 69 59 
+col: 512 val: 0.0253431 seq: 57 96 7 71 102 21 98 
+col: 919 val: 0.0105862 seq: 21 102 71 7 96 56 
+col: 1209 val: 0.0553883 seq: 57 102 91 71 7 96 30 
+col: 1350 val: 0.00780682 seq: 81 102 91 25 48 60 28 
+col: 1390 val: 0.416436 seq: 21 102 71 91 48 60 28 
+col: 1516 val: 0.0711479 seq: 68 63 10 41 54 7 71 102 
+col: 1703 val: 0.0350726 seq: 96 7 71 102 91 25 48 28 98 
+col: 1825 val: 0.0118384 seq: 18 102 71 7 54 10 63 30 
+col: 1949 val: 0.0330239 seq: 30 96 7 71 91 102 18 
+col: 1984 val: 0.167486 seq: 98 102 7 71 91 25 60 
+col: 2203 val: 0.0731122 seq: 21 102 91 71 7 41 10 
+col: 2580 val: 0.0724534 seq: 102 71 7 54 96 56 
+col: 4148 val: 0.00469218 seq: 102 7 71 91 25 60 80 
+col: 4186 val: 0.00780682 seq: 56 96 7 71 102 49 
+col: 4591 val: 0.00780682 seq: 60 91 102 21 18 
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[1;36m[REMIND] 2: gap improved= 1.143410 ratio= 0.026378 threshold= 0.040000 in function increaseCondition2 at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:77[0m
+[1;36m[REMIND] tail off counter= 3 threshold= 3 in function setIfTailOff at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/src/call_cutting.cpp:150[0m
+[1;36m[REMIND] error forbidden in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:351[0m
+col: 139 val: 0.088764 seq: 19 40 88 22 45 82 69 59 
+col: 321 val: 0.0345615 seq: 15 88 117 82 69 59 
+col: 395 val: 0.0643021 seq: 19 15 88 117 82 69 59 
+col: 607 val: 0.0879788 seq: 19 88 22 45 93 24 84 115 46 15 
+col: 698 val: 0.364048 seq: 40 88 22 45 93 24 84 115 46 15 
+col: 816 val: 0.0157894 seq: 88 46 115 93 84 24 76 101 50 32 
+col: 817 val: 0.0167151 seq: 50 101 76 24 84 93 115 46 88 
+col: 834 val: 0.00675713 seq: 32 50 23 101 24 84 93 115 46 88 40 
+col: 846 val: 0.00714658 seq: 50 23 101 24 84 93 115 46 88 40 
+col: 1016 val: 0.140561 seq: 88 46 115 93 84 24 76 23 50 
+col: 1105 val: 0.110545 seq: 15 88 22 45 82 117 19 
+col: 1171 val: 0.00810351 seq: 59 69 82 117 88 31 
+col: 1709 val: 0.0266333 seq: 32 23 76 101 24 84 93 115 46 88 
+col: 1711 val: 0.0115244 seq: 101 23 76 24 84 93 115 46 88 
+col: 2986 val: 0.0165691 seq: 19 88 22 45 82 69 59 
+col: 209 val: 0.0253431 seq: 57 96 7 71 102 21 98 
+col: 474 val: 0.0105862 seq: 21 102 71 7 96 56 
+col: 678 val: 0.0553883 seq: 57 102 91 71 7 96 30 
+col: 758 val: 0.00780682 seq: 81 102 91 25 48 60 28 
+col: 786 val: 0.416436 seq: 21 102 71 91 48 60 28 
+col: 893 val: 0.0711479 seq: 68 63 10 41 54 7 71 102 
+col: 1010 val: 0.0350726 seq: 96 7 71 102 91 25 48 28 98 
+col: 1074 val: 0.0118384 seq: 18 102 71 7 54 10 63 30 
+col: 1152 val: 0.0330239 seq: 30 96 7 71 91 102 18 
+col: 1178 val: 0.167486 seq: 98 102 7 71 91 25 60 
+col: 1343 val: 0.0731122 seq: 21 102 91 71 7 41 10 
+col: 1629 val: 0.0724534 seq: 102 71 7 54 96 56 
+col: 2659 val: 0.00469218 seq: 102 7 71 91 25 60 80 
+col: 2692 val: 0.00780682 seq: 56 96 7 71 102 49 
+col: 3038 val: 0.00780682 seq: 60 91 102 21 18 
+[1;36m[REMIND] ONE EDGE MAP in function obtainSolEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:409[0m
+[91m[FATAL ERROR] edge: 40,88 expected 1 but got 0.466716 in function obtainSol3DEdgeMap at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/main/include/call_branching.hpp:453[0m

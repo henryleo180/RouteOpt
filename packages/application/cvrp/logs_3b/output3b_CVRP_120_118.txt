@@ -1,0 +1,6 @@
+Set parameter Username
+Set parameter LicenseID to value 2629497
+Academic license - for non-commercial use only - expires 2026-02-28
+Set parameter Threads to value 1
+instance name= CVRP_120_118
+[91m[FATAL ERROR] Label assigned=8000000 failed in reallocateLabel. Not enough memory. in function reallocateLabel at /home/haoran/solver/RouteOpt/packages/application/cvrp/src/pricing/include/write_columns_from_pricing.hpp:47[0m

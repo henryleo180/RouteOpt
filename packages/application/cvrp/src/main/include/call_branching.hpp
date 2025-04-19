@@ -347,39 +347,44 @@ namespace RouteOpt::Application::CVRP {
             if (seq.size() != 1) edge_map[{0, b4}] += val; //if single point, just be one count;
         }
         //check the edge
-        for (auto &brc: node->brcs) {
-            if (brc.br_dir) {
-                if (!equalFloat(edge_map[brc.edge], 1., EDGE_IF_ONE_TOLERANCE)) {
-                    //print the col
-                    for (int i = 0; i < cols.size(); ++i) {
-                        const auto val = x[i];
-                        if (val < SOL_X_TOLERANCE) continue;
-                        const auto &seq = cols[i].col_seq;
-                        if (std::find(seq.begin(), seq.end(), brc.edge.second) != seq.end()) {
-                            std::cout << "col: " << i << " val: " << val << " seq: ";
-                            for (auto j: seq) {
-                                std::cout << j << " ";
-                            }
-                            std::cout << std::endl;
-                        }
-                    }
 
-                    THROW_RUNTIME_ERROR(
-                        "edge: " + std::to_string(brc.edge.first) + " " + std::to_string(brc.edge.second)
-                        + " not 1 but " + std::to_string(edge_map[brc.edge]));
-                } else {
-                    edge_map[brc.edge] = 1.; //force to be 1.
-                }
-            } else {
-                if (!equalFloat(edge_map[brc.edge], 0.)) {
-                    THROW_RUNTIME_ERROR(
-                        "edge: " + std::to_string(brc.edge.first) + " " + std::to_string(brc.edge.second)
-                        + " not 0 but " + std::to_string(edge_map[brc.edge]));
-                } else {
-                    edge_map[brc.edge] = 0.; //force to be 0.
-                }
-            }
-        }
+        PRINT_REMIND("error forbidden");
+        
+        // ?? what is the effect
+        // for (auto &brc: node->brcs) {
+        //     if (brc.br_dir) {
+        //         if (!equalFloat(edge_map[brc.edge], 1., EDGE_IF_ONE_TOLERANCE)) {
+        //             //print the col
+        //             for (int i = 0; i < cols.size(); ++i) {
+        //                 const auto val = x[i];
+        //                 if (val < SOL_X_TOLERANCE) continue;
+        //                 const auto &seq = cols[i].col_seq;
+        //                 if (std::find(seq.begin(), seq.end(), brc.edge.second) != seq.end()) {
+        //                     std::cout << "col: " << i << " val: " << val << " seq: ";
+        //                     for (auto j: seq) {
+        //                         std::cout << j << " ";
+        //                     }
+        //                     std::cout << std::endl;
+        //                 }
+        //             }
+
+                    
+        //             // THROW_RUNTIME_ERROR(
+        //             //     "edge: " + std::to_string(brc.edge.first) + " " + std::to_string(brc.edge.second)
+        //             //     + " not 1 but " + std::to_string(edge_map[brc.edge]));
+        //         } else {
+        //             edge_map[brc.edge] = 1.; //force to be 1.
+        //         }
+        //     } else {
+        //         if (!equalFloat(edge_map[brc.edge], 0.)) {
+        //             THROW_RUNTIME_ERROR(
+        //                 "edge: " + std::to_string(brc.edge.first) + " " + std::to_string(brc.edge.second)
+        //                 + " not 0 but " + std::to_string(edge_map[brc.edge]));
+        //         } else {
+        //             edge_map[brc.edge] = 0.; //force to be 0.
+        //         }
+        //     }
+        // }
         
         // std::cout << "=== edge_map contents ===\n";
         // for (const auto &kv : edge_map) {
@@ -391,16 +396,18 @@ namespace RouteOpt::Application::CVRP {
         // }
         // std::cout << "=========================\n";
 
-        auto twoEdgeMap = BbNode::obtainSol3DEdgeMap(node);
+        // auto twoEdgeMap = BbNode::obtainSol3DEdgeMap(node);
 
-        for (auto &kv : twoEdgeMap) {
-            // kv.first is vector of two edges
-            std::cout << "(" 
-                    << kv.first[0].first << "," << kv.first[0].second 
-                    << ") (" 
-                    << kv.first[1].first << "," << kv.first[1].second 
-                    << ") -> " << kv.second << "\n";
-        }
+        // for (auto &kv : twoEdgeMap) {
+        //     // kv.first is vector of two edges
+        //     std::cout << "(" 
+        //             << kv.first[0].first << "," << kv.first[0].second 
+        //             << ") (" 
+        //             << kv.first[1].first << "," << kv.first[1].second 
+        //             << ") -> " << kv.second << "\n";
+        // }
+
+        PRINT_REMIND("ONE EDGE MAP");
 
         return edge_map;
     }
@@ -435,27 +442,29 @@ namespace RouteOpt::Application::CVRP {
         }
 
         // 2) Enforce branch‐record overrides (same as in obtainSolEdgeMap)
-        for (auto &brc : node->brcs) {
-            auto &e = brc.edge;
-            double &current = oneEdgeMap[e];
-            if (brc.br_dir) {
-                // must be 1
-                if (!equalFloat(current, 1., EDGE_IF_ONE_TOLERANCE))
-                    THROW_RUNTIME_ERROR(
-                        "edge: " + std::to_string(e.first) + "," + std::to_string(e.second) +
-                        " expected 1 but got " + std::to_string(current)
-                    );
-                current = 1.;
-            } else {
-                // must be 0
-                if (!equalFloat(current, 0., EDGE_IF_ONE_TOLERANCE))
-                    THROW_RUNTIME_ERROR(
-                        "edge: " + std::to_string(e.first) + "," + std::to_string(e.second) +
-                        " expected 0 but got " + std::to_string(current)
-                    );
-                current = 0.;
-            }
-        }
+        PRINT_REMIND("error forbidden in 3d edge map");
+        // for (auto &brc : node->brcs) {
+        //     auto &e = brc.edge;
+        //     double &current = oneEdgeMap[e];
+        //     if (brc.br_dir) {
+        //         // must be 1
+        //         PRINT_REMIND("1 allow for 3 branching")
+        //         // if (!equalFloat(current, 1., EDGE_IF_ONE_TOLERANCE))
+        //         //     THROW_RUNTIME_ERROR(
+        //         //         "edge: " + std::to_string(e.first) + "," + std::to_string(e.second) +
+        //         //         " expected 1 but got " + std::to_string(current)
+        //         //     );
+        //         current = 1.;
+        //     } else {
+        //         // must be 0
+        //         if (!equalFloat(current, 0., EDGE_IF_ONE_TOLERANCE))
+        //             THROW_RUNTIME_ERROR(
+        //                 "edge: " + std::to_string(e.first) + "," + std::to_string(e.second) +
+        //                 " expected 0 but got " + std::to_string(current)
+        //             );
+        //         current = 0.;
+        //     }
+        // }
 
         // 3) Collect all edges into a vector for indexing
         std::vector<std::pair<int,int>> edges;
@@ -475,6 +484,7 @@ namespace RouteOpt::Application::CVRP {
             }
         }
 
+        PRINT_REMIND("TWO EDGE MAP");
         return comboMap;
     }
 

@@ -102,6 +102,7 @@ namespace RouteOpt::Application::CVRP {
 
         void reduceNGSet(BbNode *node, int dim, std::vector<routeOptLong> &ng_mem4_vertex) {
             auto sol_edge_map = BbNode::obtainSolEdgeMap(node);
+            PRINT_REMIND("reduce ng set");
             for (int i = 1; i < dim; ++i) {
                 std::set<int> tmp;
                 std::set<int> tmp2;
