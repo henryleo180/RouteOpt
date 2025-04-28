@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
 
     // using BrCType = std::vector<std::pair<int, int>>;
     // //using BrCType = std::pair<int, int>;
-    // using BrCHasher = VectorPairHasher;
+    using BrCHasher = PairHasher;
 
     //Branching::BBT::BBTController<BbNode, std::pair<int, int>, PairHasher> bbt_controller{
     Branching::BBT::BBTController<BbNode, std::vector<std::pair<int, int>>, VectorPairHasher> bbt_controller{
