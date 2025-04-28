@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (c) 2025 Zhengzhong (Ricky) You.
  * All rights reserved.
  * Software: RouteOpt
@@ -7,9 +7,15 @@
 
 #include "cvrp.hpp"
 
-namespace RouteOpt::Application::CVRP {
-    void CVRPSolver::callEnumeration(BbNode *node) {
-        if constexpr (ml_type == ML_TYPE::ML_GET_DATA_1 || ml_type == ML_TYPE::ML_GET_DATA_2) {
+namespace RouteOpt::Application::CVRP
+{
+    void CVRPSolver::callEnumeration(BbNode *node)
+    {
+        PRINT_REMIND("call enumeration forbidden");
+        return;
+
+        if constexpr (ml_type == ML_TYPE::ML_GET_DATA_1 || ml_type == ML_TYPE::ML_GET_DATA_2)
+        {
             return;
         }
         bool if_fix_meet_point = (!node->getR1Cs().empty()) &&
@@ -21,10 +27,8 @@ namespace RouteOpt::Application::CVRP {
                                                                              node->refNumForwardBucketArcs(),
                                                                              node->refNumBackwardBucketArcs(),
                                                                              node->refIfInEnumState(),
-                                                                             node->
-                                                                             refIndexColumnsInEnumerationColumnPool(),
-                                                                             node->
-                                                                             refCostForColumnsInEnumerationColumnPool(),
+                                                                             node->refIndexColumnsInEnumerationColumnPool(),
+                                                                             node->refCostForColumnsInEnumerationColumnPool(),
                                                                              node->refValidSize(),
                                                                              if_fix_meet_point,
                                                                              app_type == APPLICATION_TYPE::VRPTW
@@ -34,7 +38,8 @@ namespace RouteOpt::Application::CVRP {
                                                                                  ? cap
                                                                                  : 0);
 
-        if (!if_suc) return;
+        if (!if_suc)
+            return;
 
         node->preprocessEnumeration(pricing_controller.getColumnPoolPtr(),
                                     rank1_coefficient_getter, pricing_controller.getNGMem(),
