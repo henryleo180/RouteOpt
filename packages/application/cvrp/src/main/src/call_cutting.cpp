@@ -374,6 +374,7 @@ namespace RouteOpt::Application::CVRP {
 
             std::vector<R1c> cuts;
             rank1_separation_controller.separateRank1Cuts(cuts, if_mem, if_select_cuts);
+            PRINT_REMIND("rank1 cuts size= " + std::to_string(cuts.size()));
             if (cuts.empty()) return;
             printHeadLines("Separate Rank1Cuts");
 
@@ -486,10 +487,11 @@ namespace RouteOpt::Application::CVRP {
 
         if (!CuttingDetail::if_pure_rcc_tail) goto PRICING;
 
-    // Only use RCC in the child node
-    // PRINT_REMIND("")
-    // 
-    // if (!node->getIfRootNode() ) goto PRICING;
+    // Only disable R1C in the child node
+    PRINT_REMIND("Only disable R1C in the child node/ Plus all")
+    
+    if (!node->getIfRootNode() ) 
+    goto PRICING;
 
     RANK1: {
             CuttingDetail::callRank1(
@@ -513,10 +515,14 @@ namespace RouteOpt::Application::CVRP {
     PRICING:
         if (old_row == num_row) {
             goto SET_TAIL_OFF;
-        } {
+        } 
+        //
+        {
             bool if_care_lb_improvement = !node->getIfInEnumState();
             auto if_continue = node->validateCuts(old_row, if_care_lb_improvement);
-            if (!if_continue) {
+            // if (!if_continue && CuttingDetail::if_pure_rcc_tail) {
+            if (!if_continue ) {
+            PRINT_REMIND("no if pure rcc tail");
                 goto QUIT;
             }
         }

@@ -257,58 +257,6 @@ namespace RouteOpt::Application::CVRP {
         node->clearEdgeMap();
     };
 
-    void CVRPSolver::imposeThreeBranching(
-        BbNode* node,
-        const std::pair<int,int>& edge1,
-        const std::pair<int,int>& edge2,
-        std::vector<BbNode*>& children
-    ) {
-        // 1. Prepare space for up to 3 children.
-        //    (You may store them in children[0], children[1], children[2] if feasible).
-        children.resize(3, nullptr);
-
-        // 2. If node is flagged to terminate or is infeasible, just return.
-        if (node->getIfTerminate()) return;
-
-        // 3. Possibly do some checks to see if 3-branch is allowed or beneficial.
-        //    For example, if edge1 + edge2 = 1.0 in the LP solution already
-        //    (and that leads to loops or confusion), you might skip 3-branch.
-
-        // 4. Create the "both accepted" child
-        //    - This is the branch a+b >= 2 in your model.
-        //    - Implementation: impose constraints that x_edge1 = 1, x_edge2 = 1, or however "accept" is enforced.
-
-        BbNode* bothAcceptedNode = createChildNodeForBothAccepted(node, edge1, edge2);
-        if (bothAcceptedNode != nullptr) {
-            children[0] = bothAcceptedNode;
-        }
-
-        // 5. Create the "both rejected" child
-        //    - This is the branch a+b <= 0 in your model.
-        //    - Implementation: impose constraints that x_edge1 = 0, x_edge2 = 0, or however "reject" is enforced.
-
-        BbNode* bothRejectedNode = createChildNodeForBothRejected(node, edge1, edge2);
-        if (bothRejectedNode != nullptr) {
-            children[1] = bothRejectedNode;
-        }
-
-        // 6. Create the "exactly one accepted" child
-        //    - This is the branch a+b = 1 in your model.
-        //    - Implementation: impose constraints that x_edge1 + x_edge2 = 1
-
-        BbNode* exactlyOneNode = createChildNodeForExactlyOne(node, edge1, edge2);
-        if (exactlyOneNode != nullptr) {
-            children[2] = exactlyOneNode;
-        }
-
-        // 7. Clear or update any data in the original node if needed (similar to your 2-branch code).
-        node->clearEdgeMap();
-
-        // 8. If any of the newly created children are infeasible or invalid, set them to nullptr and/or shrink the vector.
-        //    For example:
-        auto it = std::remove(children.begin(), children.end(), nullptr);
-        children.erase(it, children.end());
-    }
 
 
 
