@@ -17,6 +17,7 @@
 #include "vrptw.hpp"               // VRPTW solver header.
 #include "cvrp_macro.hpp"          // Macros specific to CVRP.
 #include "bbt_controller.hpp"      // Branch-and-bound tree controller.
+
 using namespace std;
 using namespace RouteOpt;
 using namespace Application::CVRP;
@@ -67,12 +68,17 @@ int main(int argc, char *argv[]) {
         static_cast<int>(NUM_TESTING::PHASE1), // Number of output candidates for phase 1.
         static_cast<int>(NUM_TESTING::PHASE2), // Number of output candidates for phase 2.
         static_cast<int>(NUM_TESTING::PHASE3), // Number of output candidates for phase 3.
-        IF_BKF
+        
+        // Temporary stop BKF
+        // IF_BKF
+        false
             ? std::vector<std::pair<int, int> >{
                 {static_cast<int>(BKF_TYPE::M_LP), static_cast<int>(BKF_TYPE::N_LP)},
                 {static_cast<int>(BKF_TYPE::M_HEUR), static_cast<int>(BKF_TYPE::N_HEUR)}
             }
             : std::vector<std::pair<int, int> >{}, // BKF parameters if BKF is enabled.
+
+
         BbNode::defineBetterNode, // Function to compare nodes.
         BbNode::getNodeValue, // Function to extract node value.
         BbNode::getNodeIdx, // Function to extract node index.
@@ -81,18 +87,22 @@ int main(int argc, char *argv[]) {
         BbNode::refNodeBrIncreaseVal, // Function to reference node branching increase value.
         BbNode::getNodeIfTerminate, // Function to check if node is terminated.
         BbNode::obtainSolEdgeMap, // Function to obtain solution edge map.
-        // LP testing function for processing LP testing.
-        [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
-            return cvrp->processLPTesting(arg1, arg2, arg3, arg4);
-        },
-        // Heuristic testing function.
-        [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
-            return cvrp->processCGTesting<false>(arg1, arg2, arg3, arg4);
-        },
-        // Exact testing function.
-        [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
-            return cvrp->processCGTesting<true>(arg1, arg2, arg3, arg4);
-        },
+        // LP testing function for processing LP testing. //cannot be used in 3 branch
+        // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
+        //     return cvrp->processLPTesting(arg1, arg2, arg3, arg4);
+        // },
+        /* LP test */   
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // LP test no‑op
+        // Heuristic testing function. //cannot be used in 3 branch
+        // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
+        //     return cvrp->processCGTesting<false>(arg1, arg2, arg3, arg4);
+        // },
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Heur test no‑op
+        // Exact testing function. //cannot be used in 3 branch
+        // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
+        //     return cvrp->processCGTesting<true>(arg1, arg2, arg3, arg4);
+        // },
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Exact test no‑op,
         // Function to perform pricing at the beginning of processing a node.
         [cvrp](auto arg1) -> decltype(auto) {
             return cvrp->callPricingAtBeg(arg1);
@@ -106,11 +116,21 @@ int main(int argc, char *argv[]) {
             return cvrp->imposeBranching(arg1, arg2, arg3);
         },
         // Self-Defined Branching Selection Function (e.g., 2LBB).
-        ml_candidate_selection,
+        // ml_candidate_selection,
+        nullptr,
+
         // Node output function for writing nodes to external storage.
-        node_out_func,
+        // node_out_func,
+        nullptr,
+        // [](BbNode*,
+        //     const std::pair<int,int>&,
+        //     double&,
+        //     double&)
+        //     { /* no‐op */ },
+        
         // Node input function for reading node information.
         node_in_func
+        //nullptr
     };
 
     // Solve the branch-and-bound tree starting from the root node.

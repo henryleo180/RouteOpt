@@ -60,6 +60,16 @@ namespace RouteOpt {
         }
     };
 
+    struct VectorPairHasher {
+        size_t operator()(const std::vector<std::pair<int,int>>& vec) const {
+            size_t seed = vec.size();
+            PairHasher ph;
+            for (auto &p : vec)
+                seed ^= ph(p) + 0x9e3779b9 + (seed<<6) + (seed>>2);
+            return seed;
+        }
+    };
+
     /**
      * @brief Structure representing sequence information.
      *

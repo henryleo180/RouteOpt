@@ -72,6 +72,8 @@ namespace RouteOpt::Application::CVRP {
 
         static std::unordered_map<std::pair<int, int>, double, PairHasher> obtainSolEdgeMap(BbNode *node);
 
+        static std::unordered_map<std::vector<std::pair<int,int>>, double, VectorPairHasher> obtainSol3DEdgeMap(BbNode *node);
+
 
         //refers
         Solver &refSolver() {
