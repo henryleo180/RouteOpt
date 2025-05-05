@@ -73,8 +73,8 @@ int main(int argc, char *argv[])
     //   - PairHasher: hash function for branching candidates.
 
     // using BrCType = std::vector<std::pair<int, int>>;
-    // //using BrCType = std::pair<int, int>;
-    using BrCHasher = PairHasher;
+    // using BrCType = std::pair<int, int>;
+    // using BrCHasher = PairHasher;
 
     // Branching::BBT::BBTController<BbNode, std::pair<int, int>, PairHasher> bbt_controller{
     Branching::BBT::BBTController<BbNode, std::vector<std::pair<int, int>>, VectorPairHasher> bbt_controller{
@@ -105,25 +105,25 @@ int main(int argc, char *argv[])
         //     return cvrp->processLPTesting(arg1, arg2, arg3, arg4);
         // },
         /* LP test */
-        [](BbNode *, const std::vector<std::pair<int, int>> &, double &, double &) {}, // LP test no‑op
+        // [](BbNode *, const std::vector<std::pair<int, int>> &, double &, double &) {}, // LP test no‑op
 
-        // [](BbNode*, const std::pair<int, int>&, double&, double&){},  // LP test no‑op
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // LP test no‑op
 
         // Heuristic testing function. //cannot be used in 3 branch
         // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
         //     return cvrp->processCGTesting<false>(arg1, arg2, arg3, arg4);
         // },
-        [](BbNode *, const std::vector<std::pair<int, int>> &, double &, double &) {}, // Heur test no‑op
+        // [](BbNode *, const std::vector<std::pair<int, int>> &, double &, double &) {}, // Heur test no‑op
 
-        // [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Heur test no‑op
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Heur test no‑op
         // Exact testing function. //cannot be used in 3 branch
         // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
         //     return cvrp->processCGTesting<true>(arg1, arg2, arg3, arg4);
         // },
 
-        [](BbNode *, const std::vector<std::pair<int, int>> &, double &, double &) {}, // Exact test no‑op,
+        // [](BbNode *, const std::vector<std::pair<int, int>> &, double &, double &) {}, // Exact test no‑op,
 
-        // [](BbNode *, const std::pair<int, int> &, double &, double &) {}, // Exact test no‑op,
+        [](BbNode *, const std::pair<int, int> &, double &, double &) {}, // Exact test no‑op,
         // Function to perform pricing at the beginning of processing a node.
         [cvrp](auto arg1) -> decltype(auto)
         {
