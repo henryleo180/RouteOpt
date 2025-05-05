@@ -84,9 +84,10 @@ namespace RouteOpt::Branching::BBT {
             std::function<double&(Node *)> brcValueOutput,
             const std::function<bool(Node *)> &isTerminate,
             const std::function<std::unordered_map<BrCType, double, Hasher>(Node *)> &getBranchingCandidates,
-            const std::function<void(Node *, const BrCType &, double &, double &)> &processLPTestingFunction,
-            const std::function<void(Node *, const BrCType &, double &, double &)> &processHeurTestingFunction,
-            const std::function<void(Node *, const BrCType &, double &, double &)> &processExactTestingFunction,
+            // try to use 3PB on 3Branching
+            const std::function<void(Node *, const std::pair<int, int> &, double &, double &)> &processLPTestingFunction,
+            const std::function<void(Node *, const std::pair<int, int> &, double &, double &)> &processHeurTestingFunction,
+            const std::function<void(Node *, const std::pair<int, int> &, double &, double &)> &processExactTestingFunction,
             const std::function<void(Node *)> &pricing,
             const std::function<void(Node *)> &cutting,
             const std::function<void(Node *, const BrCType &, std::vector<Node *> &)> &imposeBranching,

@@ -102,17 +102,19 @@ int main(int argc, char *argv[]) {
         //     return cvrp->processLPTesting(arg1, arg2, arg3, arg4);
         // },
         /* LP test */   
-        [](BbNode*, const std::vector<std::pair<int, int>>&, double&, double&){},  // LP test no‑op
+        // [](BbNode*, const std::vector<std::pair<int, int>>&, double&, double&){},  // LP test no‑op
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // LP test no‑op
+
         // Heuristic testing function. //cannot be used in 3 branch
         // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
         //     return cvrp->processCGTesting<false>(arg1, arg2, arg3, arg4);
         // },
-        [](BbNode*, const std::vector<std::pair<int, int>>&, double&, double&){},  // Heur test no‑op
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Heur test no‑op
         // Exact testing function. //cannot be used in 3 branch
         // [cvrp](auto arg1, auto &arg2, auto &arg3, auto &arg4) -> decltype(auto) {
         //     return cvrp->processCGTesting<true>(arg1, arg2, arg3, arg4);
         // },
-        [](BbNode*, const std::vector<std::pair<int, int>>&, double&, double&){},  // Exact test no‑op,
+        [](BbNode*, const std::pair<int, int>&, double&, double&){},  // Exact test no‑op,
         // Function to perform pricing at the beginning of processing a node.
         [cvrp](auto arg1) -> decltype(auto) {
             return cvrp->callPricingAtBeg(arg1);
@@ -127,8 +129,9 @@ int main(int argc, char *argv[]) {
             return cvrp->imposeThreeBranching(arg1, arg2, arg3);
         },
         // Self-Defined Branching Selection Function (e.g., 2LBB). (3PB cannot be used for 3 branching)
-        vec_candidate_selection,
-        //nullptr,
+        // nullptr for 3PB
+        // vec_candidate_selection,
+        nullptr,
 
         // Node output function for writing nodes to external storage.
         //node_out_func,

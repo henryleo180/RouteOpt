@@ -94,9 +94,7 @@ namespace RouteOpt::Application::CVRP {
         }
     }
 
-    // using BrCType = std::vector<std::pair<int, int>>;
-    // //using BrCType = std::pair<int, int>;
-    // using BrCHasher = VectorPairHasher;
+
 
     template<bool if_exact>
     void CVRPSolver::processCGTesting(BbNode *node, const std::pair<int, int> &edge, double &dif1, double &dif2) {

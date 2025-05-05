@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../bin/cvrp"
-  "../bin/cvrp.pdb"
+  "/home/haoran/solver/RouteOpt/packages/application/cvrp/bin/cvrp"
+  "/home/haoran/solver/RouteOpt/packages/application/cvrp/bin/cvrp.pdb"
   "CMakeFiles/cvrp.dir/home/haoran/solver/RouteOpt/packages/branching/bkf/src/bkf_get_k.cpp.o"
   "CMakeFiles/cvrp.dir/home/haoran/solver/RouteOpt/packages/branching/bkf/src/bkf_get_k.cpp.o.d"
   "CMakeFiles/cvrp.dir/home/haoran/solver/RouteOpt/packages/branching/bkf/src/bkf_update.cpp.o"
