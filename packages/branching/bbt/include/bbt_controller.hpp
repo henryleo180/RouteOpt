@@ -85,12 +85,12 @@ namespace RouteOpt::Branching::BBT {
             const std::function<bool(Node *)> &isTerminate,
             const std::function<std::unordered_map<BrCType, double, Hasher>(Node *)> &getBranchingCandidates,
             // try to use 3PB on 3Branching
-            // const std::function<void(Node *, const std::pair<int, int> &, double &, double &)> &processLPTestingFunction,
-            // const std::function<void(Node *, const std::pair<int, int> &, double &, double &)> &processHeurTestingFunction,
-            // const std::function<void(Node *, const std::pair<int, int> &, double &, double &)> &processExactTestingFunction,
-            const std::function<void(Node *, const BrCType &, double &, double &)> &processLPTestingFunction,
-            const std::function<void(Node *, const BrCType &, double &, double &)> &processHeurTestingFunction,
-            const std::function<void(Node *, const BrCType &, double &, double &)> &processExactTestingFunction,
+            const std::function<void(Node *, const std::pair<int, int> &, double &, double &)> &processLPTestingFunction,
+            const std::function<void(Node *, const std::pair<int, int> &, double &, double &)> &processHeurTestingFunction,
+            const std::function<void(Node *, const std::pair<int, int> &, double &, double &)> &processExactTestingFunction,
+            // const std::function<void(Node *, const BrCType &, double &, double &)> &processLPTestingFunction,
+            // const std::function<void(Node *, const BrCType &, double &, double &)> &processHeurTestingFunction,
+            // const std::function<void(Node *, const BrCType &, double &, double &)> &processExactTestingFunction,
 
              
             const std::function<void(Node *)> &pricing,
