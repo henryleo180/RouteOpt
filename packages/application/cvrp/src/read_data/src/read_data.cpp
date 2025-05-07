@@ -297,6 +297,8 @@ namespace RouteOpt::Application::CVRP {
             temp_ss >> info_vertex[tmp_j][3];
             ++tmp_j;
         }
+        // dim_ref.get() = 70;
+        // PRINT_DEBUG("dim_ref.get() = " + std::to_string(dim_ref.get()));
         info_vertex.resize(dim_ref.get());
     }
 }

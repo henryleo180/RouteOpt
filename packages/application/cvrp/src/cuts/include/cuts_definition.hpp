@@ -21,6 +21,7 @@ namespace RouteOpt::Application::CVRP {
         std::pair<int, int> edge;
         int idx_brc{INVALID_BRC_INDEX};
         bool br_dir;
+        bool if_3b_mid;
     };
 }
 

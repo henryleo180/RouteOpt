@@ -1,18 +1,18 @@
-/* 
+/*
  * Copyright (c) 2025 Zhengzhong (Ricky) You.
  * All rights reserved.
  * Software: RouteOpt
  * License: GPL-3.0
  */
 
-/*
- * @file bbt_controller.hpp
- * @brief Header file for the BBTController class template.
- *
- * This header defines the BBTController class template, which manages the branch-and-bound
- * tree for the optimization solver using a branching strategy. It integrates various
- * components such as BKF controllers, candidate selectors, and testing functions.
- */
+ /*
+  * @file bbt_controller.hpp
+  * @brief Header file for the BBTController class template.
+  *
+  * This header defines the BBTController class template, which manages the branch-and-bound
+  * tree for the optimization solver using a branching strategy. It integrates various
+  * components such as BKF controllers, candidate selectors, and testing functions.
+  */
 
 #ifndef ROUTE_OPT_BBT_CONTROLLER_HPP
 #define ROUTE_OPT_BBT_CONTROLLER_HPP
@@ -70,56 +70,56 @@ namespace RouteOpt::Branching::BBT {
          */
         BBTController(
             int dim,
-            double &ub,
+            double& ub,
             int num_phase0,
             int num_phase1,
             int num_phase2,
             int num_phase3,
-            const std::vector<std::pair<int, int> > &bkf_size,
-            const std::function<bool(Node *, Node *)> &nodeComparator,
-            const std::function<double(Node *)> &valueExtractor,
-            const std::function<int(Node *)> &idxExtractor,
-            const std::function<bool(Node *)> &enuStateExtractor,
-            const std::function<std::tuple<BrCType, bool, int>(Node *)> &lastBrcExtractor,
-            std::function<double&(Node *)> brcValueOutput,
-            const std::function<bool(Node *)> &isTerminate,
-            const std::function<std::unordered_map<BrCType, double, Hasher>(Node *)> &getBranchingCandidates,
-            const std::function<void(Node *, const BrCType &, double &, double &)> &processLPTestingFunction,
-            const std::function<void(Node *, const BrCType &, double &, double &)> &processHeurTestingFunction,
-            const std::function<void(Node *, const BrCType &, double &, double &)> &processExactTestingFunction,
-            const std::function<void(Node *)> &pricing,
-            const std::function<void(Node *)> &cutting,
-            const std::function<void(Node *, const BrCType &, std::vector<Node *> &)> &imposeBranching,
-            const std::function<BrCType(Node *, BranchingHistory<BrCType, Hasher> &,
-                                        BranchingDataShared<BrCType, Hasher> &,
-                                        CandidateSelector::BranchingTesting<Node, BrCType, Hasher> &)> &
-                    getBestCandidateBySelfDefined = nullptr,
-            const std::function<void(Node *,
-                                     const BranchingHistory<BrCType, Hasher> &,
-                                     const BKF::BKFDataShared &)> &tryWriteNodeOut = nullptr,
-            const std::function<void(Node *,
-                                     BranchingHistory<BrCType, Hasher> &,
-                                     BKF::BKFDataShared &)> &tryReadNodeIn = nullptr)
+            const std::vector<std::pair<int, int> >& bkf_size,
+            const std::function<bool(Node*, Node*)>& nodeComparator,
+            const std::function<double(Node*)>& valueExtractor,
+            const std::function<int(Node*)>& idxExtractor,
+            const std::function<bool(Node*)>& enuStateExtractor,
+            const std::function<std::tuple<BrCType, bool, int>(Node*)>& lastBrcExtractor,
+            std::function<double& (Node*)> brcValueOutput,
+            const std::function<bool(Node*)>& isTerminate,
+            const std::function<std::unordered_map<BrCType, double, Hasher>(Node*)>& getBranchingCandidates,
+            const std::function<void(Node*, const BrCType&, double&, double&)>& processLPTestingFunction,
+            const std::function<void(Node*, const BrCType&, double&, double&)>& processHeurTestingFunction,
+            const std::function<void(Node*, const BrCType&, double&, double&)>& processExactTestingFunction,
+            const std::function<void(Node*)>& pricing,
+            const std::function<void(Node*)>& cutting,
+            const std::function<void(Node*, const std::vector<BrCType>&, std::vector<Node*>&)>& imposeBranching,
+            const std::function<BrCType(Node*, BranchingHistory<BrCType, Hasher>&,
+                BranchingDataShared<BrCType, Hasher>&,
+                CandidateSelector::BranchingTesting<Node, BrCType, Hasher>&)>&
+            getBestCandidateBySelfDefined = nullptr,
+            const std::function<void(Node*,
+                const BranchingHistory<BrCType, Hasher>&,
+                const BKF::BKFDataShared&)>& tryWriteNodeOut = nullptr,
+            const std::function<void(Node*,
+                BranchingHistory<BrCType, Hasher>&,
+                BKF::BKFDataShared&)>& tryReadNodeIn = nullptr)
             : branching_data_shared(dim),
-              branching_tester(num_phase0, num_phase1, num_phase2, num_phase3,
-                               processLPTestingFunction,
-                               processHeurTestingFunction,
-                               processExactTestingFunction),
-              pricing(pricing),
-              cutting(cutting),
-              imposeBranching(imposeBranching),
-              getBranchingCandidates(getBranchingCandidates),
-              getBestCandidateBySelfDefined(getBestCandidateBySelfDefined),
-              tryWriteNodeOut(tryWriteNodeOut),
-              tryReadNodeIn(tryReadNodeIn),
-              isTerminate(isTerminate),
-              valueExtractor(valueExtractor),
-              idxExtractor(idxExtractor),
-              enuStateExtractor(enuStateExtractor),
-              lastBrcExtractor(lastBrcExtractor),
-              brcValueOutput(brcValueOutput),
-              tree(nodeComparator),
-              ub_ref(ub) {
+            branching_tester(num_phase0, num_phase1, num_phase2, num_phase3,
+                processLPTestingFunction,
+                processHeurTestingFunction,
+                processExactTestingFunction),
+            pricing(pricing),
+            cutting(cutting),
+            imposeBranching(imposeBranching),
+            getBranchingCandidates(getBranchingCandidates),
+            getBestCandidateBySelfDefined(getBestCandidateBySelfDefined),
+            tryWriteNodeOut(tryWriteNodeOut),
+            tryReadNodeIn(tryReadNodeIn),
+            isTerminate(isTerminate),
+            valueExtractor(valueExtractor),
+            idxExtractor(idxExtractor),
+            enuStateExtractor(enuStateExtractor),
+            lastBrcExtractor(lastBrcExtractor),
+            brcValueOutput(brcValueOutput),
+            tree(nodeComparator),
+            ub_ref(ub) {
             // Initialize BKF controllers based on provided sizes.
             bkf_controllers.resize(bkf_size.size());
             for (int i = 0; i < bkf_size.size(); ++i) {
@@ -136,7 +136,7 @@ namespace RouteOpt::Branching::BBT {
          * @param root_node Pointer to the root node of the branch-and-bound tree.
          * @param time_limit Maximum time limit for the solving process (default is numeric limits of float).
          */
-        void solve(Node *root_node, double time_limit = std::numeric_limits<float>::max());
+        void solve(Node* root_node, double time_limit = std::numeric_limits<float>::max());
 
         /**
          * @brief Get the total number of nodes explored during the solving process.
@@ -190,52 +190,54 @@ namespace RouteOpt::Branching::BBT {
         std::vector<BKF::BKFController> bkf_controllers{};
 
         // Function for performing pricing operations.
-        std::function<void(Node *)> pricing{};
+        std::function<void(Node*)> pricing{};
 
         // Function for performing cutting operations.
-        std::function<void(Node *)> cutting{};
+        std::function<void(Node*)> cutting{};
 
         // Function to impose branching decisions on a node.
-        std::function<void(Node *, const BrCType &, std::vector<Node *> &)> imposeBranching{};
+        // std::function<void(Node *, const BrCType &, std::vector<Node *> &)> imposeBranching{};
+        std::function<void(Node*, const std::vector<BrCType>&, std::vector<Node*>&)> imposeBranching{};
+
 
         // Function to get branching candidates from a node.
-        std::function<std::unordered_map<BrCType, double, Hasher>(Node *)> getBranchingCandidates{};
+        std::function<std::unordered_map<BrCType, double, Hasher>(Node*)> getBranchingCandidates{};
 
         // Optional custom function to select the best branching candidate.
-        std::function<BrCType(Node *, BranchingHistory<BrCType, Hasher> &, BranchingDataShared<BrCType, Hasher> &,
-                              CandidateSelector::BranchingTesting<Node, BrCType, Hasher> &)>
-        getBestCandidateBySelfDefined{};
+        std::function<BrCType(Node*, BranchingHistory<BrCType, Hasher>&, BranchingDataShared<BrCType, Hasher>&,
+            CandidateSelector::BranchingTesting<Node, BrCType, Hasher>&)>
+            getBestCandidateBySelfDefined{};
 
         // Optional function to write node details to external storage.
-        std::function<void(Node *,
-                           const BranchingHistory<BrCType, Hasher> &,
-                           const BKF::BKFDataShared &)> tryWriteNodeOut{};
+        std::function<void(Node*,
+            const BranchingHistory<BrCType, Hasher>&,
+            const BKF::BKFDataShared&)> tryWriteNodeOut{};
 
         // Optional function to read node details from external storage.
-        std::function<void(Node *,
-                           BranchingHistory<BrCType, Hasher> &,
-                           BKF::BKFDataShared &)> tryReadNodeIn{};
+        std::function<void(Node*,
+            BranchingHistory<BrCType, Hasher>&,
+            BKF::BKFDataShared&)> tryReadNodeIn{};
 
         // Function to check if termination criteria have been met.
-        std::function<bool(Node *)> isTerminate;
+        std::function<bool(Node*)> isTerminate;
 
         // Function to extract a value from a node (e.g., objective value).
-        std::function<double(Node *)> valueExtractor;
+        std::function<double(Node*)> valueExtractor;
 
         // Function to extract an index from a node.
-        std::function<int(Node *)> idxExtractor;
+        std::function<int(Node*)> idxExtractor;
 
         // Function to extract the enumeration state from a node.
-        std::function<bool(Node *)> enuStateExtractor;
+        std::function<bool(Node*)> enuStateExtractor;
 
         // Function to extract last branching candidate information from a node. (candidate, direction, local tree size)
-        std::function<std::tuple<BrCType, bool, int>(Node *)> lastBrcExtractor;
+        std::function<std::tuple<BrCType, bool, int>(Node*)> lastBrcExtractor;
 
         // Function to obtain a reference to a branching candidate value from a node.
-        std::function<double&(Node *)> brcValueOutput;
+        std::function<double& (Node*)> brcValueOutput;
 
         // Set representing the branch-and-bound tree, ordered by the custom comparator.
-        std::set<Node *, std::function<bool(Node *, Node *)> > tree;
+        std::set<Node*, std::function<bool(Node*, Node*)> > tree;
 
         double lb{}; ///< Lower bound on the objective function.
         std::reference_wrapper<double> ub_ref; ///< Reference to the upper bound value.
@@ -245,7 +247,7 @@ namespace RouteOpt::Branching::BBT {
          *
          * @param node Pointer to the node to be added.
          */
-        void addNode(Node *node) {
+        void addNode(Node* node) {
             tree.insert(node);
         }
 
@@ -258,9 +260,10 @@ namespace RouteOpt::Branching::BBT {
         void updateBounds() {
             if (tree.empty()) {
                 lb = ub_ref.get();
-            } else {
+            }
+            else {
                 double minVal = std::numeric_limits<double>::infinity();
-                for (auto &nodePtr: tree) {
+                for (auto& nodePtr : tree) {
                     double val = valueExtractor(nodePtr);
                     if (val < minVal) {
                         minVal = val;
@@ -278,7 +281,7 @@ namespace RouteOpt::Branching::BBT {
         void printTreeDetail() {
             std::cout << BIG_PHASE_SEPARATION;
             std::cout << "tree size= " << tree.size() << " lb= " << lb << " ub= " << ub_ref.get()
-                    << std::endl;
+                << std::endl;
             std::cout << BIG_PHASE_SEPARATION;
         }
 
@@ -289,7 +292,7 @@ namespace RouteOpt::Branching::BBT {
          */
         void deleteTree() {
             while (!tree.empty()) {
-                delete *tree.begin();
+                delete* tree.begin();
                 tree.erase(tree.begin());
             }
         }
@@ -300,7 +303,7 @@ namespace RouteOpt::Branching::BBT {
          * This function checks if the current time exceeds the specified time limit and manages
          * the termination of the node and tree if the limit is reached.
          */
-        bool checkIfTimeLimit(Node *node, double time_limit) {
+        bool checkIfTimeLimit(Node* node, double time_limit) {
             if (glob_timer.getTime() > time_limit) {
                 PRINT_REMIND("Time limit= " + std::to_string(time_limit) + " exceeded");
                 updateBounds();

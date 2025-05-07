@@ -558,7 +558,10 @@ namespace RouteOpt::Application::CVRP {
         if (!if_tail_off) goto CUTTING;
     QUIT:
         if (rollback_solver.model) rollback_solver.freeModel();
+
+        
         if (!node->getIfTerminate() && !node->getIfInEnumState()) {
+        PRINT_REMIND("cutting deleted");
             node->cleanIndexColForNode();
         }
     }

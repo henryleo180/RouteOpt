@@ -14,7 +14,7 @@ namespace RouteOpt::Application::CVRP {
                 getIfInEnumState() << std::endl;
         //print all brcs
         for (auto &brc: node->getBrCs()) {
-            std::cout << "brc= " << brc.edge.first << "-" << brc.edge.second << " : " << (brc.br_dir ? "+" : "-")
+            std::cout << "brc= " << brc.edge.first << "-" << brc.edge.second << " : " << (brc.br_dir ? "+" : "-") << " : "<< (brc.if_3b_mid ? "mid" : "side")
                     << std::endl;
         }
 

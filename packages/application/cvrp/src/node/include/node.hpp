@@ -322,6 +322,8 @@ namespace RouteOpt::Application::CVRP {
         void obtainColIdxNotAllowByEdge(const std::pair<int, int> &edge, std::vector<int> &col_idx);
 
         void clearEdgeMap() {
+            // print clear
+            std::cout << "clear edge col map" << std::endl;
             edge_col_map.clear();
         }
 

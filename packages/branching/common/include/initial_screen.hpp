@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (c) 2025 Zhengzhong (Ricky) You.
  * All rights reserved.
  * Software: RouteOpt
@@ -7,17 +7,18 @@
 
 #ifndef ROUTE_OPT_INITIAL_SCREEN_HPP
 #define ROUTE_OPT_INITIAL_SCREEN_HPP
-#include <vector>
-#include <unordered_map>
 #include <iostream>
-#include "route_opt_macro.hpp"
+#include <unordered_map>
+#include <vector>
 #include "branching_macro.hpp"
 #include "candidate_selector_macro.hpp"
+#include "route_opt_macro.hpp"
 
 namespace RouteOpt::Branching {
     namespace HistoryDetail {
         inline void getGeomean(double &old_v, int &n, double new_v) {
-            if (new_v < TOLERANCE) return;
+            if (new_v < TOLERANCE)
+                return;
             if (n == 0) {
                 old_v = new_v;
                 ++n;
@@ -26,25 +27,19 @@ namespace RouteOpt::Branching {
             old_v = std::exp((n * std::log(old_v) + std::log(new_v)) / (n + 1));
             ++n;
         }
-    }
+    } // namespace HistoryDetail
 
     template<typename BrCType, typename Hasher>
-    double checkImprovements(
-        const BranchingHistory<BrCType, Hasher> &branching_history,
-        const std::pair<const BrCType, double> &candidate,
-        bool if_only_check_exact = false) {
+    double checkImprovements(const BranchingHistory<BrCType, Hasher> &branching_history,
+                             const std::pair<const BrCType, double> &candidate, bool if_only_check_exact = false) {
         // Arrays of pointers to the corresponding 'up' and 'down' maps
         std::array<const std::unordered_map<BrCType, std::pair<double, int>, Hasher> *, 3> improvement_ups = {
-            &branching_history.exact_improvement_up,
-            &branching_history.heuristic_improvement_up,
-            &branching_history.lp_testing_improvement_up
-        };
+                &branching_history.exact_improvement_up, &branching_history.heuristic_improvement_up,
+                &branching_history.lp_testing_improvement_up};
 
         std::array<const std::unordered_map<BrCType, std::pair<double, int>, Hasher> *, 3> improvement_downs = {
-            &branching_history.exact_improvement_down,
-            &branching_history.heuristic_improvement_down,
-            &branching_history.lp_testing_improvement_down
-        };
+                &branching_history.exact_improvement_down, &branching_history.heuristic_improvement_down,
+                &branching_history.lp_testing_improvement_down};
 
         // Iterating over the arrays
         for (size_t i = 0; i < improvement_ups.size(); ++i) {
@@ -62,17 +57,18 @@ namespace RouteOpt::Branching {
                     return up * frac_up * down * frac_down;
                 }
             }
-            if (if_only_check_exact) break;
+            if (if_only_check_exact)
+                break;
         }
 
         return INVALID_BR_SCORE;
     }
 
     template<typename BrCType, typename Hasher>
-    void BranchingHistory<BrCType, Hasher>::initialScreen(
-        BranchingDataShared<BrCType, Hasher> &branching_data_shared, int num) {
-        std::vector<std::pair<BrCType, double> > fracEdges;
-        std::vector<std::pair<BrCType, double> > OldBranch;
+    void BranchingHistory<BrCType, Hasher>::initialScreen(BranchingDataShared<BrCType, Hasher> &branching_data_shared,
+                                                          int num) {
+        std::vector<std::pair<BrCType, double>> fracEdges;
+        std::vector<std::pair<BrCType, double>> OldBranch;
         int num_all_frac_edge = 0;
         for (const auto &edge: branching_data_shared.getCandidate()) {
             if (checkFrac(edge.second, CANDIDATE_TOLERANCE)) {
@@ -85,12 +81,8 @@ namespace RouteOpt::Branching {
             }
         }
 
-        std::sort(OldBranch.begin(), OldBranch.end(), [](const auto &a, const auto &b) {
-            return a.second > b.second;
-        });
-        std::sort(fracEdges.begin(), fracEdges.end(), [](const auto &a, const auto &b) {
-            return a.second < b.second;
-        });
+        std::sort(OldBranch.begin(), OldBranch.end(), [](const auto &a, const auto &b) { return a.second > b.second; });
+        std::sort(fracEdges.begin(), fracEdges.end(), [](const auto &a, const auto &b) { return a.second < b.second; });
 
         int all_branch_phase0 = std::min(num, num_all_frac_edge);
         int sudo_cap = std::min(static_cast<int>(OldBranch.size()), static_cast<int>(all_branch_phase0 * PSEUDO_FRAC));
@@ -102,18 +94,27 @@ namespace RouteOpt::Branching {
 
         auto &branch_pair = branching_data_shared.refBranchPair();
         branch_pair.resize(all_branch_phase0);
-        std::transform(OldBranch.begin(), OldBranch.begin() + sudo_cap, branch_pair.begin(), [](const auto &a) {
-            return a.first;
-        });
+        std::transform(OldBranch.begin(), OldBranch.begin() + sudo_cap, branch_pair.begin(),
+                       [](const auto &a) { return a.first; });
 
         std::transform(fracEdges.begin(), fracEdges.begin() + frac_cap, branch_pair.begin() + sudo_cap,
-                       [](const auto &a) {
-                           return a.first;
-                       });
+                       [](const auto &a) { return a.first; });
 
+        // ── DEBUG: print each selected candidate using PRINT_REMIND ──
+        // ── DEBUG: serialize entire refBranchPair into one PRINT_REMIND ──
+        {
+            std::ostringstream oss;
+            oss << "[";
+            for (size_t i = 0; i < branch_pair.size(); ++i) {
+                oss << "(" << branch_pair[i].first << ", " << branch_pair[i].second << ")";
+                if (i + 1 < branch_pair.size())
+                    oss << ", ";
+            }
+            oss << "]";
+            PRINT_REMIND("initialScreen refBranchPair = " + oss.str());
+        }
 
-        BRANCHING_VERBOSE_EXEC(
-            std::cout<<"pseudo= "<<sudo_cap<<" frac= "<<frac_cap<<std::endl;)
+        BRANCHING_VERBOSE_EXEC(std::cout << "pseudo= " << sudo_cap << " frac= " << frac_cap << std::endl;)
     };
 
     template<typename BrCType, typename Hasher>
@@ -121,21 +122,18 @@ namespace RouteOpt::Branching {
         return checkImprovements(*this, std::pair<const BrCType, double>(candidate, 0.)) != INVALID_BR_SCORE;
     }
 
-
     template<typename BrCType, typename Hasher>
     bool BranchingHistory<BrCType, Hasher>::isOnceBranched(const BrCType &candidate) const {
         return checkImprovements(*this, std::pair<const BrCType, double>(candidate, 0.), true) != INVALID_BR_SCORE;
     }
 
-
     template<typename BrCType, typename Hasher>
     void BranchingHistory<BrCType, Hasher>::recordExactPerScore(const BrCType &edge, double old_val, double now_val,
-                                                                bool dir,
-                                                                int tree_level) {
+                                                                bool dir, int tree_level) {
         auto dif = now_val - old_val;
         if (dif < RC_TOLERANCE * now_val) {
             THROW_RUNTIME_ERROR("branching leads to a decreasing in lb: from " + std::to_string(old_val) + " to " +
-                std::to_string(now_val));
+                                std::to_string(now_val));
         }
         dif = std::max(dif, TOLERANCE);
         if (dir) {
@@ -146,7 +144,8 @@ namespace RouteOpt::Branching {
             ++exact_improvement_down[edge].second;
         }
 
-        if (increase_depth.size() <= tree_level) increase_depth.resize(tree_level + 1);
+        if (increase_depth.size() <= tree_level)
+            increase_depth.resize(tree_level + 1);
         auto &r_star = increase_depth[tree_level];
 
         auto &recordings = dir ? r_star.second.second : r_star.first.second;
@@ -166,7 +165,8 @@ namespace RouteOpt::Branching {
         if (left_increase.second == 0 || right_increase.second == 0) {
             r_star = std::numeric_limits<float>::max();
             for (auto &[fst, snd]: increase_depth) {
-                if (fst.second == 0 || snd.second == 0) continue;
+                if (fst.second == 0 || snd.second == 0)
+                    continue;
                 r_star = std::min(r_star, std::sqrt(fst.first * snd.first));
             }
             if (r_star == std::numeric_limits<float>::max()) {
@@ -178,6 +178,6 @@ namespace RouteOpt::Branching {
         }
         return r_star * R_DISCOUNT;
     }
-}
+} // namespace RouteOpt::Branching
 
 #endif // ROUTE_OPT_INITIAL_SCREEN_HPP

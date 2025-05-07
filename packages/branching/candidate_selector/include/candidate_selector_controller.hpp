@@ -1,18 +1,18 @@
-/* 
+/*
  * Copyright (c) 2025 Zhengzhong (Ricky) You.
  * All rights reserved.
  * Software: RouteOpt
  * License: GPL-3.0
  */
 
-/*
- * @file candidate_selector_controller.hpp
- * @brief CandidateSelectorController class for managing candidate selection in RouteOpt.
- *
- * This header defines the BranchingTesting class, which encapsulates the candidate selection process
- * during branching in the RouteOpt framework. It manages different testing phases (LP, Heuristic, Exact)
- * by applying user-defined processing functions on nodes, and measuring the corresponding execution times.
- */
+ /*
+  * @file candidate_selector_controller.hpp
+  * @brief CandidateSelectorController class for managing candidate selection in RouteOpt.
+  *
+  * This header defines the BranchingTesting class, which encapsulates the candidate selection process
+  * during branching in the RouteOpt framework. It manages different testing phases (LP, Heuristic, Exact)
+  * by applying user-defined processing functions on nodes, and measuring the corresponding execution times.
+  */
 
 #ifndef ROUTE_OPT_CANDIDATE_SELECTOR_CONTROLLER_HPP
 #define ROUTE_OPT_CANDIDATE_SELECTOR_CONTROLLER_HPP
@@ -24,7 +24,8 @@
 #include "candidate_selector_macro.hpp"
 #include "branching_macro.hpp"
 
-namespace RouteOpt::Branching::CandidateSelector {
+namespace RouteOpt::Branching::CandidateSelector
+{
     /**
      * @brief The BranchingTesting class encapsulates the candidate selection process
      *        during branching in the RouteOpt framework.
@@ -38,8 +39,9 @@ namespace RouteOpt::Branching::CandidateSelector {
      * @tparam BrCType Type representing a branching candidate.
      * @tparam Hasher  Hash function for candidate keys.
      */
-    template<typename Node, typename BrCType, typename Hasher>
-    class BranchingTesting {
+    template <typename Node, typename BrCType, typename Hasher>
+    class BranchingTesting
+    {
     public:
         /**
          * @brief Constructs a BranchingTesting object with phase parameters and testing functions.
@@ -53,12 +55,13 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @param processExactTestingFunction Function to process exact testing.
          */
         BranchingTesting(int num_phase0, int num_phase1, int num_phase2, int num_phase3,
-                         const std::function<void(Node *, const BrCType &, double &, double &)> &
-                         processLPTestingFunction,
-                         const std::function<void(Node *, const BrCType &, double &, double &)> &
-                         processHeurTestingFunction,
-                         const std::function<void(Node *, const BrCType &, double &, double &)> &
-                         processExactTestingFunction) {
+            const std::function<void(Node*, const BrCType&, double&, double&)>&
+            processLPTestingFunction,
+            const std::function<void(Node*, const BrCType&, double&, double&)>&
+            processHeurTestingFunction,
+            const std::function<void(Node*, const BrCType&, double&, double&)>&
+            processExactTestingFunction)
+        {
             setNumPhase0(num_phase0);
             setNumPhase1(num_phase1);
             setNumPhase2(num_phase2);
@@ -72,7 +75,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Sets the number of tests for phase 0 (LP phase).
          * @param num Number of tests.
          */
-        void setNumPhase0(int num) {
+        void setNumPhase0(int num)
+        {
             num_phase0 = num;
         }
 
@@ -80,7 +84,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Sets the number of tests for phase 1 (Heuristic phase).
          * @param num Number of tests.
          */
-        void setNumPhase1(int num) {
+        void setNumPhase1(int num)
+        {
             num_phase1 = num;
         }
 
@@ -88,7 +93,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Sets the number of tests for phase 2 (Exact phase).
          * @param num Number of tests.
          */
-        void setNumPhase2(int num) {
+        void setNumPhase2(int num)
+        {
             num_phase2 = num;
         }
 
@@ -96,7 +102,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Sets the number of tests for phase 3.
          * @param num Number of tests.
          */
-        void setNumPhase3(int num) {
+        void setNumPhase3(int num)
+        {
             num_phase3 = num;
         }
 
@@ -104,7 +111,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Sets the function used for processing LP testing.
          * @param func Function to process LP testing.
          */
-        void setProcessLPTestingFunction(const std::function<void(Node *, const BrCType &, double &, double &)> &func) {
+        void setProcessLPTestingFunction(const std::function<void(Node*, const BrCType&, double&, double&)>& func)
+        {
             processLPTestingFunction = func;
         }
 
@@ -113,7 +121,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @param func Function to process heuristic testing.
          */
         void setProcessHeurTestingFunction(
-            const std::function<void(Node *, const BrCType &, double &, double &)> &func) {
+            const std::function<void(Node*, const BrCType&, double&, double&)>& func)
+        {
             processHeurTestingFunction = func;
         }
 
@@ -122,7 +131,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @param func Function to process exact testing.
          */
         void setProcessExactTestingFunction(
-            const std::function<void(Node *, const BrCType &, double &, double &)> &func) {
+            const std::function<void(Node*, const BrCType&, double&, double&)>& func)
+        {
             processExactTestingFunction = func;
         }
 
@@ -130,7 +140,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Retrieves the edge score information generated during testing.
          * @return Constant reference to the vector of edge score information.
          */
-        const std::vector<CandidateScoreInfo<BrCType> > &getEdgeInfo() const {
+        const std::vector<CandidateScoreInfo<BrCType>>& getEdgeInfo() const
+        {
             return edge_info;
         }
 
@@ -138,7 +149,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Gets the number of tests configured for phase 0.
          * @return Number of tests in phase 0.
          */
-        [[nodiscard]] int getNumPhase0() const {
+        [[nodiscard]] int getNumPhase0() const
+        {
             return num_phase0;
         }
 
@@ -146,7 +158,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Gets the number of tests configured for phase 1.
          * @return Number of tests in phase 1.
          */
-        [[nodiscard]] int getNumPhase1() const {
+        [[nodiscard]] int getNumPhase1() const
+        {
             return num_phase1;
         }
 
@@ -154,7 +167,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Gets the number of tests configured for phase 2.
          * @return Number of tests in phase 2.
          */
-        [[nodiscard]] int getNumPhase2() const {
+        [[nodiscard]] int getNumPhase2() const
+        {
             return num_phase2;
         }
 
@@ -162,7 +176,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Gets the number of tests configured for phase 3.
          * @return Number of tests in phase 3.
          */
-        [[nodiscard]] int getNumPhase3() const {
+        [[nodiscard]] int getNumPhase3() const
+        {
             return num_phase3;
         }
 
@@ -170,7 +185,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Provides a mutable reference to the LP testing time counter.
          * @return Reference to the LP time counter (pair: time and count).
          */
-        auto &refLPTimeCnt() {
+        auto& refLPTimeCnt()
+        {
             return lp_time_cnt;
         }
 
@@ -178,7 +194,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Provides a mutable reference to the heuristic testing time counter.
          * @return Reference to the heuristic time counter (pair: time and count).
          */
-        auto &refHeuristicTimeCnt() {
+        auto& refHeuristicTimeCnt()
+        {
             return heuristic_time_cnt;
         }
 
@@ -186,7 +203,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @brief Provides a mutable reference to the exact testing time counter.
          * @return Reference to the exact time counter (pair: time and count).
          */
-        auto &refExactTimeCnt() {
+        auto& refExactTimeCnt()
+        {
             return exact_time_cnt;
         }
 
@@ -203,32 +221,238 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @param candidate_map        Map of candidate branching decisions and their scores.
          * @return The best candidate branching decision.
          */
-        const BrCType &getBestCandidate(Node *node,
-                                        BranchingHistory<BrCType, Hasher> &branching_history,
-                                        BranchingDataShared<BrCType, Hasher> &branching_data_shared,
-                                        const std::unordered_map<BrCType, double, Hasher> &candidate_map) {
+        const BrCType& getBestCandidate(Node* node,
+            BranchingHistory<BrCType, Hasher>& branching_history,
+            BranchingDataShared<BrCType, Hasher>& branching_data_shared,
+            const std::unordered_map<BrCType, double, Hasher>& candidate_map)
+        {
             // Update the candidate map in the shared data.
             branching_data_shared.refCandidateMap() = candidate_map;
+
+            // ── DEBUG: serialize and print the entire candidate_map ──
+            // {
+            //     std::ostringstream ossMap;
+            //     ossMap << "{";
+            //     bool first = true;
+            //     for (const auto& entry : branching_data_shared.refCandidateMap()) {
+            //         if (!first)
+            //             ossMap << ", ";
+            //         first = false;
+            //         // If BrCType is a pair like (i,k), print as "(i,k)=score"
+            //         ossMap << "("
+            //             << entry.first.first << ","
+            //             << entry.first.second << ")"
+            //             << "="
+            //             << entry.second;
+            //     }
+            //     ossMap << "}";
+            //     PRINT_REMIND("Candidate map = " + ossMap.str());
+            // }
+
             // Perform initial screening based on the LP phase.
             branching_history.initialScreen(branching_data_shared, num_phase0);
             // Measure LP testing time.
-            lp_time_cnt.first = TimeSetter::measure([&]() {
-                testing(node, branching_history, branching_data_shared, TestingPhase::LP);
-            });
+            lp_time_cnt.first = TimeSetter::measure([&]()
+                { testing(node, branching_history, branching_data_shared, TestingPhase::LP); });
             lp_time_cnt.second = num_phase0 == 1 ? 0 : 2 * num_phase0;
             // Measure heuristic testing time.
-            heuristic_time_cnt.first = TimeSetter::measure([&]() {
-                testing(node, branching_history, branching_data_shared, TestingPhase::Heuristic);
-            });
+            heuristic_time_cnt.first = TimeSetter::measure([&]()
+                { testing(node, branching_history, branching_data_shared, TestingPhase::Heuristic); });
             heuristic_time_cnt.second = num_phase1 == 1 ? 0 : 2 * num_phase1;
             // Measure exact testing time.
-            exact_time_cnt.first = TimeSetter::measure([&]() {
-                testing(node, branching_history, branching_data_shared, TestingPhase::Exact);
-            });
+            exact_time_cnt.first = TimeSetter::measure([&]()
+                { testing(node, branching_history, branching_data_shared, TestingPhase::Exact); });
             exact_time_cnt.second = num_phase2 == 1 ? 0 : 2 * num_phase2;
             // Return the best candidate as determined by the initial screening.
+
+            PRINT_REMIND("The best candidate is: " + std::to_string(branching_data_shared.refBranchPair().front().first) + " " + std::to_string(branching_data_shared.refBranchPair().front().second));
+
+            // To see the internal structure of refBranchPair:
+            {
+                const auto& pairs = branching_data_shared.refBranchPair();
+                std::ostringstream oss;
+                oss << "[";
+                PRINT_REMIND("The size of refBranchPair is: " + std::to_string(pairs.size()));
+                for (size_t i = 0; i < pairs.size(); ++i)
+                {
+                    oss << "("
+                        << pairs[i].first << ","
+                        << pairs[i].second << ")";
+                    if (i + 1 < pairs.size())
+                        oss << ", ";
+                }
+                oss << "]";
+                PRINT_REMIND("The refBranchPair is: " + oss.str());
+            }
+
+
+            {
+                const auto& pairs = branching_data_shared.refBranchPair();
+                const auto& candMap = branching_data_shared.refCandidateMap();
+                std::ostringstream oss;
+                oss << "[";
+                for (size_t i = 0; i < pairs.size(); ++i) {
+                    const auto& p = pairs[i];
+                    double score = candMap.at(p);
+                    oss << "("
+                        << p.first << ","
+                        << p.second << " = "
+                        << score
+                        << ")";
+                    if (i + 1 < pairs.size())
+                        oss << ", ";
+                }
+                oss << "]";
+                PRINT_REMIND("refBranchPair ⟶ candidate_map values: " + oss.str());
+            }
+
             return branching_data_shared.refBranchPair().front();
         }
+
+
+        std::vector<BrCType> getTopTwoCandidates(Node* node,
+            BranchingHistory<BrCType, Hasher>& branching_history,
+            BranchingDataShared<BrCType, Hasher>& branching_data_shared,
+            const std::unordered_map<BrCType, double, Hasher>& candidate_map)
+        {
+            // … run initial screening & testing exactly as before …
+            branching_data_shared.refCandidateMap() = candidate_map;
+            branching_history.initialScreen(branching_data_shared, num_phase0);
+            PRINT_REMIND("Finish initialScreen in GetTopTwoCandidates");
+            lp_time_cnt.first = TimeSetter::measure([&] { testing(node, branching_history, branching_data_shared, TestingPhase::LP); });
+            heuristic_time_cnt.first = TimeSetter::measure([&] { testing(node, branching_history, branching_data_shared, TestingPhase::Heuristic); });
+            exact_time_cnt.first = TimeSetter::measure([&] { testing(node, branching_history, branching_data_shared, TestingPhase::Exact); });
+
+            {
+                const auto& pairs = branching_data_shared.refBranchPair();
+                const auto& candMap = branching_data_shared.refCandidateMap();
+                std::ostringstream oss;
+                oss << "[";
+                for (size_t i = 0; i < pairs.size(); ++i) {
+                    const auto& p = pairs[i];
+                    double score = candMap.at(p);
+                    oss << "("
+                        << p.first << ","
+                        << p.second << " = "
+                        << score
+                        << ")";
+                    if (i + 1 < pairs.size())
+                        oss << ", ";
+                }
+                oss << "]";
+                PRINT_REMIND("refBranchPair ⟶ candidate_map values: " + oss.str());
+            }
+
+            // 1) Grab the full ranked list
+            const auto& pairs = branching_data_shared.refBranchPair();  // at least 3 entries
+            const auto& cmap = branching_data_shared.refCandidateMap();
+
+            // 2) Build a filtered list of “still available” edges
+            std::vector<BrCType> available;
+            available.reserve(pairs.size());
+            for (const auto& p : pairs) {
+                bool used = std::any_of(
+                    node->getBrCs().begin(),
+                    node->getBrCs().end(),
+                    [&](const auto& brc) {
+                        return brc.edge == p;
+                    }
+                );
+                if (used) {
+                    PRINT_REMIND(
+                        "Skipping already‐branched edge: ("
+                        + std::to_string(p.first) + ","
+                        + std::to_string(p.second) + ")"
+                    );
+                }
+                else {
+                    available.push_back(p);
+                }
+            }
+
+            // 3) If we’ve filtered away too many, fall back to the top-3 logic
+            if (available.size() < 2) {
+                PRINT_REMIND("Not enough new candidates, reverting to first two of original list");
+                available = { pairs[0], pairs[1] };
+            }
+
+            // 4) Now choose from the *available* list exactly as before:
+            double sum01 = cmap.at(available[0]) + cmap.at(available[1]);
+
+            std::vector<BrCType> chosen;
+            if (std::abs(sum01 - 1.0) > 1e-9) {
+                chosen = { available[0], available[1] };
+            }
+            else {
+                // if there’s a third available, pick it; otherwise reuse the second
+                if (available.size() > 2)
+                    chosen = { available[0], available[2] };
+                else
+                    chosen = { available[0], available[1] };
+            }
+
+            // 5) Debug print
+            {
+                std::ostringstream oss;
+                oss << "[";
+                for (size_t i = 0; i < chosen.size(); ++i) {
+                    oss << "("
+                        << chosen[i].first << ","
+                        << chosen[i].second << ")";
+                    if (i + 1 < chosen.size()) oss << ", ";
+                }
+                oss << "]";
+                PRINT_REMIND("Final selected pair‐of‐two: " + oss.str());
+            }
+
+            return chosen;
+
+
+            //             const auto& pairs = branching_data_shared.refBranchPair();  // has at least 3 entries
+            //             const auto& map = branching_data_shared.refCandidateMap();
+
+            //             for (auto &brc: node->getBrCs()) {
+            //             // if brc.edge appears anywhere in pairs, skip it
+            // if (std::find(pairs.begin(), pairs.end(), brc.edge) != pairs.end()) {
+            //     PRINT_REMIND(
+            //       "Excluding "
+            //       + std::to_string(brc.edge.first)
+            //       + "-"
+            //       + std::to_string(brc.edge.second)
+            //     );
+            //     continue;
+            // }
+            //         }
+
+            //             // Compute sum of scores for the first two
+            //             double sum01 = map.at(pairs[0]) + map.at(pairs[1]);
+
+            //             // Choose either (0,1) if sum01 == 1, else (0,2)
+            //             std::vector<BrCType> chosen;
+            //             if (std::abs(sum01 - 1.0) > 1e-9) {
+            //                 chosen = { pairs[0], pairs[1] };
+            //             }
+            //             else {
+            //                 chosen = { pairs[0], pairs[2] };
+            //             }
+
+            //             // Debug print the chosen two
+            //             {
+            //                 std::ostringstream oss;
+            //                 oss << "[";
+            //                 for (size_t i = 0; i < chosen.size(); ++i) {
+            //                     oss << "("
+            //                         << chosen[i].first << ","
+            //                         << chosen[i].second << ")";
+            //                     if (i + 1 < chosen.size()) oss << ", ";
+            //                 }
+            //                 oss << "]";
+            //                 PRINT_REMIND("Selected pair-of-two from top-3: " + oss.str());
+            //             }
+
+            //             return chosen;
+        }
+
 
         /**
          * @brief Performs testing on the given node for a specified testing phase.
@@ -242,9 +466,9 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @param phase                The testing phase to execute.
          */
         void testing(
-            Node *node,
-            BranchingHistory<BrCType, Hasher> &branching_history,
-            BranchingDataShared<BrCType, Hasher> &branching_data_shared,
+            Node* node,
+            BranchingHistory<BrCType, Hasher>& branching_history,
+            BranchingDataShared<BrCType, Hasher>& branching_data_shared,
             TestingPhase phase);
 
         /**
@@ -256,19 +480,27 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @param eps             Additional elapsed time.
          * @param bkf_controllers Vector of BKFController objects to update.
          */
-        void updateBKFtime(double eps, std::vector<BKF::BKFController> &bkf_controllers) const {
-            for (int i = 0; i < bkf_controllers.size(); ++i) {
-                auto &bkf = bkf_controllers[i];
-                if (i == 0) {
+        void updateBKFtime(double eps, std::vector<BKF::BKFController>& bkf_controllers) const
+        {
+            for (int i = 0; i < bkf_controllers.size(); ++i)
+            {
+                auto& bkf = bkf_controllers[i];
+                if (i == 0)
+                {
                     bkf.setTestingTime(lp_time_cnt.first, lp_time_cnt.second);
                     bkf.setNodeTime(eps + (heuristic_time_cnt.first + exact_time_cnt.first) / 2);
-                } else if (i == 1) {
+                }
+                else if (i == 1)
+                {
                     bkf.setTestingTime(heuristic_time_cnt.first, heuristic_time_cnt.second);
                     bkf.setNodeTime(eps + (exact_time_cnt.first + lp_time_cnt.first) / 2);
-                } else if (i == 2) {
+                }
+                else if (i == 2)
+                {
                     bkf.setTestingTime(exact_time_cnt.first, exact_time_cnt.second);
                     bkf.setNodeTime(eps + (lp_time_cnt.first + heuristic_time_cnt.first) / 2);
-                } else
+                }
+                else
                     THROW_RUNTIME_ERROR("BKFController only supports 3 phases, but got " + std::to_string(i));
             }
         }
@@ -285,15 +517,15 @@ namespace RouteOpt::Branching::CandidateSelector {
         int num_phase2{};
         int num_phase3{};
         // Time counters for each testing phase (pair: total time, count of tests).
-        std::pair<double, int> lp_time_cnt{}; // LP testing time and count.
+        std::pair<double, int> lp_time_cnt{};        // LP testing time and count.
         std::pair<double, int> heuristic_time_cnt{}; // Heuristic testing time and count.
-        std::pair<double, int> exact_time_cnt{}; // Exact testing time and count.
+        std::pair<double, int> exact_time_cnt{};     // Exact testing time and count.
         // Edge score information collected during testing.
-        std::vector<CandidateScoreInfo<BrCType> > edge_info{};
+        std::vector<CandidateScoreInfo<BrCType>> edge_info{};
         // Function objects for processing each type of testing.
-        std::function<void(Node *, const BrCType &, double &, double &)> processLPTestingFunction{};
-        std::function<void(Node *, const BrCType &, double &, double &)> processHeurTestingFunction{};
-        std::function<void(Node *, const BrCType &, double &, double &)> processExactTestingFunction{};
+        std::function<void(Node*, const BrCType&, double&, double&)> processLPTestingFunction{};
+        std::function<void(Node*, const BrCType&, double&, double&)> processHeurTestingFunction{};
+        std::function<void(Node*, const BrCType&, double&, double&)> processExactTestingFunction{};
 
         /**
          * @brief Revises the score for extremely unbalanced candidates.
@@ -304,8 +536,8 @@ namespace RouteOpt::Branching::CandidateSelector {
          * @param branching_history Reference to the branching history.
          * @param phase             The testing phase for which to revise scores.
          */
-        void reviseExtremeUnbalancedScore(BranchingHistory<BrCType, Hasher> &branching_history,
-                                          TestingPhase phase);
+        void reviseExtremeUnbalancedScore(BranchingHistory<BrCType, Hasher>& branching_history,
+            TestingPhase phase);
     };
 }
 
