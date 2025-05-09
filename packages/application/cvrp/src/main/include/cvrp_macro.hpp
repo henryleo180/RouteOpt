@@ -90,9 +90,9 @@ namespace RouteOpt::Application::CVRP {
 
     enum class NUM_TESTING {
         PHASE0 = 30,
-        PHASE1 = 3,
-        PHASE2 = 1,
-        PHASE3 = 1
+        PHASE1 = 6,
+        PHASE2 = 6,
+        PHASE3 = 6
     };
 
 

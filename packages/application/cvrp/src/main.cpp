@@ -67,7 +67,9 @@ int main(int argc, char *argv[]) {
         static_cast<int>(NUM_TESTING::PHASE1), // Number of output candidates for phase 1.
         static_cast<int>(NUM_TESTING::PHASE2), // Number of output candidates for phase 2.
         static_cast<int>(NUM_TESTING::PHASE3), // Number of output candidates for phase 3.
-        IF_BKF
+        // Temporary stop BKF
+        // IF_BKF
+        false
             ? std::vector<std::pair<int, int> >{
                 {static_cast<int>(BKF_TYPE::M_LP), static_cast<int>(BKF_TYPE::N_LP)},
                 {static_cast<int>(BKF_TYPE::M_HEUR), static_cast<int>(BKF_TYPE::N_HEUR)}
@@ -106,7 +108,8 @@ int main(int argc, char *argv[]) {
             return cvrp->imposeBranching(arg1, arg2, arg3);
         },
         // Self-Defined Branching Selection Function (e.g., 2LBB).
-        ml_candidate_selection,
+        // ml_candidate_selection,
+        nullptr,
         // Node output function for writing nodes to external storage.
         node_out_func,
         // Node input function for reading node information.
