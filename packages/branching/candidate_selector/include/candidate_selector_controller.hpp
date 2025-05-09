@@ -370,14 +370,53 @@ namespace RouteOpt::Branching::CandidateSelector
                 }
             }
 
+            if (available.front() == pairs.front()) {
+                PRINT_REMIND("First candidate is still available");
+            }
+            else {
+                PRINT_REMIND("First candidate is not available(used)");
+                available.insert(available.begin(), pairs.front());
+            }
+
             // 3) If we’ve filtered away too many, fall back to the top-3 logic
             if (available.size() < 2) {
                 PRINT_REMIND("Not enough new candidates, reverting to first two of original list");
-                available = { pairs[0], pairs[1] };
+                available = { pairs[0], pairs[1], pairs[2] };
             }
 
+            
+
             // 4) Now choose from the *available* list exactly as before:
+
+            // 4) Modified selection strategy:
+
+//    - orig = first available
+//    - then cycle the rest so each moves one slot forward
+// BrCType orig = pairs.front();
+// // std::vector<BrCType> rest(available.begin() + 1, available.end());
+
+// // // rotate left by 1: rest[0]←old rest[1], rest[1]←old rest[2], …, rest.back()←old rest[0]
+// // if (rest.size() > 1) {
+// //     std::rotate(rest.begin(), rest.begin() + 1, rest.end());
+// // }
+
+// // rebuild a `newAvail` with orig at [0]
+// std::vector<BrCType> newAvail;
+
+// if (newAvail.front() == orig) {
+// newAvail = available;
+// }
+// else {
+//     newAvail.reserve(1 + available.size());
+// newAvail.push_back(orig);
+// newAvail.insert(newAvail.end(), available.begin(), available.end());
+// }
+
+
+
             double sum01 = cmap.at(available[0]) + cmap.at(available[1]);
+
+            // double sum01 = cmap.at(newAvail[0]) + cmap.at(newAvail[1]);
 
             std::vector<BrCType> chosen;
             if (std::abs(sum01 - 1.0) > 1e-9) {
@@ -404,6 +443,32 @@ namespace RouteOpt::Branching::CandidateSelector
                 oss << "]";
                 PRINT_REMIND("Final selected pair‐of‐two: " + oss.str());
             }
+
+            // std::vector<BrCType> chosen;
+            // if (std::abs(sum01 - 1.0) > 1e-9) {
+            //     chosen = { newAvail[0], newAvail[1] };
+            // }
+            // else {
+            //     // if there’s a third available, pick it; otherwise reuse the second
+            //     if (newAvail.size() > 2)
+            //         chosen = { newAvail[0], newAvail[2] };
+            //     else
+            //         chosen = { newAvail[0], newAvail[1] };
+            // }
+
+            // // 5) Debug print
+            // {
+            //     std::ostringstream oss;
+            //     oss << "[";
+            //     for (size_t i = 0; i < chosen.size(); ++i) {
+            //         oss << "("
+            //             << chosen[i].first << ","
+            //             << chosen[i].second << ")";
+            //         if (i + 1 < chosen.size()) oss << ", ";
+            //     }
+            //     oss << "]";
+            //     PRINT_REMIND("Final selected pair‐of‐two: " + oss.str());
+            // }
 
             return chosen;
 

@@ -148,7 +148,7 @@ namespace RouteOpt::Application::CVRP {
         auto e1 = edgepair[0];
         auto e2 = edgepair[1];
 
-        static constexpr int MAX_3WAY_ROUNDS = 10;
+        static constexpr int MAX_3WAY_ROUNDS = 4;
         static thread_local int three_way_count = 0;
 
         if (node->getIfTerminate())
