@@ -92,6 +92,7 @@ namespace RouteOpt::Application::CVRP {
                                                                  ml_type == ML_TYPE::ML_GET_DATA_1 || ml_type ==
                                                                  ML_TYPE::ML_GET_DATA_2) {
             std::cout << "instance name= " << ins_name << std::endl;
+            LOG_MESSAGE("?", ins_name, true);
         }
 
         void callCutting(BbNode *node);

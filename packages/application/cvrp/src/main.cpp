@@ -31,6 +31,7 @@ int main(int argc, char *argv[]) {
     // Create a new branch-and-bound node (BbNode) as the root node.
     auto node = new BbNode();
 
+
     // Define a candidate selection function pointer for machine learning based candidate selection.
     // Initialize to nullptr by default.
     CandidateSelectionFuncType ml_candidate_selection = nullptr;

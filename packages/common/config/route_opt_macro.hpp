@@ -272,8 +272,18 @@ try { \
      *
      * @param msg The message to log.
      */
-    inline void writeToLog(const std::string &msg) {
-        static std::ofstream logFile("/home/haoran/solver/RouteOpt/packages/application/cvrp/dual_gain_log.txt", std::ios::app);
+    inline void writeToLog(const std::string &msg, const std::string &instance_name, bool if_clear= true) {
+
+if(if_clear)
+    {
+    static std::ofstream logFile("dg/"+instance_name+".dg", std::ios::out);
+    logFile.close();
+    return;
+    }
+
+
+    mkDir("dg");
+        static std::ofstream logFile("dg/"+instance_name+".dg", if_clear? (std::ios::out):(std::ios::app));
         
         if (!logFile.is_open()) {
             std::cerr << "Failed to open log file!" << std::endl;
@@ -284,11 +294,11 @@ try { \
         logFile << msg << std::endl;
         
         // Make sure it's written immediately
-        logFile.flush();
+        logFile.close();
     }
 
 // Convenience macro for logging without context information
-#define LOG_MESSAGE(msg) writeToLog((msg));
+#define LOG_MESSAGE(msg, msg2, msg3) writeToLog(msg, msg2, msg3);
 } // namespace RouteOpt
 
 #endif // ROUTE_OPT_ROUTE_OPT_MACRO_HPP

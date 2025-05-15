@@ -124,7 +124,7 @@ namespace RouteOpt::Application::CVRP {
         LOG_MESSAGE("(idx,edge):(diff1, diff2)"+
                     std::to_string(node->getIdx()) + " " +
                     std::to_string(edge.first) + "-" + std::to_string(edge.second) + " " +
-                    std::to_string(dif1) + " " + std::to_string(dif2))
+                    std::to_string(dif1) + " " + std::to_string(dif2), ins_name, false);
 
         SAFE_SOLVER(node_solver.delConstraints(1, &b4_num_row))
         SAFE_SOLVER(node_solver.updateModel())
