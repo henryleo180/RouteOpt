@@ -3,3 +3,13 @@
 *.iml
 .idea
 .gitignore.swp
+
+build/
+**/build/
+# If you want to ignore specific build directories
+# solver/RouteOpt/packages/application/cvrp/build/
+# solver/RouteOpt/packages/application/cvrp/lib/hgs/build/
+
+/packages/external/
+
+
