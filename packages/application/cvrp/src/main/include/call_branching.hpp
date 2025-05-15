@@ -116,10 +116,15 @@ namespace RouteOpt::Application::CVRP {
         TestingDetail::callPricingInTesting<if_exact>(this, node, tmp_val);
         dif1 = TestingDetail::calculateDifference(tmp_val, org_val);
 
+
         node->refBrCs().back().br_dir = true;
         TestingDetail::inverseLastBranchConstraint(node_solver);
         TestingDetail::callPricingInTesting<if_exact>(this, node, tmp_val);
         dif2 = TestingDetail::calculateDifference(tmp_val, org_val);
+        LOG_MESSAGE("(idx,edge):(diff1, diff2)"+
+                    std::to_string(node->getIdx()) + " " +
+                    std::to_string(edge.first) + "-" + std::to_string(edge.second) + " " +
+                    std::to_string(dif1) + " " + std::to_string(dif2))
 
         SAFE_SOLVER(node_solver.delConstraints(1, &b4_num_row))
         SAFE_SOLVER(node_solver.updateModel())

@@ -89,9 +89,10 @@ namespace RouteOpt::Application::CVRP {
                                                       : 2;
 
     enum class NUM_TESTING {
-        PHASE0 = 30,
-        PHASE1 = 3,
-        PHASE2 = 1,
+    //   * The number of candidates to be outputted in each phase. -- settings for dual gain
+        PHASE0 = 100,
+        PHASE1 = 100,
+        PHASE2 = 100,
         PHASE3 = 1
     };
 

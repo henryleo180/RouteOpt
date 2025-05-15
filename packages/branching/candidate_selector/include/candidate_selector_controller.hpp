@@ -212,15 +212,17 @@ namespace RouteOpt::Branching::CandidateSelector {
             // Perform initial screening based on the LP phase.
             branching_history.initialScreen(branching_data_shared, num_phase0);
             // Measure LP testing time.
-            lp_time_cnt.first = TimeSetter::measure([&]() {
-                testing(node, branching_history, branching_data_shared, TestingPhase::LP);
-            });
-            lp_time_cnt.second = num_phase0 == 1 ? 0 : 2 * num_phase0;
+            PRINT_REMIND("LP testing is disabled")
+            // lp_time_cnt.first = TimeSetter::measure([&]() {
+            //     testing(node, branching_history, branching_data_shared, TestingPhase::LP);
+            // });
+            // lp_time_cnt.second = num_phase0 == 1 ? 0 : 2 * num_phase0;
             // Measure heuristic testing time.
-            heuristic_time_cnt.first = TimeSetter::measure([&]() {
-                testing(node, branching_history, branching_data_shared, TestingPhase::Heuristic);
-            });
-            heuristic_time_cnt.second = num_phase1 == 1 ? 0 : 2 * num_phase1;
+            PRINT_REMIND("Heuristic testing is disabled")
+            // heuristic_time_cnt.first = TimeSetter::measure([&]() {
+            //     testing(node, branching_history, branching_data_shared, TestingPhase::Heuristic);
+            // });
+            // heuristic_time_cnt.second = num_phase1 == 1 ? 0 : 2 * num_phase1;
             // Measure exact testing time.
             exact_time_cnt.first = TimeSetter::measure([&]() {
                 testing(node, branching_history, branching_data_shared, TestingPhase::Exact);

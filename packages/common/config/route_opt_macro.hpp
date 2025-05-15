@@ -27,6 +27,8 @@
 #include <iomanip>
 #include <sstream>
 
+#include <fstream>
+
 namespace RouteOpt {
     // Maximum number of customers. This is used to size bitsets and define limits in the application.
     constexpr int MAX_NUM_CUSTOMERS = 1002;
@@ -263,6 +265,30 @@ try { \
 #define PRINT_WARNING(msg) logMessage<ErrorType::WARNING>((msg), __FILE__, __LINE__, __func__);
 #define PRINT_DEBUG(msg) logMessage<ErrorType::DEBUG>((msg), __FILE__, __LINE__, __func__);
 #define PRINT_REMIND(msg) logMessage<ErrorType::REMIND>((msg), __FILE__, __LINE__, __func__);
+
+
+    /**
+     * @brief Writes a log message to a specific log file.
+     *
+     * @param msg The message to log.
+     */
+    inline void writeToLog(const std::string &msg) {
+        static std::ofstream logFile("/home/haoran/solver/RouteOpt/packages/application/cvrp/dual_gain_log.txt", std::ios::app);
+        
+        if (!logFile.is_open()) {
+            std::cerr << "Failed to open log file!" << std::endl;
+            return;
+        }
+        
+        // Write message directly to log file
+        logFile << msg << std::endl;
+        
+        // Make sure it's written immediately
+        logFile.flush();
+    }
+
+// Convenience macro for logging without context information
+#define LOG_MESSAGE(msg) writeToLog((msg));
 } // namespace RouteOpt
 
 #endif // ROUTE_OPT_ROUTE_OPT_MACRO_HPP

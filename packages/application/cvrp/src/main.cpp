@@ -106,7 +106,8 @@ int main(int argc, char *argv[]) {
             return cvrp->imposeBranching(arg1, arg2, arg3);
         },
         // Self-Defined Branching Selection Function (e.g., 2LBB).
-        ml_candidate_selection,
+        // ml_candidate_selection,
+        nullptr,
         // Node output function for writing nodes to external storage.
         node_out_func,
         // Node input function for reading node information.
