@@ -1,6 +1,6 @@
 # FindGUROBI.cmake
 
-set(GUROBI_ROOT "/apps/gurobi/12.0.2")
+set(GUROBI_ROOT "/apps/gurobi/11.0.1")
 
 if (EXISTS "${GUROBI_ROOT}")
     set(GUROBI_FOUND TRUE)
@@ -15,7 +15,7 @@ find_path(GUROBI_INCLUDE_DIR
         PATHS "${GUROBI_ROOT}/include")
 
 find_library(GUROBI_LIBRARY
-        NAMES libgurobi120.so
+        NAMES libgurobi110.so
         PATHS "${GUROBI_ROOT}/lib"
 )
 

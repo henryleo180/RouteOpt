@@ -29,7 +29,8 @@
 
 #include <fstream>
 
-namespace RouteOpt {
+namespace RouteOpt
+{
     // Maximum number of customers. This is used to size bitsets and define limits in the application.
     constexpr int MAX_NUM_CUSTOMERS = 1002;
 
@@ -44,11 +45,11 @@ namespace RouteOpt {
 
     // Separation lines for formatted console output.
     constexpr auto SMALL_PHASE_SEPARATION =
-            "-----------------------------------------------------------------------------------------\n";
+        "-----------------------------------------------------------------------------------------\n";
     constexpr auto MID_PHASE_SEPARATION =
-            "*****************************************************************************************\n";
+        "*****************************************************************************************\n";
     constexpr auto BIG_PHASE_SEPARATION =
-            "#########################################################################################\n";
+        "#########################################################################################\n";
 
     /**
      * @brief Custom hash functor for a pair of integers.
@@ -56,8 +57,10 @@ namespace RouteOpt {
      * This structure provides a hash function for std::pair<int, int> objects,
      * which is useful when using pairs as keys in unordered containers.
      */
-    struct PairHasher {
-        size_t operator()(const std::pair<int, int> &V) const {
+    struct PairHasher
+    {
+        size_t operator()(const std::pair<int, int> &V) const
+        {
             return V.first * MAX_NUM_CUSTOMERS + V.second;
         }
     };
@@ -68,7 +71,8 @@ namespace RouteOpt {
      * Contains a vector of integers representing a forward sequence (excluding 0)
      * and a position indicator for the last processed element in a forward partial label.
      */
-    struct SequenceInfo {
+    struct SequenceInfo
+    {
         std::vector<int> col_seq; // Forward sequence of customer indices (excludes 0).
         /*
          * Records the last position of the forward partial label.
@@ -76,7 +80,8 @@ namespace RouteOpt {
          */
         int forward_concatenate_pos{};
         // Equality operator comparing both the sequence and the concatenation position.
-        bool operator==(const SequenceInfo &other) const {
+        bool operator==(const SequenceInfo &other) const
+        {
             return (col_seq == other.col_seq) &&
                    (forward_concatenate_pos == other.forward_concatenate_pos);
         }
@@ -90,7 +95,8 @@ namespace RouteOpt {
      * @param tolerance Acceptable difference between x and y (default is TOLERANCE).
      * @return true if the difference is less than the tolerance, false otherwise.
      */
-    constexpr bool equalFloat(double x, double y, double tolerance = TOLERANCE) {
+    constexpr bool equalFloat(double x, double y, double tolerance = TOLERANCE)
+    {
         return std::fabs(x - y) < tolerance;
     }
 
@@ -100,7 +106,8 @@ namespace RouteOpt {
      * @param x The number to check.
      * @return true if x is not an integer (has a fractional part), false otherwise.
      */
-    constexpr bool checkFrac(double x, double tolerance = TOLERANCE) {
+    constexpr bool checkFrac(double x, double tolerance = TOLERANCE)
+    {
         return !equalFloat(std::fmod(x, 1.), 0, tolerance);
     }
 
@@ -111,11 +118,15 @@ namespace RouteOpt {
      *
      * @param path1 The path of the directory.
      */
-    inline void mkDir(const std::string &path1) {
+    inline void mkDir(const std::string &path1)
+    {
         namespace fs = std::filesystem;
-        if (fs::exists(path1) && fs::is_directory(path1)) {
+        if (fs::exists(path1) && fs::is_directory(path1))
+        {
             std::cout << path1 + " already exists" << std::endl;
-        } else {
+        }
+        else
+        {
             fs::create_directory(path1);
             std::cout << path1 + " created" << std::endl;
         }
@@ -126,9 +137,11 @@ namespace RouteOpt {
      *
      * Provides a templated static function to time any callable object's execution.
      */
-    struct TimeSetter {
-        template<typename Func, typename... Args>
-        static double measure(Func f, Args &&... args) {
+    struct TimeSetter
+    {
+        template <typename Func, typename... Args>
+        static double measure(Func f, Args &&...args)
+        {
             auto start = std::chrono::high_resolution_clock::now();
             f(std::forward<Args>(args)...);
             auto end = std::chrono::high_resolution_clock::now();
@@ -142,16 +155,19 @@ namespace RouteOpt {
      * Wraps a function call in a try-catch block to catch and report any exceptions,
      * then exits the program in case of an error.
      */
-#define SAFE_EIGEN(func) \
-try { \
-    func; \
-} catch (const std::exception &e) { \
-    std::ostringstream oss; \
-    oss << "\x1b[91mError in file " << __FILE__ \
-        << " at line " << __LINE__ << ": " << e.what() << "\x1b[0m"; \
-    std::cerr << oss.str() << std::endl; \
-    std::exit(EXIT_FAILURE); \
-}
+#define SAFE_EIGEN(func)                                                 \
+    try                                                                  \
+    {                                                                    \
+        func;                                                            \
+    }                                                                    \
+    catch (const std::exception &e)                                      \
+    {                                                                    \
+        std::ostringstream oss;                                          \
+        oss << "\x1b[91mError in file " << __FILE__                      \
+            << " at line " << __LINE__ << ": " << e.what() << "\x1b[0m"; \
+        std::cerr << oss.str() << std::endl;                             \
+        std::exit(EXIT_FAILURE);                                         \
+    }
 
     /**
      * @brief Prints a formatted message with the elapsed time.
@@ -159,7 +175,8 @@ try { \
      * @param message A custom message to print.
      * @param time The elapsed time in seconds.
      */
-    inline void printTimeMessage(const std::string &message, double time) {
+    inline void printTimeMessage(const std::string &message, double time)
+    {
         std::ios init(nullptr);
         init.copyfmt(std::cout);
         std::cout << message << std::fixed << std::setprecision(2) << " time= " << time << " s." << std::endl;
@@ -171,7 +188,8 @@ try { \
      *
      * @param message The headline text.
      */
-    inline void printHeadLines(const std::string &message) {
+    inline void printHeadLines(const std::string &message)
+    {
         std::cout << " ****** " << message << " ****** " << std::endl;
     }
 
@@ -181,18 +199,21 @@ try { \
      * The GlobTimer starts upon instantiation and provides methods to report or retrieve
      * the elapsed time.
      */
-    struct GlobTimer {
+    struct GlobTimer
+    {
         std::chrono::time_point<std::chrono::high_resolution_clock> start;
 
         // Constructor initializes the timer.
-        GlobTimer() {
+        GlobTimer()
+        {
             start = std::chrono::high_resolution_clock::now();
         }
 
         /**
          * @brief Reports the elapsed time to standard output.
          */
-        void report() const {
+        void report() const
+        {
             auto now = std::chrono::high_resolution_clock::now();
             double elapsed = std::chrono::duration<double>(now - start).count();
 
@@ -206,7 +227,8 @@ try { \
          *
          * @return Elapsed time since the timer started.
          */
-        [[nodiscard]] double getTime() const {
+        [[nodiscard]] double getTime() const
+        {
             return std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
         }
     };
@@ -221,7 +243,8 @@ try { \
      * @param decimals Number of decimal places (default is 1).
      * @return The rounded value.
      */
-    inline double roundTo(double value, int decimals = 1) {
+    inline double roundTo(double value, int decimals = 1)
+    {
         double factor = std::pow(10.0, decimals);
         return std::round(value * factor) / factor;
     }
@@ -229,7 +252,13 @@ try { \
     /**
      * @brief Enumeration for different error and logging types.
      */
-    enum class ErrorType { ERROR_EXIT, WARNING, DEBUG, REMIND };
+    enum class ErrorType
+    {
+        ERROR_EXIT,
+        WARNING,
+        DEBUG,
+        REMIND
+    };
 
     /**
      * @brief Logs a message with detailed context information.
@@ -243,19 +272,27 @@ try { \
      * @param line The line number.
      * @param func The function name.
      */
-    template<ErrorType type>
-    void logMessage(const std::string &msg, const char *file, int line, const char *func) {
+    template <ErrorType type>
+    void logMessage(const std::string &msg, const char *file, int line, const char *func)
+    {
         std::ostringstream oss;
         oss << msg << " in function " << func << " at " << file << ":" << line;
 
-        if constexpr (type == ErrorType::ERROR_EXIT) {
+        if constexpr (type == ErrorType::ERROR_EXIT)
+        {
             std::cerr << "\x1b[91m[FATAL ERROR] " << oss.str() << "\x1b[0m" << std::endl;
             std::exit(EXIT_FAILURE);
-        } else if constexpr (type == ErrorType::WARNING) {
+        }
+        else if constexpr (type == ErrorType::WARNING)
+        {
             std::cerr << "\x1b[1;35m[WARNING] " << oss.str() << "\x1b[0m" << std::endl;
-        } else if constexpr (type == ErrorType::DEBUG) {
+        }
+        else if constexpr (type == ErrorType::DEBUG)
+        {
             std::cerr << "\x1b[94m[DEBUG] " << oss.str() << "\x1b[0m" << std::endl;
-        } else if constexpr (type == ErrorType::REMIND) {
+        }
+        else if constexpr (type == ErrorType::REMIND)
+        {
             std::cout << "\x1b[1;36m[REMIND] " << oss.str() << "\x1b[0m" << std::endl;
         }
     }
@@ -266,33 +303,33 @@ try { \
 #define PRINT_DEBUG(msg) logMessage<ErrorType::DEBUG>((msg), __FILE__, __LINE__, __func__);
 #define PRINT_REMIND(msg) logMessage<ErrorType::REMIND>((msg), __FILE__, __LINE__, __func__);
 
-
     /**
      * @brief Writes a log message to a specific log file.
      *
      * @param msg The message to log.
      */
-    inline void writeToLog(const std::string &msg, const std::string &instance_name, bool if_clear= true) {
-
-if(if_clear)
+    inline void writeToLog(const std::string &msg, const std::string &instance_name, bool if_clear = true)
     {
-    static std::ofstream logFile("dg/"+instance_name+".dg", std::ios::out);
-    logFile.close();
-    return;
-    }
 
+        if (if_clear)
+        {
+            std::ofstream logFile("dg/" + instance_name + ".dg", std::ios::out);
+            logFile.close();
+            return;
+        }
 
-    mkDir("dg");
-        static std::ofstream logFile("dg/"+instance_name+".dg", if_clear? (std::ios::out):(std::ios::app));
-        
-        if (!logFile.is_open()) {
+        mkDir("dg");
+        std::ofstream logFile("dg/" + instance_name + ".dg", if_clear ? (std::ios::out) : (std::ios::app));
+
+        if (!logFile.is_open())
+        {
             std::cerr << "Failed to open log file!" << std::endl;
             return;
         }
-        
+
         // Write message directly to log file
         logFile << msg << std::endl;
-        
+
         // Make sure it's written immediately
         logFile.close();
     }
