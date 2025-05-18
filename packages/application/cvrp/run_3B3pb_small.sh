@@ -5,7 +5,7 @@
 # Logs for the 3b variant go to /home/haoran/data_eda/3b_on_2bsetting
 
 INSTANCE_ROOT="/home/haoran/data_eda/instance2"
-LOG_ROOT="/home/haoran/data_eda/3b_3pb_exclude_exist2nd"
+LOG_ROOT="/home/haoran/data_eda/3b_3pb_v2_only_ex1"
 
 mkdir -p "$LOG_ROOT"
 
@@ -16,7 +16,7 @@ mkdir -p "$LOG_ROOT"
 total_runs=0
 # for sub in 120_200 150_200 180_200 200_200; do
 
-for sub in 120_200 150_200 180_200 200_200; do
+for sub in 120_200 150_200; do
     for file in "$INSTANCE_ROOT/$sub"/*.vrp; do
         (( total_runs++ ))
     done
@@ -40,7 +40,7 @@ run_count=0
 # Loop over each instance and run the 3b variant
 # for sub in 120_200 150_200 180_200 200_200; do
 
-for sub in 120_200 150_200 180_200 200_200; do
+for sub in 120_200 150_200; do
     for file in "$INSTANCE_ROOT/$sub"/*.vrp; do
         # Extract the optimal value ("opt = 31598.0")
         opt=$(grep -Eo "opt *= *[0-9]+(\.[0-9]+)?" "$file" | grep -Eo "[0-9]+(\.[0-9]+)?")

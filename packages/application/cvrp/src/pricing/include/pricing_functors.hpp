@@ -135,6 +135,7 @@ namespace RouteOpt::Application::CVRP {
                 bucket2.first[bucket2.second++] = all_label + i;
                 auto rc_return = new_label.rc + chg_cost_mat4_vertex[i][0];
                 if (adjust_brc_dual4_single_route.find(i) != adjust_brc_dual4_single_route.end()) {
+                    
                     rc_return += adjust_brc_dual4_single_route[i];
                 }
                 addPathByRC(rc_return, all_label + i, nullptr, num_col_generated_ub);

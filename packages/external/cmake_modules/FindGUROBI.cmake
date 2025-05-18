@@ -1,6 +1,6 @@
 # FindGUROBI.cmake
 
-# set(GUROBI_ROOT "/home/haoran/opt/gurobi1000/linux64")
+# set(GUROBI_ROOT "/home/haoran/opt/gurobi1201/linux64")
 set(GUROBI_ROOT "/home/haoran/opt/gurobi1201/linux64")
 
 if (EXISTS "${GUROBI_ROOT}")
