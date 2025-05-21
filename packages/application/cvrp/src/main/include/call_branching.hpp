@@ -165,7 +165,7 @@ namespace RouteOpt::Application::CVRP {
         int numCols;
         SAFE_SOLVER(node_solver.getNumCol(&numCols));
 
-        std::cout << "numCols=" << numCols << std::endl;
+        // std::cout << "numCols=" << numCols << std::endl;
 
 
         SAFE_SOLVER(node_solver.setEnvCrossOver(SOLVER_CROSSOVER_DOWN))
@@ -174,7 +174,7 @@ namespace RouteOpt::Application::CVRP {
         std::vector<int> solver_ind;
         std::vector<double> solver_val;
 
-        PRINT_REMIND("update model before obtain brc coef");
+        // PRINT_REMIND("update model before obtain brc coef");
         SAFE_SOLVER(node_solver.updateModel());
 
 
@@ -186,8 +186,8 @@ namespace RouteOpt::Application::CVRP {
 
         SAFE_SOLVER(node_solver.getNumRow(&num_row))
 
-            PRINT_REMIND("Add constraint: LP test first:" + std::to_string(solver_ind.front()) + " " +
-                std::to_string(solver_ind.back()) + " " + std::to_string(num_row));
+            // PRINT_REMIND("Add constraint: LP test first:" + std::to_string(solver_ind.front()) + " " +
+            //     std::to_string(solver_ind.back()) + " " + std::to_string(num_row));
 
         // {
         //     int numCols;
@@ -202,22 +202,22 @@ namespace RouteOpt::Application::CVRP {
         {
             int numCols;
             SAFE_SOLVER(node_solver.getNumCol(&numCols));
-            std::cerr << "  >> adding row with "
-                << solver_ind.size() << " nonzeros, col-range = ["
-                << solver_ind.front() << ".." << solver_ind.back() << "], numCols="
-                << numCols << ", sense='" << SOLVER_EQUAL << "'\n";
-            for (auto i : solver_ind) {
-                if (i < 0 || i >= numCols)
-                    std::cerr << "    !! invalid col index " << i << "\n";
-            }
-            if (solver_val.size() != solver_ind.size()) {
-                std::cerr << "    !! mismatch: vals=" << solver_val.size()
-                    << " vs inds=" << solver_ind.size() << "\n";
-            }
+            // std::cerr << "  >> adding row with "
+            //     << solver_ind.size() << " nonzeros, col-range = ["
+            //     << solver_ind.front() << ".." << solver_ind.back() << "], numCols="
+            //     << numCols << ", sense='" << SOLVER_EQUAL << "'\n";
+            // for (auto i : solver_ind) {
+            //     if (i < 0 || i >= numCols)
+            //         std::cerr << "    !! invalid col index " << i << "\n";
+            // }
+            // if (solver_val.size() != solver_ind.size()) {
+            //     std::cerr << "    !! mismatch: vals=" << solver_val.size()
+            //         << " vs inds=" << solver_ind.size() << "\n";
+            // }
         }
 
         TestingDetail::addBranchConstraint(solver_ind, solver_val, node_solver);
-        PRINT_REMIND("Finish adding constraint: LP test first");
+        // PRINT_REMIND("Finish adding constraint: LP test first");
 
         SAFE_SOLVER(node_solver.reoptimize(SOLVER_BARRIER))
             SAFE_SOLVER(node_solver.getObjVal(&tmp_val))
@@ -243,15 +243,15 @@ namespace RouteOpt::Application::CVRP {
     };
 
     inline void BbNode::obtainBrcMap() {
-        std::cout << "called?" << std::endl;
+        // std::cout << "called?" << std::endl;
         if (!edge_col_map.empty()) return;
-        std::cout << "obtainBrcMap() called" << std::endl;
+        // std::cout << "obtainBrcMap() called" << std::endl;
         // std::unordered_map<std::pair<int, int>, std::vector<std::pair<int, int> > > edge_col_map{}; //edge, col idx, cnt
         // print column size
-        std::cout << "cols size: " << cols.size() << std::endl;
+        // std::cout << "cols size: " << cols.size() << std::endl;
         int num_col;
         SAFE_SOLVER(solver.getNumCol(&num_col))
-            std::cout << "num_col=" << num_col << std::endl;
+            // std::cout << "num_col=" << num_col << std::endl;
         for (int i = 0; i < static_cast<int>(cols.size()); ++i) {
             const auto& c = cols[i].col_seq;
             if (c.size() == 1) {

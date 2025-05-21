@@ -2,7 +2,7 @@
 # launch_2bon3bsetting.sh
 # Starts run_exp_2bon3bsetting.sh under nohup, logs output, and saves the PID.
 
-LOGDIR="/home/haoran/data_eda/3b_3pb_v2_only_ex1/nohup"
+LOGDIR="/home/haoran/data_eda/3b_3pb_v5_only_ex1/nohup"
 mkdir -p "$LOGDIR"
 
 nohup bash run_3B3pb_small.sh \

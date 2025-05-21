@@ -376,11 +376,11 @@ namespace RouteOpt::Branching::CandidateSelector
             }
 
             // Sort available by cmap value in descending order
-            std::sort(available.begin(), available.end(),
-                      [&cmap](const BrCType &a, const BrCType &b)
-                      {
-                          return cmap.at(a) > cmap.at(b);
-                      });
+            // std::sort(available.begin(), available.end(),
+            //           [&cmap](const BrCType &a, const BrCType &b)
+            //           {
+            //               return cmap.at(a) > cmap.at(b);
+            //           });
 
             // Find the best two pairs that don't sum to 1
             std::vector<BrCType> chosen;
@@ -397,7 +397,7 @@ namespace RouteOpt::Branching::CandidateSelector
                     }
 
                     double sum = cmap.at(available[i]) + cmap.at(available[j]);
-                    if (std::abs(sum - 1.0) > 1e-9)
+                    if (std::abs(sum - 1.0) > 1e-3)
                     {
                         // Found a pair that doesn't sum to 1
                         chosen = {available[i], available[j]};

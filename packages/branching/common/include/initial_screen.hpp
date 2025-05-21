@@ -102,6 +102,8 @@ namespace RouteOpt::Branching {
 
         // ── DEBUG: print each selected candidate using PRINT_REMIND ──
         // ── DEBUG: serialize entire refBranchPair into one PRINT_REMIND ──
+        std::cout << "################## START BRANCHING ON THIS NODE ##################" << std::endl;
+        
         {
             std::ostringstream oss;
             oss << "[";
@@ -111,6 +113,7 @@ namespace RouteOpt::Branching {
                     oss << ", ";
             }
             oss << "]";
+            
             PRINT_REMIND("initialScreen refBranchPair = " + oss.str());
         }
 

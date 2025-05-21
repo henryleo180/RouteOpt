@@ -154,6 +154,7 @@ namespace RouteOpt::Application::CVRP {
 
 
             printInfoLabeling(iter, num_col, num_row, mt, spt, prior_value, ub, false);
+            // PRINT_REMIND("1st label print")
 
             if (if_possible_terminate_early) {
                 if (cg_mode == PRICING_LEVEL::LIGHT && num_col > LP_COL_FINAL_LIMIT *
@@ -207,6 +208,7 @@ namespace RouteOpt::Application::CVRP {
 
         BREAK:
             printInfoLabeling(iter, num_col, num_row, mt, spt, prior_value, ub, true);
+            // PRINT_REMIND("2nd label print")
             break;
         }
     }
@@ -346,6 +348,7 @@ namespace RouteOpt::Application::CVRP {
 
 
             printInfoLabeling(iter, num_col, num_row, mt, spt, prior_value, ub, false);
+            // PRINT_REMIND("3rd label print")
 
             SAFE_SOLVER(node->refSolver().getDual(0, num_row, pi4_labeling.data()))
 
@@ -388,6 +391,7 @@ namespace RouteOpt::Application::CVRP {
 
         BREAK:
             printInfoLabeling(iter, num_col, num_row, mt, spt, prior_value, ub, true);
+            // PRINT_REMIND("4th label print")
             break;
         }
         glob_timer.report();
