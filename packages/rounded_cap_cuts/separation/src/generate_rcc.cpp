@@ -8,13 +8,13 @@
 
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 #include "route_opt_macro.hpp"
 #include "rcc_macro.hpp"
 #include "rcc_separation_macro.hpp"
 #include "rcc_separation_controller.hpp"
 #include "capsep.h"
 #include "cnstrmgr.h"
-#include "rank1_macro.hpp"
 
 
 namespace RouteOpt::RCCs::Separation {

@@ -1,9 +1,11 @@
-/* 
+/*
  * Copyright (c) 2025 Zhengzhong (Ricky) You.
  * All rights reserved.
  * Software: RouteOpt
  * License: GPL-3.0
  */
+
+#include <unordered_set>
 
 #include "rank1_rc_controller.hpp"
 #include "route_opt_macro.hpp"
@@ -54,7 +56,7 @@ namespace RouteOpt::Rank1Cuts::RCGetter {
                                                                     r1c.info_r1c.second);
             rank1_dual[num] = pi_vector[r1c.idx_r1c];
             cg_r1c_denominator[num] = denominator;
-            revised_rank1_dual[num] = rank1_dual[num]; //reserved for future sue
+            revised_rank1_dual[num] = rank1_dual[num]; //reserved for future use
 
             for (int j = 0; j < r1c.info_r1c.first.size(); ++j) {
                 int n = r1c.info_r1c.first[j];
@@ -68,13 +70,21 @@ namespace RouteOpt::Rank1Cuts::RCGetter {
                     cg_v_v_use_states[k][n][num] = add;
                 }
             }
-            for (auto &m: r1c.arc_mem) {
-                cg_v_cut_map[m.second].v_union_mem.emplace_back(num);
-                cg_v_cut_map[m.second].union_map.set(num);
-                for (auto &k: m.first) {
-                    cg_v_v_use_states[k][m.second][num] = 0;
+
+
+            for (auto [fst, snd]: r1c.arc_mem) {
+                if (!cg_v_cut_map[fst].union_map.test(num)) {
+                    cg_v_cut_map[fst].union_map.set(num);
+                    cg_v_cut_map[fst].v_union_mem.emplace_back(num);
                 }
+                if (!cg_v_cut_map[snd].union_map.test(num)) {
+                    cg_v_cut_map[snd].union_map.set(num);
+                    cg_v_cut_map[snd].v_union_mem.emplace_back(num);
+                }
+                if (cg_v_v_use_states[fst][snd][num] == RANK1_INVALID) cg_v_v_use_states[fst][snd][num] = 0;
+                if (cg_v_v_use_states[snd][fst][num] == RANK1_INVALID) cg_v_v_use_states[snd][fst][num] = 0;
             }
+
             ++num;
         }
     }
