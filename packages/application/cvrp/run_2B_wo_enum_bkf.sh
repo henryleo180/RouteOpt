@@ -1,25 +1,43 @@
 #!/bin/bash
+
+mkdir build
+
+cd build
+
+cmake -DCMAKE_BUILD_TYPE=Release ..
+
+make -j$(nproc)
+
+cd ..
+
 # run_experiments.sh
 # This script runs multiple CVRP experiments over VRP instances organized in subdirectories.
-
-# Documentation for this script:
-# Two Branching
-# Disable enumeration
-# Disable BKF
-# 3PB setting: 30/6/6/6
-# Disable 1 approximation in call branching
+# Instances live under /home/haoran/data_eda/instance2/{120_200,150_200,180_200,200_200}
+# Logs for the 3b variant go to /home/haoran/data_eda/3b_on_2bsetting
 
 INSTANCE_ROOT="/home/haoran/data_eda/instance2"
-LOG_ROOT="/home/haoran/data_eda/2b_wo_enum_bkf"
+LOG_ROOT="/home/haoran/data_eda/2b_wo_v6"
+BIN_STORE="/home/haoran/data_eda/bin_store"  # New directory to store the timestamped executable
 
-# mkdir -p "$LOG_ROOT"
-
-# Create log directory if it doesn't exist
+# Create necessary directories
 mkdir -p "$LOG_ROOT"
+mkdir -p "$BIN_STORE"
+
+# Create a timestamp for this batch of experiments
+timestamp=$(date +"%Y%m%d_%H%M%S")
+
+# Copy the current executable to the bin_store with timestamp
+cvrp_copy="$BIN_STORE/cvrp_${timestamp}"
+cp ./bin/cvrp "$cvrp_copy"
+
+# Make sure it's executable
+chmod +x "$cvrp_copy"
+
+echo "Created executable copy: $cvrp_copy"
 
 # Count total runs (1 experiment per file for the 3b variant)
 total_runs=0
-for sub in 120_200 150_200 180_200 200_200; do
+for sub in 120_200 150_200; do
     for file in "$INSTANCE_ROOT/$sub"/*.vrp; do
         (( total_runs++ ))
     done
@@ -41,7 +59,7 @@ show_progress() {
 run_count=0
 
 # Loop over each instance and run the 3b variant
-for sub in 120_200 150_200 180_200 200_200; do
+for sub in 120_200 150_200; do
     for file in "$INSTANCE_ROOT/$sub"/*.vrp; do
         # Extract the optimal value ("opt = 31598.0")
         opt=$(grep -Eo "opt *= *[0-9]+(\.[0-9]+)?" "$file" | grep -Eo "[0-9]+(\.[0-9]+)?")
@@ -54,11 +72,12 @@ for sub in 120_200 150_200 180_200 200_200; do
         u=$(awk -v opt="$opt" 'BEGIN { printf "%.0f", opt + 1 }')
 
         base=$(basename "$file" .vrp)
-
-        # Run the 3b variant
+        
+        # Run the experiment using the copied executable
         (( run_count++ ))
         show_progress "$run_count"
-        ./bin/cvrp "$file" -u "$u" > "$LOG_ROOT/output_2bwoeb_${base}.txt" 2>&1
+        "$cvrp_copy" "$file" -u "$u" > "$LOG_ROOT/output_2bwo_${base}.txt" 2>&1
     done
 done
 
+echo -e "\nExperiments completed. Executable copy used: $cvrp_copy"
