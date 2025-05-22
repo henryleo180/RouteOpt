@@ -149,6 +149,10 @@ namespace RouteOpt::Application::CVRP {
             return demand;
         }
 
+        auto &getDisMat() const {
+            return cost_mat4_vertex;
+        }
+
         //refers; allow for modification
         Solver &refSolver() {
             return solver;
@@ -233,7 +237,8 @@ namespace RouteOpt::Application::CVRP {
 
         void runColumnGenerationType(BbNode *node, PRICING_LEVEL cg_mode, double time_limit,
                                      bool if_possible_terminate_early,
-                                     bool if_fix_row, bool if_fix_meet_point, bool if_allow_delete_col);
+                                     bool if_fix_row, bool if_fix_meet_point, bool if_allow_delete_col,
+                                     bool if_last_cg_type, bool if_stabilization);
 
         virtual void checkSolutionFeasibility(const std::vector<double> &X,
                                               const std::vector<SequenceInfo> &cols,
@@ -248,12 +253,16 @@ namespace RouteOpt::Application::CVRP {
                                         Solver &solver) {
         };
 
-        void callInspection(BbNode *node);
+        void callInspection(BbNode *node, double &time_4_pure_pricing);
 
-        void callLabeling(BbNode *node, double labeling_time_limit);
+        void callLabeling(BbNode *node, double labeling_time_limit, double &time_4_pure_pricing);
 
-        void callPricing(BbNode *node, double labeling_time_limit);
+        void callPricing(BbNode *node, double labeling_time_limit, double &time_4_pure_pricing);
     };
+
+    namespace ConstructInitialColumnsDetail {
+        void constructInitialColumns(const CVRPSolver &cvrp_solver, BbNode *node);
+    }
 }
 
 #include "call_branching.hpp"

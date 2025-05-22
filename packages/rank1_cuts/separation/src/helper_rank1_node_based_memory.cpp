@@ -43,7 +43,7 @@ namespace RouteOpt::Rank1Cuts::Separation {
             }
         }
         std::transform(num_vis_times.begin(), num_vis_times.end(), num_vis_times.begin(),
-                  [denominator](const int x) { return static_cast<int>(x / denominator); });
+                       [denominator](const int x) { return static_cast<int>(x / denominator); });
         cutLong mem_long = 0;
         int num = 0;
         for (auto &route: sol) {
@@ -284,6 +284,24 @@ namespace RouteOpt::Rank1Cuts::Separation {
         }
     }
 
+    void translateMemInt2MemPair(const std::vector<int> &cut_info, const std::unordered_set<int> &mem_set,
+                                 std::vector<std::pair<int, int> > &mem_pair) {
+        std::vector<int> mem(mem_set.begin(), mem_set.end());
+        std::sort(mem.begin(), mem.end());
+        //write mem_pair
+        mem_pair.clear();
+        for (int i = 0; i < static_cast<int>(mem.size()) - 1; ++i) {
+            for (int j = i + 1; j < static_cast<int>(mem.size()); ++j) {
+                mem_pair.emplace_back(mem[i], mem[j]);
+            }
+        }
+        for (auto &i: cut_info) {
+            for (auto &j: mem) {
+                mem_pair.emplace_back(i, j); //from cut to mem;
+            }
+        }
+    }
+
     void constructMemoryVertexBased(const Rank1CutsDataShared &rank1CutsDataShared, DataShared &sharedData,
                                     const PRICING_HARD_LEVEL pricing_hard_level, Solver &solver,
                                     std::unordered_map<std::vector<int>, std::vector<std::vector<int> >,
@@ -299,7 +317,12 @@ namespace RouteOpt::Rank1Cuts::Separation {
             if (c.idx_r1c != INITIAL_IDX_R1C) {
                 auto &arc_mem = c.arc_mem;
                 for (auto &m: arc_mem) {
+                    mem.emplace(m.first);
                     mem.emplace(m.second);
+                }
+                //rm cut vertex
+                for (auto &i: c.info_r1c.first) {
+                    mem.erase(i);
                 }
             }
             bool if_suc;
@@ -314,12 +337,11 @@ namespace RouteOpt::Rank1Cuts::Separation {
                                  if_suc);
             }
             if (if_suc) {
-                auto &arc_mem = c.arc_mem;
-                arc_mem.assign(mem.size(), std::make_pair(tmp_fill, 0));
-                int cnt = 0;
-                for (auto &m: mem) {
-                    arc_mem[cnt++].second = m;
+                for (auto &i: c.info_r1c.first) {
+                    if (mem.find(i) != mem.end())
+                        THROW_RUNTIME_ERROR("mem should not have cut vertex!");
                 }
+                translateMemInt2MemPair(c.info_r1c.first, mem, c.arc_mem);
                 ++it;
             } else {
                 it = cuts.erase(it);
@@ -558,7 +580,7 @@ namespace RouteOpt::Rank1Cuts::Separation {
         }
         plan.resize(mem_other.size());
         std::transform(mem_other.begin(), mem_other.end(), plan.begin(),
-                  [](const auto &i) { return i.second; });
+                       [](const auto &i) { return i.second; });
     QUIT:;
     }
 
