@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

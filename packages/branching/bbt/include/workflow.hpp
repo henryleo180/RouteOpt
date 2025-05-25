@@ -185,6 +185,9 @@ namespace RouteOpt::Branching::BBT {
             // Update the global bounds based on the current tree state.
             updateBounds();
         }
+
+
+
     }
 } // namespace RouteOpt::Branching::BBT
 

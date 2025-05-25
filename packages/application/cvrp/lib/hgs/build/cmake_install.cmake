@@ -1,4 +1,4 @@
-# Install script for directory: /home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs
+# Install script for directory: /blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,7 +29,7 @@ endif()
 
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
+  set(CMAKE_INSTALL_SO_NO_EXE "0")
 endif()
 
 # Is this installation the result of a crosscompile?
@@ -43,25 +43,25 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so")
+  if(EXISTS "$ENV{DESTDIR}/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so"
+         FILE "$ENV{DESTDIR}/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so"
          RPATH "")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so")
+   "/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib" TYPE SHARED_LIBRARY FILES "/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/build/libhgscvrp.so")
-  if(EXISTS "$ENV{DESTDIR}/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so")
+  file(INSTALL DESTINATION "/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib" TYPE SHARED_LIBRARY FILES "/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/build/libhgscvrp.so")
+  if(EXISTS "$ENV{DESTDIR}/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/lib/libhgscvrp.so")
     endif()
   endif()
 endif()
@@ -70,15 +70,9 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/build/CMakeFiles/hgscvrp.dir/install-cxx-module-bmi-RelWithDebInfo.cmake" OPTIONAL)
+  include("/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/build/CMakeFiles/hgscvrp.dir/install-cxx-module-bmi-RelWithDebInfo.cmake" OPTIONAL)
 endif()
 
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/build/install_local_manifest.txt"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
-endif()
 if(CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_COMPONENT MATCHES "^[a-zA-Z0-9_.+-]+$")
     set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
@@ -92,6 +86,8 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/haoran/solver/RouteOpt/packages/application/cvrp/lib/hgs/build/${CMAKE_INSTALL_MANIFEST}"
+  string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+  file(WRITE "/blue/yu.yang1/haoran.liu/solver/RouteOpt/packages/application/cvrp/lib/hgs/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

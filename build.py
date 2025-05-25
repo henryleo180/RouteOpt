@@ -7,7 +7,7 @@ import subprocess
 
 
 def run_cmd(cmd, cwd=None):
-    proc = subprocess.run(cmd, shell=True, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    proc = subprocess.run(cmd, shell=True, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
     if proc.returncode != 0:
         print(f"Error in: {cmd}\n{proc.stderr}")
         sys.exit(1)
