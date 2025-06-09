@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf build bin
+# rm -rf build bin
 
 mkdir build
 
@@ -12,4 +12,6 @@ make -j$(nproc)
 
 cd ..
 
-./bin/cvrp instance/P-n20-k2.vrp -u 217
+# ./bin/cvrp instance/P-n20-k2.vrp -u 217
+
+./bin/cvrp /blue/yu.yang1/haoran.liu/instance2/120_200/CVRP_120_101.vrp -u 20009 2>&1 | tee 120_101.txt

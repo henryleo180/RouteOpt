@@ -164,7 +164,18 @@ namespace RouteOpt::Branching::BBT {
             // Update the global bounds based on the current tree state.
             updateBounds();
         }
-    }
+        PRINT_REMIND("OUTPUT THE FINAL TREE IMPROVEMENT");
+        // Print the final tree details after solving.
+        std::cout << "branching_history.increase_depth: [";
+        for(size_t i = 0; i < branching_history.increase_depth.size(); ++i) {
+            if(i > 0) std::cout << ", ";
+            std::cout << "((" << branching_history.increase_depth[i].first.first << ","
+                    << branching_history.increase_depth[i].first.second << "),("
+                    << branching_history.increase_depth[i].second.first << ","
+                    << branching_history.increase_depth[i].second.second << "))";
+        }
+        std::cout << "]" << std::endl;
+            }
 } // namespace RouteOpt::Branching::BBT
 
 #endif // ROUTE_OPT_WORKFLOW_HPP

@@ -91,9 +91,9 @@ namespace RouteOpt::Application::CVRP {
     constexpr int NODE_MEMORY_ROUTE_LENGTH{16};
 
     enum class NUM_TESTING {
-        PHASE0 = 30,
-        PHASE1 = 3,
-        PHASE2 = 1,
+        PHASE0 = 100,
+        PHASE1 = 100,
+        PHASE2 = 100,
         PHASE3 = 1
     };
 

@@ -392,6 +392,12 @@ namespace RouteOpt::Application::CVRP {
             return;
         }
 
+        // Only cutting in the root node
+        PRINT_REMIND("Only cutting in the root node")
+        if (!node->getIfRootNode() ) {
+            return;
+        }
+
 
         if (pricing_controller.getAverageRouteLength() >
             NODE_MEMORY_ROUTE_LENGTH && CuttingDetail::if_node_memory == true && node->getIfRootNode()) {

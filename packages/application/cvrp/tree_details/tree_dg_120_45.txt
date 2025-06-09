@@ -1,0 +1,2611 @@
+================================================================================
+Tree Information Details for CVRP_120_45
+================================================================================
+Total tree sections found: 137
+
+Tree Section 1 (idx=0):
+  Tree Size: 0
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 0.000000
+  Final LB (from EXACT pricing): 22094.600000
+  UB: 22138.000000
+  Gap: 0.1960%
+  Value: 0.0
+  Branches (0):
+----------------------------------------
+
+Tree Section 2 (idx=1):
+  Tree Size: 1
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22094.600000
+  Final LB (from EXACT pricing): 22106.800000
+  UB: 22138.000000
+  Gap: 0.1409%
+  Value: 22094.6
+  Branches (1):
+    1. Edge 41-58: +
+----------------------------------------
+
+Tree Section 3 (idx=2):
+  Tree Size: 2
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22094.600000
+  Final LB (from EXACT pricing): 22104.800000
+  UB: 22138.000000
+  Gap: 0.1500%
+  Value: 22094.6
+  Branches (1):
+    1. Edge 41-58: -
+----------------------------------------
+
+Tree Section 4 (idx=3):
+  Tree Size: 5
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22106.800000
+  Final LB (from EXACT pricing): 22116.200000
+  UB: 22138.000000
+  Gap: 0.0985%
+  Value: 22106.8
+  Branches (2):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+----------------------------------------
+
+Tree Section 5 (idx=4):
+  Tree Size: 6
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22106.800000
+  Final LB (from EXACT pricing): 22113.100000
+  UB: 22138.000000
+  Gap: 0.1125%
+  Value: 22106.8
+  Branches (2):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+----------------------------------------
+
+Tree Section 6 (idx=5):
+  Tree Size: 3
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22104.800000
+  Final LB (from EXACT pricing): 22123.400000
+  UB: 22138.000000
+  Gap: 0.0659%
+  Value: 22104.8
+  Branches (2):
+    1. Edge 41-58: -
+    2. Edge 41-112: +
+----------------------------------------
+
+Tree Section 7 (idx=6):
+  Tree Size: 4
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22104.800000
+  Final LB (from EXACT pricing): 22108.600000
+  UB: 22138.000000
+  Gap: 0.1328%
+  Value: 22104.8
+  Branches (2):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+----------------------------------------
+
+Tree Section 8 (idx=7):
+  Tree Size: 27
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22123.400000
+  Final LB (from EXACT pricing): 22129.500000
+  UB: 22138.000000
+  Gap: 0.0384%
+  Value: 22123.4
+  Branches (3):
+    1. Edge 41-58: -
+    2. Edge 41-112: +
+    3. Edge 1-65: +
+----------------------------------------
+
+Tree Section 9 (idx=8):
+  Tree Size: 28
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22123.400000
+  Final LB (from EXACT pricing): 22135.400000
+  UB: 22138.000000
+  Gap: 0.0117%
+  Value: 22123.4
+  Branches (3):
+    1. Edge 41-58: -
+    2. Edge 41-112: +
+    3. Edge 1-65: -
+----------------------------------------
+
+Tree Section 10 (idx=9):
+  Tree Size: 7
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22108.600000
+  Final LB (from EXACT pricing): 22127.300000
+  UB: 22138.000000
+  Gap: 0.0483%
+  Value: 22108.6
+  Branches (3):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: +
+----------------------------------------
+
+Tree Section 11 (idx=10):
+  Tree Size: 8
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22108.600000
+  Final LB (from EXACT pricing): 22111.600000
+  UB: 22138.000000
+  Gap: 0.1193%
+  Value: 22108.6
+  Branches (3):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+----------------------------------------
+
+Tree Section 12 (idx=11):
+  Tree Size: 15
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22116.200000
+  Final LB (from EXACT pricing): 22183.300000
+  UB: 22138.000000
+  Gap: -0.2046%
+  Value: 22116.2
+  Branches (3):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: +
+----------------------------------------
+
+Tree Section 13 (idx=12):
+  Tree Size: 14
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22116.200000
+  Final LB (from EXACT pricing): 22117.800000
+  UB: 22138.000000
+  Gap: 0.0912%
+  Value: 22116.2
+  Branches (3):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+----------------------------------------
+
+Tree Section 14 (idx=13):
+  Tree Size: 11
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22113.100000
+  Final LB (from EXACT pricing): 22120.700000
+  UB: 22138.000000
+  Gap: 0.0781%
+  Value: 22113.1
+  Branches (3):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: +
+----------------------------------------
+
+Tree Section 15 (idx=14):
+  Tree Size: 12
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22113.100000
+  Final LB (from EXACT pricing): 22135.300000
+  UB: 22138.000000
+  Gap: 0.0122%
+  Value: 22113.1
+  Branches (3):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: -
+----------------------------------------
+
+Tree Section 16 (idx=15):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22127.300000
+  Final LB (from EXACT pricing): 22156.900000
+  UB: 22138.000000
+  Gap: -0.0854%
+  Value: 22127.3
+  Branches (4):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: +
+    4. Edge 49-107: +
+----------------------------------------
+
+Tree Section 17 (idx=16):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22127.300000
+  Final LB (from EXACT pricing): 22129.600000
+  UB: 22138.000000
+  Gap: 0.0379%
+  Value: 22127.3
+  Branches (4):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: +
+    4. Edge 49-107: -
+----------------------------------------
+
+Tree Section 18 (idx=17):
+  Tree Size: 9
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22111.600000
+  Final LB (from EXACT pricing): 22114.300000
+  UB: 22138.000000
+  Gap: 0.1071%
+  Value: 22111.6
+  Branches (4):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+----------------------------------------
+
+Tree Section 19 (idx=18):
+  Tree Size: 10
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22111.600000
+  Final LB (from EXACT pricing): 22121.500000
+  UB: 22138.000000
+  Gap: 0.0745%
+  Value: 22111.6
+  Branches (4):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+----------------------------------------
+
+Tree Section 20 (idx=19):
+  Tree Size: 13
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22114.300000
+  Final LB (from EXACT pricing): 22148.200000
+  UB: 22138.000000
+  Gap: -0.0461%
+  Value: 22114.3
+  Branches (5):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: +
+----------------------------------------
+
+Tree Section 21 (idx=20):
+  Tree Size: 12
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22114.300000
+  Final LB (from EXACT pricing): 22114.800000
+  UB: 22138.000000
+  Gap: 0.1048%
+  Value: 22114.3
+  Branches (5):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+----------------------------------------
+
+Tree Section 22 (idx=21):
+  Tree Size: 21
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22121.500000
+  Final LB (from EXACT pricing): 22135.200000
+  UB: 22138.000000
+  Gap: 0.0126%
+  Value: 22121.5
+  Branches (5):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: +
+----------------------------------------
+
+Tree Section 23 (idx=22):
+  Tree Size: 22
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22121.500000
+  Final LB (from EXACT pricing): 22128.100000
+  UB: 22138.000000
+  Gap: 0.0447%
+  Value: 22121.5
+  Branches (5):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: -
+----------------------------------------
+
+Tree Section 24 (idx=23):
+  Tree Size: 21
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22120.700000
+  Final LB (from EXACT pricing): 22128.600000
+  UB: 22138.000000
+  Gap: 0.0425%
+  Value: 22120.7
+  Branches (4):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: +
+    4. Edge 3-61: +
+----------------------------------------
+
+Tree Section 25 (idx=24):
+  Tree Size: 22
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22120.700000
+  Final LB (from EXACT pricing): 22137.100000
+  UB: 22138.000000
+  Gap: 0.0041%
+  Value: 22120.7
+  Branches (4):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: +
+    4. Edge 3-61: -
+----------------------------------------
+
+Tree Section 26 (idx=25):
+  Tree Size: 9
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.300000
+  Final LB (from EXACT pricing): 22139.700000
+  UB: 22137.000000
+  Gap: -0.0122%
+  Value: 22135.3
+  Branches (4):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: -
+    4. Edge 30-110: +
+----------------------------------------
+
+Tree Section 27 (idx=26):
+  Tree Size: 8
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.300000
+  Final LB (from EXACT pricing): 22169.700000
+  UB: 22137.000000
+  Gap: -0.1477%
+  Value: 22135.3
+  Branches (4):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: -
+    4. Edge 30-110: -
+----------------------------------------
+
+Tree Section 28 (idx=27):
+  Tree Size: 13
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22114.800000
+  Final LB (from EXACT pricing): 22117.800000
+  UB: 22138.000000
+  Gap: 0.0912%
+  Value: 22114.8
+  Branches (6):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+----------------------------------------
+
+Tree Section 29 (idx=28):
+  Tree Size: 14
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22114.800000
+  Final LB (from EXACT pricing): 22122.100000
+  UB: 22138.000000
+  Gap: 0.0718%
+  Value: 22114.8
+  Branches (6):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+----------------------------------------
+
+Tree Section 30 (idx=29):
+  Tree Size: 17
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22117.800000
+  Final LB (from EXACT pricing): 22120.900000
+  UB: 22138.000000
+  Gap: 0.0772%
+  Value: 22117.8
+  Branches (7):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+----------------------------------------
+
+Tree Section 31 (idx=30):
+  Tree Size: 18
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22117.800000
+  Final LB (from EXACT pricing): 22129.900000
+  UB: 22138.000000
+  Gap: 0.0366%
+  Value: 22117.8
+  Branches (7):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: -
+----------------------------------------
+
+Tree Section 32 (idx=31):
+  Tree Size: 23
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22122.100000
+  Final LB (from EXACT pricing): 22158.700000
+  UB: 22138.000000
+  Gap: -0.0935%
+  Value: 22122.1
+  Branches (7):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: +
+----------------------------------------
+
+Tree Section 33 (idx=32):
+  Tree Size: 22
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22122.100000
+  Final LB (from EXACT pricing): 22123.100000
+  UB: 22138.000000
+  Gap: 0.0673%
+  Value: 22122.1
+  Branches (7):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+----------------------------------------
+
+Tree Section 34 (idx=33):
+  Tree Size: 15
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22117.800000
+  Final LB (from EXACT pricing): 22130.300000
+  UB: 22138.000000
+  Gap: 0.0348%
+  Value: 22117.8
+  Branches (4):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: +
+----------------------------------------
+
+Tree Section 35 (idx=34):
+  Tree Size: 16
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22117.800000
+  Final LB (from EXACT pricing): 22120.600000
+  UB: 22138.000000
+  Gap: 0.0786%
+  Value: 22117.8
+  Branches (4):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+----------------------------------------
+
+Tree Section 36 (idx=35):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22130.300000
+  Final LB (from EXACT pricing): 22180.700000
+  UB: 22138.000000
+  Gap: -0.1929%
+  Value: 22130.3
+  Branches (5):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: +
+    5. Edge 37-112: +
+----------------------------------------
+
+Tree Section 37 (idx=36):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22130.300000
+  Final LB (from EXACT pricing): 22135.000000
+  UB: 22138.000000
+  Gap: 0.0136%
+  Value: 22130.3
+  Branches (5):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: +
+    5. Edge 37-112: -
+----------------------------------------
+
+Tree Section 38 (idx=37):
+  Tree Size: 19
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22120.600000
+  Final LB (from EXACT pricing): 22131.100000
+  UB: 22138.000000
+  Gap: 0.0312%
+  Value: 22120.6
+  Branches (5):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: +
+----------------------------------------
+
+Tree Section 39 (idx=38):
+  Tree Size: 20
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22120.600000
+  Final LB (from EXACT pricing): 22124.700000
+  UB: 22138.000000
+  Gap: 0.0601%
+  Value: 22120.6
+  Branches (5):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: -
+----------------------------------------
+
+Tree Section 40 (idx=39):
+  Tree Size: 21
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22120.900000
+  Final LB (from EXACT pricing): 22141.400000
+  UB: 22138.000000
+  Gap: -0.0154%
+  Value: 22120.9
+  Branches (8):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: +
+----------------------------------------
+
+Tree Section 41 (idx=40):
+  Tree Size: 20
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22120.900000
+  Final LB (from EXACT pricing): 22122.100000
+  UB: 22138.000000
+  Gap: 0.0718%
+  Value: 22120.9
+  Branches (8):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+----------------------------------------
+
+Tree Section 42 (idx=41):
+  Tree Size: 31
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22129.900000
+  Final LB (from EXACT pricing): 22134.800000
+  UB: 22138.000000
+  Gap: 0.0145%
+  Value: 22129.9
+  Branches (8):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: -
+    8. Edge 47-84: +
+----------------------------------------
+
+Tree Section 43 (idx=42):
+  Tree Size: 32
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22129.900000
+  Final LB (from EXACT pricing): 22140.100000
+  UB: 22138.000000
+  Gap: -0.0095%
+  Value: 22129.9
+  Branches (8):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: -
+    8. Edge 47-84: -
+----------------------------------------
+
+Tree Section 44 (idx=43):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22131.100000
+  Final LB (from EXACT pricing): 22166.800000
+  UB: 22138.000000
+  Gap: -0.1301%
+  Value: 22131.1
+  Branches (6):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: +
+    6. Edge 63-105: +
+----------------------------------------
+
+Tree Section 45 (idx=44):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22131.100000
+  Final LB (from EXACT pricing): 22132.600000
+  UB: 22138.000000
+  Gap: 0.0244%
+  Value: 22131.1
+  Branches (6):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: +
+    6. Edge 63-105: -
+----------------------------------------
+
+Tree Section 46 (idx=45):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22124.700000
+  Final LB (from EXACT pricing): 22161.500000
+  UB: 22138.000000
+  Gap: -0.1062%
+  Value: 22124.7
+  Branches (6):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: -
+    6. Edge 17-74: +
+----------------------------------------
+
+Tree Section 47 (idx=46):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22124.700000
+  Final LB (from EXACT pricing): 22127.100000
+  UB: 22138.000000
+  Gap: 0.0492%
+  Value: 22124.7
+  Branches (6):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: -
+    6. Edge 17-74: -
+----------------------------------------
+
+Tree Section 48 (idx=47):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22128.600000
+  Final LB (from EXACT pricing): 22184.100000
+  UB: 22138.000000
+  Gap: -0.2082%
+  Value: 22128.6
+  Branches (5):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: +
+    4. Edge 3-61: +
+    5. Edge 73-78: +
+----------------------------------------
+
+Tree Section 49 (idx=48):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22128.600000
+  Final LB (from EXACT pricing): 22131.100000
+  UB: 22138.000000
+  Gap: 0.0312%
+  Value: 22128.6
+  Branches (5):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: +
+    4. Edge 3-61: +
+    5. Edge 73-78: -
+----------------------------------------
+
+Tree Section 50 (idx=49):
+  Tree Size: 23
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22122.100000
+  Final LB (from EXACT pricing): 22128.100000
+  UB: 22138.000000
+  Gap: 0.0447%
+  Value: 22122.1
+  Branches (9):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: +
+----------------------------------------
+
+Tree Section 51 (idx=50):
+  Tree Size: 24
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22122.100000
+  Final LB (from EXACT pricing): 22124.100000
+  UB: 22138.000000
+  Gap: 0.0628%
+  Value: 22122.1
+  Branches (9):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+----------------------------------------
+
+Tree Section 52 (idx=51):
+  Tree Size: 13
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.200000
+  Final LB (from EXACT pricing): 22140.700000
+  UB: 22137.000000
+  Gap: -0.0167%
+  Value: 22135.2
+  Branches (6):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: +
+    6. Edge 6-80: +
+----------------------------------------
+
+Tree Section 53 (idx=52):
+  Tree Size: 12
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.200000
+  Final LB (from EXACT pricing): 22140.600000
+  UB: 22137.000000
+  Gap: -0.0163%
+  Value: 22135.2
+  Branches (6):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: +
+    6. Edge 6-80: -
+----------------------------------------
+
+Tree Section 54 (idx=53):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22128.100000
+  Final LB (from EXACT pricing): 22146.800000
+  UB: 22138.000000
+  Gap: -0.0398%
+  Value: 22128.1
+  Branches (6):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: -
+    6. Edge 58-84: +
+----------------------------------------
+
+Tree Section 55 (idx=54):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22128.100000
+  Final LB (from EXACT pricing): 22130.900000
+  UB: 22138.000000
+  Gap: 0.0321%
+  Value: 22128.1
+  Branches (6):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: -
+    6. Edge 58-84: -
+----------------------------------------
+
+Tree Section 56 (idx=55):
+  Tree Size: 25
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22123.100000
+  Final LB (from EXACT pricing): 22135.400000
+  UB: 22138.000000
+  Gap: 0.0117%
+  Value: 22123.1
+  Branches (8):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: +
+----------------------------------------
+
+Tree Section 57 (idx=56):
+  Tree Size: 26
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22123.100000
+  Final LB (from EXACT pricing): 22125.100000
+  UB: 22138.000000
+  Gap: 0.0583%
+  Value: 22123.1
+  Branches (8):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+----------------------------------------
+
+Tree Section 58 (idx=57):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22128.100000
+  Final LB (from EXACT pricing): 22147.400000
+  UB: 22138.000000
+  Gap: -0.0425%
+  Value: 22128.1
+  Branches (10):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: +
+    10. Edge 12-21: +
+----------------------------------------
+
+Tree Section 59 (idx=58):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22128.100000
+  Final LB (from EXACT pricing): 22131.400000
+  UB: 22138.000000
+  Gap: 0.0298%
+  Value: 22128.1
+  Branches (10):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: +
+    10. Edge 12-21: -
+----------------------------------------
+
+Tree Section 60 (idx=59):
+  Tree Size: 29
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22124.100000
+  Final LB (from EXACT pricing): 22127.100000
+  UB: 22138.000000
+  Gap: 0.0492%
+  Value: 22124.1
+  Branches (10):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: +
+----------------------------------------
+
+Tree Section 61 (idx=60):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22124.100000
+  Final LB (from EXACT pricing): 22128.600000
+  UB: 22138.000000
+  Gap: 0.0425%
+  Value: 22124.1
+  Branches (10):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: -
+----------------------------------------
+
+Tree Section 62 (idx=61):
+  Tree Size: 5
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.400000
+  Final LB (from EXACT pricing): 22150.100000
+  UB: 22137.000000
+  Gap: -0.0592%
+  Value: 22135.4
+  Branches (9):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: +
+    9. Edge 35-61: +
+----------------------------------------
+
+Tree Section 63 (idx=62):
+  Tree Size: 4
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.400000
+  Final LB (from EXACT pricing): 22158.300000
+  UB: 22137.000000
+  Gap: -0.0962%
+  Value: 22135.4
+  Branches (9):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: +
+    9. Edge 35-61: -
+----------------------------------------
+
+Tree Section 64 (idx=63):
+  Tree Size: 31
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22125.100000
+  Final LB (from EXACT pricing): 22126.200000
+  UB: 22138.000000
+  Gap: 0.0533%
+  Value: 22125.1
+  Branches (9):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+----------------------------------------
+
+Tree Section 65 (idx=64):
+  Tree Size: 32
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22125.100000
+  Final LB (from EXACT pricing): 22138.300000
+  UB: 22138.000000
+  Gap: -0.0014%
+  Value: 22125.1
+  Branches (9):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: -
+----------------------------------------
+
+Tree Section 66 (idx=65):
+  Tree Size: 31
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22129.500000
+  Final LB (from EXACT pricing): 22132.300000
+  UB: 22138.000000
+  Gap: 0.0257%
+  Value: 22129.5
+  Branches (4):
+    1. Edge 41-58: -
+    2. Edge 41-112: +
+    3. Edge 1-65: +
+    4. Edge 98-105: +
+----------------------------------------
+
+Tree Section 67 (idx=66):
+  Tree Size: 32
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22129.500000
+  Final LB (from EXACT pricing): 22152.200000
+  UB: 22138.000000
+  Gap: -0.0641%
+  Value: 22129.5
+  Branches (4):
+    1. Edge 41-58: -
+    2. Edge 41-112: +
+    3. Edge 1-65: +
+    4. Edge 98-105: -
+----------------------------------------
+
+Tree Section 68 (idx=67):
+  Tree Size: 7
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.400000
+  Final LB (from EXACT pricing): 22173.000000
+  UB: 22137.000000
+  Gap: -0.1626%
+  Value: 22135.4
+  Branches (4):
+    1. Edge 41-58: -
+    2. Edge 41-112: +
+    3. Edge 1-65: -
+    4. Edge 4-119: +
+----------------------------------------
+
+Tree Section 69 (idx=68):
+  Tree Size: 6
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.400000
+  Final LB (from EXACT pricing): 22139.000000
+  UB: 22137.000000
+  Gap: -0.0090%
+  Value: 22135.4
+  Branches (4):
+    1. Edge 41-58: -
+    2. Edge 41-112: +
+    3. Edge 1-65: -
+    4. Edge 4-119: -
+----------------------------------------
+
+Tree Section 70 (idx=69):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22127.100000
+  Final LB (from EXACT pricing): 22158.800000
+  UB: 22138.000000
+  Gap: -0.0940%
+  Value: 22127.1
+  Branches (11):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: +
+    11. Edge 12-81: +
+----------------------------------------
+
+Tree Section 71 (idx=70):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22127.100000
+  Final LB (from EXACT pricing): 22128.500000
+  UB: 22138.000000
+  Gap: 0.0429%
+  Value: 22127.1
+  Branches (11):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: +
+    11. Edge 12-81: -
+----------------------------------------
+
+Tree Section 72 (idx=71):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22128.600000
+  Final LB (from EXACT pricing): 22139.100000
+  UB: 22138.000000
+  Gap: -0.0050%
+  Value: 22128.6
+  Branches (11):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: -
+    11. Edge 18-29: +
+----------------------------------------
+
+Tree Section 73 (idx=72):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22128.600000
+  Final LB (from EXACT pricing): 22130.300000
+  UB: 22138.000000
+  Gap: 0.0348%
+  Value: 22128.6
+  Branches (11):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: -
+    11. Edge 18-29: -
+----------------------------------------
+
+Tree Section 74 (idx=73):
+  Tree Size: 31
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22127.100000
+  Final LB (from EXACT pricing): 22130.600000
+  UB: 22138.000000
+  Gap: 0.0334%
+  Value: 22127.1
+  Branches (7):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: -
+    6. Edge 17-74: -
+    7. Edge 98-105: +
+----------------------------------------
+
+Tree Section 75 (idx=74):
+  Tree Size: 32
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22127.100000
+  Final LB (from EXACT pricing): 22142.700000
+  UB: 22138.000000
+  Gap: -0.0212%
+  Value: 22127.1
+  Branches (7):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: -
+    6. Edge 17-74: -
+    7. Edge 98-105: -
+----------------------------------------
+
+Tree Section 76 (idx=75):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22126.200000
+  Final LB (from EXACT pricing): 22145.200000
+  UB: 22138.000000
+  Gap: -0.0325%
+  Value: 22126.2
+  Branches (10):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: +
+----------------------------------------
+
+Tree Section 77 (idx=76):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22126.200000
+  Final LB (from EXACT pricing): 22127.500000
+  UB: 22138.000000
+  Gap: 0.0474%
+  Value: 22126.2
+  Branches (10):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+----------------------------------------
+
+Tree Section 78 (idx=77):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22127.500000
+  Final LB (from EXACT pricing): 22151.000000
+  UB: 22138.000000
+  Gap: -0.0587%
+  Value: 22127.5
+  Branches (11):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: +
+----------------------------------------
+
+Tree Section 79 (idx=78):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22127.500000
+  Final LB (from EXACT pricing): 22128.200000
+  UB: 22138.000000
+  Gap: 0.0443%
+  Value: 22127.5
+  Branches (11):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+----------------------------------------
+
+Tree Section 80 (idx=79):
+  Tree Size: 31
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22130.600000
+  Final LB (from EXACT pricing): 22136.500000
+  UB: 22138.000000
+  Gap: 0.0068%
+  Value: 22130.6
+  Branches (8):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: -
+    6. Edge 17-74: -
+    7. Edge 98-105: +
+    8. Edge 18-29: +
+----------------------------------------
+
+Tree Section 81 (idx=80):
+  Tree Size: 32
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22130.600000
+  Final LB (from EXACT pricing): 22148.700000
+  UB: 22138.000000
+  Gap: -0.0483%
+  Value: 22130.6
+  Branches (8):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: -
+    6. Edge 17-74: -
+    7. Edge 98-105: +
+    8. Edge 18-29: -
+----------------------------------------
+
+Tree Section 82 (idx=81):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22128.500000
+  Final LB (from EXACT pricing): 22140.700000
+  UB: 22138.000000
+  Gap: -0.0122%
+  Value: 22128.5
+  Branches (12):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: +
+    11. Edge 12-81: -
+    12. Edge 12-21: +
+----------------------------------------
+
+Tree Section 83 (idx=82):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22128.500000
+  Final LB (from EXACT pricing): 22133.500000
+  UB: 22138.000000
+  Gap: 0.0203%
+  Value: 22128.5
+  Branches (12):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: +
+    11. Edge 12-81: -
+    12. Edge 12-21: -
+----------------------------------------
+
+Tree Section 84 (idx=83):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22129.600000
+  Final LB (from EXACT pricing): 22139.500000
+  UB: 22138.000000
+  Gap: -0.0068%
+  Value: 22129.6
+  Branches (5):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: +
+    4. Edge 49-107: -
+    5. Edge 23-108: +
+----------------------------------------
+
+Tree Section 85 (idx=84):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22129.600000
+  Final LB (from EXACT pricing): 22131.900000
+  UB: 22138.000000
+  Gap: 0.0276%
+  Value: 22129.6
+  Branches (5):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: +
+    4. Edge 49-107: -
+    5. Edge 23-108: -
+----------------------------------------
+
+Tree Section 86 (idx=85):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22128.200000
+  Final LB (from EXACT pricing): 22141.300000
+  UB: 22138.000000
+  Gap: -0.0149%
+  Value: 22128.2
+  Branches (12):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: +
+----------------------------------------
+
+Tree Section 87 (idx=86):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22128.200000
+  Final LB (from EXACT pricing): 22128.700000
+  UB: 22138.000000
+  Gap: 0.0420%
+  Value: 22128.2
+  Branches (12):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+----------------------------------------
+
+Tree Section 88 (idx=87):
+  Tree Size: 31
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22130.900000
+  Final LB (from EXACT pricing): 22133.900000
+  UB: 22138.000000
+  Gap: 0.0185%
+  Value: 22130.9
+  Branches (7):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: -
+    6. Edge 58-84: -
+    7. Edge 47-84: +
+----------------------------------------
+
+Tree Section 89 (idx=88):
+  Tree Size: 32
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22130.900000
+  Final LB (from EXACT pricing): 22184.400000
+  UB: 22138.000000
+  Gap: -0.2096%
+  Value: 22130.9
+  Branches (7):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: -
+    6. Edge 58-84: -
+    7. Edge 47-84: -
+----------------------------------------
+
+Tree Section 90 (idx=89):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22131.400000
+  Final LB (from EXACT pricing): 22169.800000
+  UB: 22138.000000
+  Gap: -0.1436%
+  Value: 22131.4
+  Branches (11):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: +
+    10. Edge 12-21: -
+    11. Edge 12-81: +
+----------------------------------------
+
+Tree Section 91 (idx=90):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22131.400000
+  Final LB (from EXACT pricing): 22134.700000
+  UB: 22138.000000
+  Gap: 0.0149%
+  Value: 22131.4
+  Branches (11):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: +
+    10. Edge 12-21: -
+    11. Edge 12-81: -
+----------------------------------------
+
+Tree Section 92 (idx=91):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22128.700000
+  Final LB (from EXACT pricing): 22142.900000
+  UB: 22138.000000
+  Gap: -0.0221%
+  Value: 22128.7
+  Branches (13):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: +
+----------------------------------------
+
+Tree Section 93 (idx=92):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22128.700000
+  Final LB (from EXACT pricing): 22129.500000
+  UB: 22138.000000
+  Gap: 0.0384%
+  Value: 22128.7
+  Branches (13):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+----------------------------------------
+
+Tree Section 94 (idx=93):
+  Tree Size: 27
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22133.500000
+  Final LB (from EXACT pricing): 22144.500000
+  UB: 22137.000000
+  Gap: -0.0339%
+  Value: 22133.5
+  Branches (13):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: +
+    11. Edge 12-81: -
+    12. Edge 12-21: -
+    13. Edge 16-51: +
+----------------------------------------
+
+Tree Section 95 (idx=94):
+  Tree Size: 26
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22133.500000
+  Final LB (from EXACT pricing): 22135.100000
+  UB: 22137.000000
+  Gap: 0.0086%
+  Value: 22133.5
+  Branches (13):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: +
+    11. Edge 12-81: -
+    12. Edge 12-21: -
+    13. Edge 16-51: -
+----------------------------------------
+
+Tree Section 96 (idx=95):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22130.300000
+  Final LB (from EXACT pricing): 22152.900000
+  UB: 22138.000000
+  Gap: -0.0673%
+  Value: 22130.3
+  Branches (12):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: -
+    11. Edge 18-29: -
+    12. Edge 6-68: +
+----------------------------------------
+
+Tree Section 97 (idx=96):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22130.300000
+  Final LB (from EXACT pricing): 22133.000000
+  UB: 22138.000000
+  Gap: 0.0226%
+  Value: 22130.3
+  Branches (12):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: -
+    11. Edge 18-29: -
+    12. Edge 6-68: -
+----------------------------------------
+
+Tree Section 98 (idx=97):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22131.100000
+  Final LB (from EXACT pricing): 22167.400000
+  UB: 22138.000000
+  Gap: -0.1328%
+  Value: 22131.1
+  Branches (6):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: +
+    4. Edge 3-61: +
+    5. Edge 73-78: -
+    6. Edge 4-119: +
+----------------------------------------
+
+Tree Section 99 (idx=98):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22131.100000
+  Final LB (from EXACT pricing): 22134.200000
+  UB: 22138.000000
+  Gap: 0.0172%
+  Value: 22131.1
+  Branches (6):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: +
+    4. Edge 3-61: +
+    5. Edge 73-78: -
+    6. Edge 4-119: -
+----------------------------------------
+
+Tree Section 100 (idx=99):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22129.500000
+  Final LB (from EXACT pricing): 22137.600000
+  UB: 22138.000000
+  Gap: 0.0018%
+  Value: 22129.5
+  Branches (14):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: +
+----------------------------------------
+
+Tree Section 101 (idx=100):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22129.500000
+  Final LB (from EXACT pricing): 22130.900000
+  UB: 22138.000000
+  Gap: 0.0321%
+  Value: 22129.5
+  Branches (14):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+----------------------------------------
+
+Tree Section 102 (idx=101):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22132.300000
+  Final LB (from EXACT pricing): 22145.700000
+  UB: 22137.000000
+  Gap: -0.0393%
+  Value: 22132.3
+  Branches (5):
+    1. Edge 41-58: -
+    2. Edge 41-112: +
+    3. Edge 1-65: +
+    4. Edge 98-105: +
+    5. Edge 3-61: +
+----------------------------------------
+
+Tree Section 103 (idx=102):
+  Tree Size: 30
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22132.300000
+  Final LB (from EXACT pricing): 22140.100000
+  UB: 22137.000000
+  Gap: -0.0140%
+  Value: 22132.3
+  Branches (5):
+    1. Edge 41-58: -
+    2. Edge 41-112: +
+    3. Edge 1-65: +
+    4. Edge 98-105: +
+    5. Edge 3-61: -
+----------------------------------------
+
+Tree Section 104 (idx=103):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22130.900000
+  Final LB (from EXACT pricing): 22145.600000
+  UB: 22138.000000
+  Gap: -0.0343%
+  Value: 22130.9
+  Branches (15):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: +
+----------------------------------------
+
+Tree Section 105 (idx=104):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22130.900000
+  Final LB (from EXACT pricing): 22131.500000
+  UB: 22138.000000
+  Gap: 0.0294%
+  Value: 22130.9
+  Branches (15):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: -
+----------------------------------------
+
+Tree Section 106 (idx=105):
+  Tree Size: 31
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22131.900000
+  Final LB (from EXACT pricing): 22135.300000
+  UB: 22137.000000
+  Gap: 0.0077%
+  Value: 22131.9
+  Branches (6):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: +
+    4. Edge 49-107: -
+    5. Edge 23-108: -
+    6. Edge 67-114: +
+----------------------------------------
+
+Tree Section 107 (idx=106):
+  Tree Size: 32
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22131.900000
+  Final LB (from EXACT pricing): 22136.200000
+  UB: 22137.000000
+  Gap: 0.0036%
+  Value: 22131.9
+  Branches (6):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: +
+    4. Edge 49-107: -
+    5. Edge 23-108: -
+    6. Edge 67-114: -
+----------------------------------------
+
+Tree Section 108 (idx=107):
+  Tree Size: 19
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22134.800000
+  Final LB (from EXACT pricing): 22147.400000
+  UB: 22137.000000
+  Gap: -0.0470%
+  Value: 22134.8
+  Branches (9):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: -
+    8. Edge 47-84: +
+    9. Edge 37-112: +
+----------------------------------------
+
+Tree Section 109 (idx=108):
+  Tree Size: 18
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22134.800000
+  Final LB (from EXACT pricing): 22137.100000
+  UB: 22137.000000
+  Gap: -0.0005%
+  Value: 22134.8
+  Branches (9):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: -
+    8. Edge 47-84: +
+    9. Edge 37-112: -
+----------------------------------------
+
+Tree Section 110 (idx=109):
+  Tree Size: 17
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.000000
+  Final LB (from EXACT pricing): 22163.800000
+  UB: 22137.000000
+  Gap: -0.1211%
+  Value: 22135.0
+  Branches (6):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: +
+    5. Edge 37-112: -
+    6. Edge 52-73: +
+----------------------------------------
+
+Tree Section 111 (idx=110):
+  Tree Size: 16
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.000000
+  Final LB (from EXACT pricing): 22141.900000
+  UB: 22137.000000
+  Gap: -0.0221%
+  Value: 22135.0
+  Branches (6):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: +
+    5. Edge 37-112: -
+    6. Edge 52-73: -
+----------------------------------------
+
+Tree Section 112 (idx=111):
+  Tree Size: 27
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22133.000000
+  Final LB (from EXACT pricing): 22135.500000
+  UB: 22137.000000
+  Gap: 0.0068%
+  Value: 22133.0
+  Branches (13):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: -
+    11. Edge 18-29: -
+    12. Edge 6-68: -
+    13. Edge 85-92: +
+----------------------------------------
+
+Tree Section 113 (idx=112):
+  Tree Size: 28
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22133.000000
+  Final LB (from EXACT pricing): 22138.200000
+  UB: 22137.000000
+  Gap: -0.0054%
+  Value: 22133.0
+  Branches (13):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: -
+    11. Edge 18-29: -
+    12. Edge 6-68: -
+    13. Edge 85-92: -
+----------------------------------------
+
+Tree Section 114 (idx=113):
+  Tree Size: 1
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22136.500000
+  Final LB (from EXACT pricing): 22154.000000
+  UB: 22137.000000
+  Gap: -0.0768%
+  Value: 22136.5
+  Branches (9):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: -
+    6. Edge 17-74: -
+    7. Edge 98-105: +
+    8. Edge 18-29: +
+    9. Edge 72-118: +
+----------------------------------------
+
+Tree Section 115 (idx=114):
+  Tree Size: 0
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22136.500000
+  Final LB (from EXACT pricing): 22141.000000
+  UB: 22137.000000
+  Gap: -0.0181%
+  Value: 22136.5
+  Branches (9):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: -
+    6. Edge 17-74: -
+    7. Edge 98-105: +
+    8. Edge 18-29: +
+    9. Edge 72-118: -
+----------------------------------------
+
+Tree Section 116 (idx=115):
+  Tree Size: 31
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22131.500000
+  Final LB (from EXACT pricing): 22132.000000
+  UB: 22138.000000
+  Gap: 0.0271%
+  Value: 22131.5
+  Branches (16):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: -
+    16. Edge 56-69: +
+----------------------------------------
+
+Tree Section 117 (idx=116):
+  Tree Size: 32
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22131.500000
+  Final LB (from EXACT pricing): 22142.500000
+  UB: 22137.000000
+  Gap: -0.0248%
+  Value: 22131.5
+  Branches (16):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: -
+    16. Edge 56-69: -
+----------------------------------------
+
+Tree Section 118 (idx=117):
+  Tree Size: 25
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22133.900000
+  Final LB (from EXACT pricing): 22164.500000
+  UB: 22137.000000
+  Gap: -0.1242%
+  Value: 22133.9
+  Branches (8):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: -
+    6. Edge 58-84: -
+    7. Edge 47-84: +
+    8. Edge 47-86: +
+----------------------------------------
+
+Tree Section 119 (idx=118):
+  Tree Size: 24
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22133.900000
+  Final LB (from EXACT pricing): 22139.500000
+  UB: 22137.000000
+  Gap: -0.0113%
+  Value: 22133.9
+  Branches (8):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: -
+    5. Edge 47-108: -
+    6. Edge 58-84: -
+    7. Edge 47-84: +
+    8. Edge 47-86: -
+----------------------------------------
+
+Tree Section 120 (idx=119):
+  Tree Size: 29
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22132.600000
+  Final LB (from EXACT pricing): 22136.200000
+  UB: 22137.000000
+  Gap: 0.0036%
+  Value: 22132.6
+  Branches (7):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: +
+    6. Edge 63-105: -
+    7. Edge 18-29: +
+----------------------------------------
+
+Tree Section 121 (idx=120):
+  Tree Size: 28
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22132.600000
+  Final LB (from EXACT pricing): 22159.500000
+  UB: 22137.000000
+  Gap: -0.1016%
+  Value: 22132.6
+  Branches (7):
+    1. Edge 41-58: +
+    2. Edge 1-65: +
+    3. Edge 8-107: -
+    4. Edge 30-110: -
+    5. Edge 5-17: +
+    6. Edge 63-105: -
+    7. Edge 18-29: -
+----------------------------------------
+
+Tree Section 122 (idx=121):
+  Tree Size: 23
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22134.200000
+  Final LB (from EXACT pricing): 22137.500000
+  UB: 22137.000000
+  Gap: -0.0023%
+  Value: 22134.2
+  Branches (7):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: +
+    4. Edge 3-61: +
+    5. Edge 73-78: -
+    6. Edge 4-119: -
+    7. Edge 4-99: +
+----------------------------------------
+
+Tree Section 123 (idx=122):
+  Tree Size: 22
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22134.200000
+  Final LB (from EXACT pricing): 22160.900000
+  UB: 22137.000000
+  Gap: -0.1080%
+  Value: 22134.2
+  Branches (7):
+    1. Edge 41-58: +
+    2. Edge 1-65: -
+    3. Edge 54-117: +
+    4. Edge 3-61: +
+    5. Edge 73-78: -
+    6. Edge 4-119: -
+    7. Edge 4-99: -
+----------------------------------------
+
+Tree Section 124 (idx=123):
+  Tree Size: 21
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22134.700000
+  Final LB (from EXACT pricing): 22160.200000
+  UB: 22137.000000
+  Gap: -0.1048%
+  Value: 22134.7
+  Branches (12):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: +
+    10. Edge 12-21: -
+    11. Edge 12-81: -
+    12. Edge 12-16: +
+----------------------------------------
+
+Tree Section 125 (idx=124):
+  Tree Size: 20
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22134.700000
+  Final LB (from EXACT pricing): 22136.900000
+  UB: 22137.000000
+  Gap: 0.0005%
+  Value: 22134.7
+  Branches (12):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: +
+    10. Edge 12-21: -
+    11. Edge 12-81: -
+    12. Edge 12-16: -
+----------------------------------------
+
+Tree Section 126 (idx=125):
+  Tree Size: 31
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22132.000000
+  Final LB (from EXACT pricing): 22144.100000
+  UB: 22137.000000
+  Gap: -0.0321%
+  Value: 22132.0
+  Branches (17):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: -
+    16. Edge 56-69: +
+    17. Edge 12-79: +
+----------------------------------------
+
+Tree Section 127 (idx=126):
+  Tree Size: 30
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22132.000000
+  Final LB (from EXACT pricing): 22132.600000
+  UB: 22137.000000
+  Gap: 0.0199%
+  Value: 22132.0
+  Branches (17):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: -
+    16. Edge 56-69: +
+    17. Edge 12-79: -
+----------------------------------------
+
+Tree Section 128 (idx=127):
+  Tree Size: 11
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.300000
+  Final LB (from EXACT pricing): 22189.700000
+  UB: 22137.000000
+  Gap: -0.2381%
+  Value: 22135.3
+  Branches (7):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: +
+    4. Edge 49-107: -
+    5. Edge 23-108: -
+    6. Edge 67-114: +
+    7. Edge 47-58: +
+----------------------------------------
+
+Tree Section 129 (idx=128):
+  Tree Size: 10
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.300000
+  Final LB (from EXACT pricing): 22136.800000
+  UB: 22137.000000
+  Gap: 0.0009%
+  Value: 22135.3
+  Branches (7):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: +
+    4. Edge 49-107: -
+    5. Edge 23-108: -
+    6. Edge 67-114: +
+    7. Edge 47-58: -
+----------------------------------------
+
+Tree Section 130 (idx=129):
+  Tree Size: 29
+  Has Edge Evaluation Marker: True
+  Initial LB (from header): 22132.600000
+  Final LB (from EXACT pricing): 22133.600000
+  UB: 22137.000000
+  Gap: 0.0154%
+  Value: 22132.6
+  Branches (18):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: -
+    16. Edge 56-69: +
+    17. Edge 12-79: -
+    18. Edge 21-96: +
+----------------------------------------
+
+Tree Section 131 (idx=130):
+  Tree Size: 30
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22132.600000
+  Final LB (from EXACT pricing): 22141.400000
+  UB: 22137.000000
+  Gap: -0.0199%
+  Value: 22132.6
+  Branches (18):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: -
+    16. Edge 56-69: +
+    17. Edge 12-79: -
+    18. Edge 21-96: -
+----------------------------------------
+
+Tree Section 132 (idx=131):
+  Tree Size: 27
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22133.600000
+  Final LB (from EXACT pricing): 22137.000000
+  UB: 22137.000000
+  Gap: 0.0000%
+  Value: 22133.6
+  Branches (19):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: -
+    16. Edge 56-69: +
+    17. Edge 12-79: -
+    18. Edge 21-96: +
+    19. Edge 6-72: +
+----------------------------------------
+
+Tree Section 133 (idx=132):
+  Tree Size: 26
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22133.600000
+  Final LB (from EXACT pricing): 22139.000000
+  UB: 22137.000000
+  Gap: -0.0090%
+  Value: 22133.6
+  Branches (19):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: -
+    7. Edge 71-86: -
+    8. Edge 54-117: -
+    9. Edge 17-116: +
+    10. Edge 0-84: -
+    11. Edge 71-84: -
+    12. Edge 6-68: -
+    13. Edge 18-29: -
+    14. Edge 0-101: -
+    15. Edge 12-16: -
+    16. Edge 56-69: +
+    17. Edge 12-79: -
+    18. Edge 21-96: +
+    19. Edge 6-72: -
+----------------------------------------
+
+Tree Section 134 (idx=133):
+  Tree Size: 3
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.500000
+  Final LB (from EXACT pricing): 22136.600000
+  UB: 22137.000000
+  Gap: 0.0018%
+  Value: 22135.5
+  Branches (14):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: -
+    11. Edge 18-29: -
+    12. Edge 6-68: -
+    13. Edge 85-92: +
+    14. Edge 38-82: +
+----------------------------------------
+
+Tree Section 135 (idx=134):
+  Tree Size: 2
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.500000
+  Final LB (from EXACT pricing): 22151.400000
+  UB: 22137.000000
+  Gap: -0.0650%
+  Value: 22135.5
+  Branches (14):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: -
+    11. Edge 18-29: -
+    12. Edge 6-68: -
+    13. Edge 85-92: +
+    14. Edge 38-82: -
+----------------------------------------
+
+Tree Section 136 (idx=135):
+  Tree Size: 15
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.100000
+  Final LB (from EXACT pricing): 22176.700000
+  UB: 22137.000000
+  Gap: -0.1793%
+  Value: 22135.1
+  Branches (14):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: +
+    11. Edge 12-81: -
+    12. Edge 12-21: -
+    13. Edge 16-51: -
+    14. Edge 79-81: +
+----------------------------------------
+
+Tree Section 137 (idx=136):
+  Tree Size: 14
+  Has Edge Evaluation Marker: False
+  Initial LB (from header): 22135.100000
+  Final LB (from EXACT pricing): 22136.100000
+  UB: 22137.000000
+  Gap: 0.0041%
+  Value: 22135.1
+  Branches (14):
+    1. Edge 41-58: -
+    2. Edge 41-112: -
+    3. Edge 49-63: -
+    4. Edge 27-47: +
+    5. Edge 50-78: -
+    6. Edge 44-118: +
+    7. Edge 42-43: +
+    8. Edge 6-14: -
+    9. Edge 81-83: -
+    10. Edge 80-113: +
+    11. Edge 12-81: -
+    12. Edge 12-21: -
+    13. Edge 16-51: -
+    14. Edge 79-81: -
+----------------------------------------
