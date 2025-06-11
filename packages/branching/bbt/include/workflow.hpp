@@ -5,13 +5,13 @@
  * License: GPL-3.0
  */
 
- /*
-  * @file workflow.hpp
-  * @brief Implementation of the branch-and-bound tree (BBT) workflow for solving optimization problems.
-  *
-  * This file contains the implementation of the BBTController class, which manages the workflow of
-  * solving a branch-and-bound tree.
-  */
+/*
+ * @file workflow.hpp
+ * @brief Implementation of the branch-and-bound tree (BBT) workflow for solving optimization problems.
+ *
+ * This file contains the implementation of the BBTController class, which manages the workflow of
+ * solving a branch-and-bound tree.
+ */
 
 #ifndef ROUTE_OPT_WORKFLOW_HPP
 #define ROUTE_OPT_WORKFLOW_HPP
@@ -19,7 +19,8 @@
 #include <set>
 #include "candidate_selector_controller.hpp"
 
-namespace RouteOpt::Branching::BBT {
+namespace RouteOpt::Branching::BBT
+{
     /**
      * @brief Solves the branch-and-bound tree (BBT).
      *
@@ -33,9 +34,10 @@ namespace RouteOpt::Branching::BBT {
      * @param root_node   Pointer to the root node of the branch-and-bound tree.
      * @param time_limit  Maximum time limit for the solving process (default is numeric limits of float).
      */
-    template<typename Node, typename BrCType, typename Hasher>
-    void BBTController<Node, BrCType, Hasher>::solve(Node* root_node,
-        double time_limit) {
+    template <typename Node, typename BrCType, typename Hasher>
+    void BBTController<Node, BrCType, Hasher>::solve(Node *root_node,
+                                                     double time_limit)
+    {
         // Optionally, read additional information for the root node if the callback is defined.
         if (tryReadNodeIn != nullptr)
             tryReadNodeIn(root_node, branching_history, bkf_data_shared);
@@ -44,7 +46,8 @@ namespace RouteOpt::Branching::BBT {
         addNode(root_node);
 
         // Continue processing nodes until the tree is empty.
-        while (!tree.empty()) {
+        while (!tree.empty())
+        {
             // Select and remove the first node from the tree.
             auto node = *tree.begin();
             tree.erase(node);
@@ -57,34 +60,36 @@ namespace RouteOpt::Branching::BBT {
             auto [edge, dir, tree_level] = lastBrcExtractor(node);
 
             // Measure the time taken for the pricing operation on the node.
-            auto eps = TimeSetter::measure([&]() {
-                pricing(node);
-                });
+            auto eps = TimeSetter::measure([&]()
+                                           { pricing(node); });
 
-
-            if (checkIfTimeLimit(node, time_limit)) break;
-
+            if (checkIfTimeLimit(node, time_limit))
+                break;
 
             // If the node is not terminated and is not the root (tree_level != 0), record branching information.
-            if (!isTerminate(node) && tree_level != 0) {
+            if (!isTerminate(node) && tree_level != 0)
+            {
                 branching_history.recordExactPerScore(edge, val, valueExtractor(node), dir, tree_level);
                 brcValueOutput(node) = branching_history.tellBranchingIncreaseVal(tree_level);
             }
 
             // Measure additional time taken for the cutting operation.
-            eps += TimeSetter::measure([&]() {
-                cutting(node);
-                });
+            eps += TimeSetter::measure([&]()
+                                       { cutting(node); });
 
-            if (checkIfTimeLimit(node, time_limit)) break;
+            if (checkIfTimeLimit(node, time_limit))
+                break;
 
             // If the node remains active (not terminated), proceed with branching.
-            if (!isTerminate(node)) {
+            if (!isTerminate(node))
+            {
                 // For non-root nodes, update the r_star value via LP testing if BKF controllers are available.
-                if (tree_level != 0) {
-                    if (!bkf_controllers.empty()) {
+                if (tree_level != 0)
+                {
+                    if (!bkf_controllers.empty())
+                    {
                         bkf_data_shared.calculateRStar(valueExtractor(node) - val, tree_level, dir, idxExtractor(node),
-                            bkf_controllers[0]); // Estimate r_star using LP testing.
+                                                       bkf_controllers[0]); // Estimate r_star using LP testing.
                     }
                 }
 
@@ -92,9 +97,9 @@ namespace RouteOpt::Branching::BBT {
                 // BrCType brc;
                 std::vector<BrCType> brcs;
 
-
                 std::vector<int> bst_ks(bkf_controllers.size());
-                for (int i = 0; i < bst_ks.size(); ++i) {
+                for (int i = 0; i < bst_ks.size(); ++i)
+                {
                     // Set the BKF controller state based on the current enumeration state.
                     bkf_controllers[i].setIfB4(!enuStateExtractor(node));
                     // Retrieve the best 'K' value from the BKF controller.
@@ -112,28 +117,39 @@ namespace RouteOpt::Branching::BBT {
                 }
 
                 // Select the branching candidate using either a self-defined function or the default tester.
-                if (getBestCandidateBySelfDefined) {
+                if (getBestCandidateBySelfDefined)
+                {
                     // brcs = getBestCandidateBySelfDefined(node, branching_history, branching_data_shared,
                     //     branching_tester);
                     // still returns a single BrCType
                     BrCType single = getBestCandidateBySelfDefined(
                         node, branching_history, branching_data_shared, branching_tester);
-                    brcs = { single };
+                    brcs = {single};
                 }
-                else {
+                else
+                {
                     // brc = branching_tester.getBestCandidate(node, branching_history, branching_data_shared,
                     //                                         getBranchingCandidates(node));
                     brcs = branching_tester.getTopTwoCandidates(
                         node, branching_history, branching_data_shared,
                         getBranchingCandidates(node));
                     PRINT_REMIND("The best candidate is: " + std::to_string(brcs[0].first) + " " + std::to_string(brcs[0].second));
-                    PRINT_REMIND("The second best candidate is: " + std::to_string(brcs[1].first) + " " + std::to_string(brcs[1].second));
+                    if (brcs.size() > 1)
+                    {
+                        PRINT_REMIND("The second best candidate is: " + std::to_string(brcs[1].first) + " " + std::to_string(brcs[1].second));
+                    }
+                    else
+                    {
+                        PRINT_REMIND("only get one best candidate");
+                    } // PRINT_REMIND("The second best candidate is: " + std::to_string(brcs[1].first) + " " + std::to_string(brcs[1].second));
                 }
 
                 // Update BKF timing information and state for each BKF controller.
-                if (!bkf_controllers.empty()) {
+                if (!bkf_controllers.empty())
+                {
                     branching_tester.updateBKFtime(eps, bkf_controllers);
-                    for (auto& bkf : bkf_controllers) {
+                    for (auto &bkf : bkf_controllers)
+                    {
                         bkf.updateTimeMeasure(bkf_data_shared);
                     }
                     // Update node counters based on enumeration state.
@@ -144,23 +160,25 @@ namespace RouteOpt::Branching::BBT {
                 // ++branching_history.branch_choice[brc];
 
                 // 3) Track how often each branch‐variable is chosen:
-                for (auto& c : brcs)
+                for (auto &c : brcs)
                     ++branching_history.branch_choice[c];
 
                 // Impose the branching decision on the current node and generate its children.
-                std::vector<Node*> children;
+                std::vector<Node *> children;
                 // imposeBranching(node, brc, children);
                 PRINT_REMIND("Imposing branching on node");
                 imposeBranching(node, brcs, children);
 
-
                 // Process each child node.
-                for (auto& child : children) {
+                for (auto &child : children)
+                {
                     // If an output callback is defined, attempt to write the node out.
-                    if (child != node && tryWriteNodeOut != nullptr) {
+                    if (child != node && tryWriteNodeOut != nullptr)
+                    {
                         tryWriteNodeOut(child, branching_history, bkf_data_shared);
                         // If the child node is terminated after writing, delete it.
-                        if (isTerminate(child)) {
+                        if (isTerminate(child))
+                        {
                             delete child;
                             continue;
                         }
@@ -168,14 +186,17 @@ namespace RouteOpt::Branching::BBT {
                     // Add the child node to the tree for further exploration.
                     addNode(child);
                     // Update the optimal K values in BKF controllers for the new child node.
-                    for (int i = 0; i < bst_ks.size(); ++i) {
+                    for (int i = 0; i < bst_ks.size(); ++i)
+                    {
                         bkf_controllers[i].updateOptK(bst_ks[i], idxExtractor(child));
                     }
                 }
             }
-            else {
+            else
+            {
                 // If the node is terminated, update BKF shared data and delete the node.
-                if (!bkf_controllers.empty()) {
+                if (!bkf_controllers.empty())
+                {
                     bkf_data_shared.updateF(ub_ref.get() - valueExtractor(node));
                 }
                 delete node;

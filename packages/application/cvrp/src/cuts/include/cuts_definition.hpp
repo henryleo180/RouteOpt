@@ -22,6 +22,7 @@ namespace RouteOpt::Application::CVRP {
         int idx_brc{INVALID_BRC_INDEX};
         bool br_dir;
         bool if_3b_mid;
+        bool if_2b;
     };
 }
 

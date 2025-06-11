@@ -5,7 +5,7 @@
 LOGDIR="/home/haoran/data_eda/3b_3pb_plus2b_v1/nohup"
 mkdir -p "$LOGDIR"
 
-nohup bash run_3B3pb_small.sh \
+nohup bash run_3B_parallel.sh \
     > "$LOGDIR/run_exp.out" 2>&1 &
 
 # save its PID so you can monitor or kill later

@@ -314,6 +314,9 @@ namespace RouteOpt::Branching::CandidateSelector
                                                  BranchingDataShared<BrCType, Hasher> &branching_data_shared,
                                                  const std::unordered_map<BrCType, double, Hasher> &candidate_map)
         {
+            static constexpr int MAX_3WAY_ROUNDS = 13;
+            static thread_local int three_way_count = 0;
+
             // … run initial screening & testing exactly as before …
             branching_data_shared.refCandidateMap() = candidate_map;
             branching_history.initialScreen(branching_data_shared, num_phase0);
@@ -450,8 +453,20 @@ namespace RouteOpt::Branching::CandidateSelector
                 oss << "]";
                 PRINT_REMIND("Final selected pair‐of‐two: " + oss.str());
             }
+            ++three_way_count;
 
-            return chosen;
+            // 6) Return the chosen pairs
+            if (three_way_count > MAX_3WAY_ROUNDS)
+            {
+                PRINT_REMIND("Three-way count exceeded, returning chosen first pair");
+                return {chosen[0]};
+            }
+
+            else
+            {
+                PRINT_REMIND("Three-way count within limit, returning chosen pairs");
+                return chosen;
+            }
 
             //             const auto& pairs = branching_data_shared.refBranchPair();  // has at least 3 entries
             //             const auto& map = branching_data_shared.refCandidateMap();

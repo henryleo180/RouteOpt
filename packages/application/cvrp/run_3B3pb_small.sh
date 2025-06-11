@@ -16,7 +16,7 @@ cd ..
 # Logs for the 3b variant go to /home/haoran/data_eda/3b_on_2bsetting
 
 INSTANCE_ROOT="/home/haoran/data_eda/instance2"
-LOG_ROOT="/home/haoran/data_eda/3b_3pb_v5_only_ex1"
+LOG_ROOT="/home/haoran/data_eda/3b_3pb_v6_only_ex1"
 BIN_STORE="/home/haoran/data_eda/bin_store"  # New directory to store the timestamped executable
 
 # Create necessary directories
