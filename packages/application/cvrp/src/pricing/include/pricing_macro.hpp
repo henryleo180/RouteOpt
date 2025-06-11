@@ -33,6 +33,7 @@ namespace RouteOpt::Application::CVRP {
     constexpr bool CHECK_PRICING_LABELS = false;
     constexpr bool INSPECT_COLUMN_FEASIBILITY = false;
     constexpr double MeetPointFactor{0.2};
+    constexpr double MeetPointFactorDecayFactor{2.};
     constexpr double NumberOfOverLabelsInMeetPoint = 0.2;
     constexpr double BucketResizeFactorRatioDominanceChecksNonDominant = 800;
     constexpr double BucketResizeFactorNumBucketArcsPerVertex = 10000;
@@ -56,11 +57,13 @@ namespace RouteOpt::Application::CVRP {
     constexpr double EnumerationFailFactor = 0.8;
     constexpr double min_enumeration_exploration_added = 0.001;
     constexpr int MaxNumLabelInEnumeration{500000};
+    constexpr int MaxNumLabelInEnumerationForce{1000000};
     constexpr int NumCheckLabelInEnumeration = 50000;
     constexpr int LabelsCheckBinInEnumeration{20};
     constexpr double MaxNumLabelsCheckBinFactorInEnumeration{4.};
     constexpr double ToleranceFactorInEnumerationLabelChecking{1.3};
-    constexpr int MaxNumRouteInEnumeration = 5000000;
+    constexpr int MaxNumRouteInEnumeration{5000000};
+    constexpr int MaxNumRouteInEnumerationForce{10000000};
     constexpr int MaxNumRoute4Mip{10000}; //often adjustable parameter
     constexpr double PricingWarningThreshold = 0.9;
     constexpr double SOL_NG_X_TOLERANCE = 1e-4;
@@ -73,8 +76,8 @@ namespace RouteOpt::Application::CVRP {
     constexpr int STAB_ARTI_COLUMN_IDX = -2;
     constexpr double STAB_DELTA_DECAY_FACTOR = 2.;
     constexpr double STAB_GAMMA_DECAY_FACTOR = 10.;
-    constexpr double INITIAL_STAB_GAMMA{0.1};
-    constexpr double INITIAL_STAB_KAPA{1.};
+    constexpr double INITIAL_STAB_GAMMA{0.9};
+    constexpr double INITIAL_STAB_KAPA{1};
     constexpr double VERY_INITIAL_STAB_KAPA{10.};
     constexpr int POSITIVE_ARTI_COLUMN_COL_SEQ = 1;
     constexpr int NEGATIVE_ARTI_COLUMN_COL_SEQ = -1;
