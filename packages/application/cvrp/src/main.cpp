@@ -108,9 +108,9 @@ int main(int argc, char *argv[]) {
             return cvrp->callCutting(arg1);
         },
         // Function to impose a branching decision on a node, generating child nodes.
-        [cvrp](auto arg1, auto arg2, auto &arg3) -> decltype(auto) {
+        [cvrp](auto arg1, auto arg2, auto &arg3, auto arg4) -> decltype(auto) {
             // return cvrp->imposeBranching(arg1, arg2, arg3);
-            return cvrp->imposeThreeBranching(arg1, arg2, arg3);
+            return cvrp->imposeThreeBranching(arg1, arg2, arg3, arg4);
         },
         // Self-Defined Branching Selection Function (e.g., 2LBB).
         // ml_candidate_selection,

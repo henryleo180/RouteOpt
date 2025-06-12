@@ -89,7 +89,7 @@ namespace RouteOpt::Branching::BBT {
             const std::function<void(Node*, const BrCType&, double&, double&)>& processExactTestingFunction,
             const std::function<void(Node*)>& pricing,
             const std::function<void(Node*)>& cutting,
-            const std::function<void(Node*, const std::vector<BrCType>&, std::vector<Node*>&)>& imposeBranching,
+            const std::function<void(Node*, const std::vector<BrCType>&, std::vector<Node*>&, const double)>& imposeBranching,
             const std::function<BrCType(Node*, BranchingHistory<BrCType, Hasher>&,
                 BranchingDataShared<BrCType, Hasher>&,
                 CandidateSelector::BranchingTesting<Node, BrCType, Hasher>&)>&
@@ -197,7 +197,7 @@ namespace RouteOpt::Branching::BBT {
 
         // Function to impose branching decisions on a node.
         // std::function<void(Node *, const BrCType &, std::vector<Node *> &)> imposeBranching{};
-        std::function<void(Node*, const std::vector<BrCType>&, std::vector<Node*>&)> imposeBranching{};
+        std::function<void(Node*, const std::vector<BrCType>&, std::vector<Node*>&, const double)> imposeBranching{};
 
 
         // Function to get branching candidates from a node.

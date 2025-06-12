@@ -16,7 +16,7 @@ cd ..
 
 # ./bin/cvrp /home/haoran/data_eda/instance2/120_200/CVRP_120_101.vrp -u 20009 2>&1 | tee tmp.txt
 
-./bin/cvrp /home/haoran/data_eda/instance2/120_200/CVRP_120_105.vrp -u 19150 2>&1 | tee tmp.txt
+./bin/cvrp /home/haoran/data_eda/instance2/120_200/CVRP_120_1.vrp -u 20373 2>&1 | tee tmp.txt
 
 # ./bin/cvrp /home/haoran/data_eda/instance2/120_200/CVRP_120_154.vrp -u 18992 2>&1 | tee 120_154.txt
 

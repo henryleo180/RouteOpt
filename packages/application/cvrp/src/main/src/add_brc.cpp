@@ -167,7 +167,8 @@ namespace RouteOpt::Application::CVRP
     void CVRPSolver::imposeThreeBranching(
         BbNode *node,
         const std::vector<std::pair<int, int>> &edgepair,
-        std::vector<BbNode *> &children)
+        std::vector<BbNode *> &children,
+        const double lp_sum)
     {
         // assert(edgepair.size() == 2);
         assert(edgepair.size() <= 2);

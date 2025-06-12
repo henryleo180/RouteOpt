@@ -96,6 +96,7 @@ namespace RouteOpt::Branching::BBT
                 // Determine the best branching candidate.
                 // BrCType brc;
                 std::vector<BrCType> brcs;
+                double lp_sum;
 
                 std::vector<int> bst_ks(bkf_controllers.size());
                 for (int i = 0; i < bst_ks.size(); ++i)
@@ -130,7 +131,7 @@ namespace RouteOpt::Branching::BBT
                 {
                     // brc = branching_tester.getBestCandidate(node, branching_history, branching_data_shared,
                     //                                         getBranchingCandidates(node));
-                    brcs = branching_tester.getTopTwoCandidates(
+                    std::tie(brcs, lp_sum) = branching_tester.getTopTwoCandidates(
                         node, branching_history, branching_data_shared,
                         getBranchingCandidates(node));
                     PRINT_REMIND("The best candidate is: " + std::to_string(brcs[0].first) + " " + std::to_string(brcs[0].second));
@@ -167,7 +168,7 @@ namespace RouteOpt::Branching::BBT
                 std::vector<Node *> children;
                 // imposeBranching(node, brc, children);
                 PRINT_REMIND("Imposing branching on node");
-                imposeBranching(node, brcs, children);
+                imposeBranching(node, brcs, children, lp_sum);
 
                 // Process each child node.
                 for (auto &child : children)

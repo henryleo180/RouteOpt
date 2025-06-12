@@ -91,10 +91,11 @@ namespace RouteOpt::Application::CVRP {
     constexpr int NODE_MEMORY_ROUTE_LENGTH{20};
 
     enum class NUM_TESTING {
-        PHASE0 = 30,
-        PHASE1 = 6,
-        PHASE2 = 6,
-        PHASE3 = 6
+    // set to inf so that sim to 3pb is disabled
+        PHASE0 = 2000,
+        PHASE1 = 2000,
+        PHASE2 = 2000,
+        PHASE3 = 2000
     };
 
 

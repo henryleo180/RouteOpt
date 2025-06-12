@@ -97,7 +97,8 @@ namespace RouteOpt::Application::CVRP
         void imposeThreeBranching(
             BbNode *node,
             const std::vector<std::pair<int, int>> &edgepair, // must have size()==2
-            std::vector<BbNode *> &children);
+            std::vector<BbNode *> &children,
+            const double lp_sum);
 
         void processLPTesting(BbNode *node, const std::pair<int, int> &edge, double &dif1, double &dif2);
 

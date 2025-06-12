@@ -309,24 +309,32 @@ namespace RouteOpt::Branching::CandidateSelector
             return branching_data_shared.refBranchPair().front();
         }
 
-        std::vector<BrCType> getTopTwoCandidates(Node *node,
+        std::pair<std::vector<BrCType>, double> getTopTwoCandidates(Node *node,
                                                  BranchingHistory<BrCType, Hasher> &branching_history,
                                                  BranchingDataShared<BrCType, Hasher> &branching_data_shared,
                                                  const std::unordered_map<BrCType, double, Hasher> &candidate_map)
         {
-            static constexpr int MAX_3WAY_ROUNDS = 13;
-            static thread_local int three_way_count = 0;
+            // static constexpr int MAX_3WAY_ROUNDS = 13;
+            // static thread_local int three_way_count = 0;
 
             // … run initial screening & testing exactly as before …
             branching_data_shared.refCandidateMap() = candidate_map;
             branching_history.initialScreen(branching_data_shared, num_phase0);
             PRINT_REMIND("Finish initialScreen in GetTopTwoCandidates");
-            lp_time_cnt.first = TimeSetter::measure([&]
-                                                    { testing(node, branching_history, branching_data_shared, TestingPhase::LP); });
-            heuristic_time_cnt.first = TimeSetter::measure([&]
-                                                           { testing(node, branching_history, branching_data_shared, TestingPhase::Heuristic); });
+
+            // PRINT_REMIND("Block initial screening in getTopTwoCandidates");
+            // PRINT_REMIND("Start lp testing in GetTopTwoCandidates");
+            // lp_time_cnt.first = TimeSetter::measure([&]
+            //                                         { testing(node, branching_history, branching_data_shared, TestingPhase::LP); });
+            // PRINT_REMIND("Finish lp testing in GetTopTwoCandidates");
+            // PRINT_REMIND("Start heuristic testing in GetTopTwoCandidates");
+            // heuristic_time_cnt.first = TimeSetter::measure([&]
+            //                                                { testing(node, branching_history, branching_data_shared, TestingPhase::Heuristic); });
+            PRINT_REMIND("Block Lp test and heuristic test in GetTopTwoCandidates");
+
             exact_time_cnt.first = TimeSetter::measure([&]
                                                        { testing(node, branching_history, branching_data_shared, TestingPhase::Exact); });
+            PRINT_REMIND("Finish exact testing in GetTopTwoCandidates");
 
             {
                 const auto &pairs = branching_data_shared.refBranchPair();
@@ -353,164 +361,85 @@ namespace RouteOpt::Branching::CandidateSelector
             const auto &pairs = branching_data_shared.refBranchPair(); // at least 3 entries
             const auto &cmap = branching_data_shared.refCandidateMap();
 
-            // Build a filtered list of "still available" edges
-            std::vector<BrCType> available;
-            // available.reserve(pairs.size());
-            // for (const auto &p : pairs)
-            // {
-            //     bool used = std::any_of(
-            //         node->getBrCs().begin(),
-            //         node->getBrCs().end(),
-            //         [&](const auto &brc)
-            //         {
-            //             return brc.edge == p;
-            //         });
-            //     if (!used)
-            //     {
-            //         available.push_back(p);
-            //     }
-            // }
+            // 2) Create pairs of pairs with the first pair fixed, recording the sum
+            std::vector<std::pair<std::vector<std::pair<int, int>>, double>> pair_combinations;
 
-            // If we've filtered away too many, fall back to the original list
-            if (available.size() < 2)
+            if (pairs.size() >= 3)
             {
-                PRINT_REMIND("Not enough new candidates, reverting to original list");
-                available = pairs;
-            }
+                const auto &first_pair = pairs[0]; // This will always be the first element
 
-            // Sort available by cmap value in descending order
-            // std::sort(available.begin(), available.end(),
-            //           [&cmap](const BrCType &a, const BrCType &b)
-            //           {
-            //               return cmap.at(a) > cmap.at(b);
-            //           });
-
-            // Find the best two pairs that don't sum to 1
-            std::vector<BrCType> chosen;
-            bool found_non_sum_pair = false;
-
-            for (size_t i = 0; i < available.size() && !found_non_sum_pair; ++i)
-            {
-                for (size_t j = i + 1; j < available.size(); ++j)
+                // Iterate through all other pairs to form combinations
+                for (size_t i = 1; i < pairs.size(); ++i)
                 {
-                    // Safety check for cmap access
-                    if (cmap.find(available[i]) == cmap.end() || cmap.find(available[j]) == cmap.end())
-                    {
-                        continue; // Skip if either pair isn't in cmap
-                    }
+                    const auto &second_pair = pairs[i];
 
-                    double sum = cmap.at(available[i]) + cmap.at(available[j]);
+                    // Check the sum constraint using pairs as keys
+                    double sum = cmap.at(first_pair) + cmap.at(second_pair);
+
                     if (std::abs(sum - 1.0) > 1e-3)
                     {
-                        // Found a pair that doesn't sum to 1
-                        chosen = {available[i], available[j]};
-                        PRINT_REMIND("Selected pair with values " +
-                                     std::to_string(cmap.at(available[i])) + " and " +
-                                     std::to_string(cmap.at(available[j])) +
-                                     " (sum = " + std::to_string(sum) + ")");
-                        found_non_sum_pair = true;
-                        break;
+                        std::vector<std::pair<int, int>> pair_vector = {first_pair, second_pair};
+                        pair_combinations.emplace_back(pair_vector, sum);
                     }
                 }
             }
 
-            // If no pair was found that doesn't sum to 1, just take the top two by cmap value
-            if (!found_non_sum_pair && available.size() >= 2)
+            // 3) Debug and print
+            std::cout << "Found " << pair_combinations.size() << " valid pair combinations:" << std::endl;
+            for (size_t idx = 0; idx < pair_combinations.size(); ++idx)
             {
-                chosen = {available[0], available[1]};
-                PRINT_REMIND("No pairs found that don't sum to 1, taking top two by value");
+                const auto &combo = pair_combinations[idx];
+                const auto &pair_vector = combo.first;
+                double sum_value = combo.second;
+
+                std::cout << "Combination " << idx << ": "
+                          << "(" << pair_vector[0].first << "," << pair_vector[0].second << ") + "
+                          << "(" << pair_vector[1].first << "," << pair_vector[1].second << ") = "
+                          << sum_value << std::endl;
             }
 
-            // Ensure we have a valid result
-            if (chosen.empty() && available.size() >= 2)
+            // 4) Select the pair that sum is most close to 0 or 2
+            if (!pair_combinations.empty())
             {
-                chosen = {available[0], available[1]};
-                PRINT_REMIND("Fallback: taking top two available values");
+                PRINT_REMIND("Found " + std::to_string(pair_combinations.size()) + " valid pair combinations.");
             }
-            else if (chosen.empty() && !pairs.empty())
-            {
-                // Last resort if everything else failed
-                chosen = {pairs[0]};
-                if (pairs.size() > 1)
-                {
-                    chosen.push_back(pairs[1]);
-                }
-                PRINT_REMIND("Emergency fallback: using first pairs from original list");
-            }
-
-            // 5) Debug print
-            {
-                std::ostringstream oss;
-                oss << "[";
-                for (size_t i = 0; i < chosen.size(); ++i)
-                {
-                    oss << "("
-                        << chosen[i].first << ","
-                        << chosen[i].second << ")";
-                    if (i + 1 < chosen.size())
-                        oss << ", ";
-                }
-                oss << "]";
-                PRINT_REMIND("Final selected pair‐of‐two: " + oss.str());
-            }
-            ++three_way_count;
-
-            // 6) Return the chosen pairs
-            if (three_way_count > MAX_3WAY_ROUNDS)
-            {
-                PRINT_REMIND("Three-way count exceeded, returning chosen first pair");
-                return {chosen[0]};
-            }
-
             else
             {
-                PRINT_REMIND("Three-way count within limit, returning chosen pairs");
-                return chosen;
+                PRINT_REMIND("No valid pair combinations found. Returning empty vector.");
+                return {};
             }
 
-            //             const auto& pairs = branching_data_shared.refBranchPair();  // has at least 3 entries
-            //             const auto& map = branching_data_shared.refCandidateMap();
+            size_t best_idx = 0;
+            double best_distance = std::numeric_limits<double>::max();
 
-            //             for (auto &brc: node->getBrCs()) {
-            //             // if brc.edge appears anywhere in pairs, skip it
-            // if (std::find(pairs.begin(), pairs.end(), brc.edge) != pairs.end()) {
-            //     PRINT_REMIND(
-            //       "Excluding "
-            //       + std::to_string(brc.edge.first)
-            //       + "-"
-            //       + std::to_string(brc.edge.second)
-            //     );
-            //     continue;
-            // }
-            //         }
+            for (size_t i = 0; i < pair_combinations.size(); ++i)
+            {
+                double sum = pair_combinations[i].second;
 
-            //             // Compute sum of scores for the first two
-            //             double sum01 = map.at(pairs[0]) + map.at(pairs[1]);
+                // Calculate distance to both 0 and 2, take the minimum
+                double dist_to_0 = std::abs(sum - 0.0);
+                double dist_to_2 = std::abs(sum - 2.0);
+                double min_distance = std::min(dist_to_0, dist_to_2);
 
-            //             // Choose either (0,1) if sum01 == 1, else (0,2)
-            //             std::vector<BrCType> chosen;
-            //             if (std::abs(sum01 - 1.0) > 1e-9) {
-            //                 chosen = { pairs[0], pairs[1] };
-            //             }
-            //             else {
-            //                 chosen = { pairs[0], pairs[2] };
-            //             }
+                if (min_distance < best_distance)
+                {
+                    best_distance = min_distance;
+                    best_idx = i;
+                }
+            }
 
-            //             // Debug print the chosen two
-            //             {
-            //                 std::ostringstream oss;
-            //                 oss << "[";
-            //                 for (size_t i = 0; i < chosen.size(); ++i) {
-            //                     oss << "("
-            //                         << chosen[i].first << ","
-            //                         << chosen[i].second << ")";
-            //                     if (i + 1 < chosen.size()) oss << ", ";
-            //                 }
-            //                 oss << "]";
-            //                 PRINT_REMIND("Selected pair-of-two from top-3: " + oss.str());
-            //             }
+            // Get the best combination
+            const auto &best_combo = pair_combinations[best_idx];
+            const auto &selected_pairs = best_combo.first;
+            double selected_sum = best_combo.second;
 
-            //             return chosen;
+            std::cout << "\nSelected combination (closest to 0 or 2):" << std::endl;
+            std::cout << "(" << selected_pairs[0].first << "," << selected_pairs[0].second << ") + "
+                      << "(" << selected_pairs[1].first << "," << selected_pairs[1].second << ") = "
+                      << selected_sum << " (distance: " << best_distance << ")" << std::endl;
+
+            PRINT_REMIND("returning chosen pairs");
+            return best_combo;
         }
 
         /**
